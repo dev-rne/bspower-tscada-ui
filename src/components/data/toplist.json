@@ -1,0 +1,44 @@
+{
+    "list":[
+        {
+            "name": "Switch_003",
+            "value": 6.8
+        },
+        {
+            "name": "Switch_009",
+            "value": 6.2
+        },
+        {
+            "name": "Switch_006",
+            "value": 5.7
+        },
+        {
+            "name": "Switch_010",
+            "value": 5.5
+        },
+        {
+            "name": "Switch_011",
+            "value": 5.1
+        },
+        {
+            "name": "Switch_007",
+            "value": 4.7
+        },
+        {
+            "name": "Switch_015",
+            "value": 4.2
+        },
+        {
+            "name": "Switch_020",
+            "value": 3.7
+        },
+        {
+            "name": "Switch_023",
+            "value": 2.5
+        },
+        {
+            "name": "Switch_019",
+            "value": 1.5
+        }
+    ]
+}
