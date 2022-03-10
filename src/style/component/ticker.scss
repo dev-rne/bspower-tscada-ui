@@ -1,0 +1,56 @@
+.ticker{
+    width: 100%;
+    border: 1px solid $blueBorder;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    align-items: center;
+
+    .title-box{
+        width: 10%;
+        background: #081D2F;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    .newsList{
+        width: 75%;
+    }
+    .select-box{
+        width: 15%;
+        display: flex;
+        align-items: center;
+        height: 30px;
+        background: #040F17;
+        margin-right: 10px;
+
+        .label{
+            width: 50%;
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .selector{
+            width: 50% !important;
+
+            .ant-select-selector{
+                background: $gray;
+                border: none;
+                color: white;
+
+                .ant-select-selection-item{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                }
+            }
+            .ant-select-arrow{
+                color: white;
+            }
+        }
+    }
+}

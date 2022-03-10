@@ -26,7 +26,7 @@ const NowTime = () => {
     const days = moment(realTime).format('ddd')
     const time = moment(realTime).format('HH:mm:ss')
 
-    return `${date}[${days}] ${time}`
+    return `${date} [${days}] ${time}`
 }
 
 export default TopNavi

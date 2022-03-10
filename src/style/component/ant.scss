@@ -1,0 +1,16 @@
+.ant-select-dropdown{
+    background: $blue;
+    border: 1px solid $blueBorder;
+    .ant-select-item{
+        color: white  !important;
+    }
+
+    .ant-select-item-option-selected{
+        background: $select;
+        color: white !important;
+    }
+
+    .ant-select-item-option-active{
+        background: $primary;
+    }
+}

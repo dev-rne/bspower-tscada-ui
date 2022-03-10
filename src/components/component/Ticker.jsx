@@ -7,11 +7,11 @@ const Ticker = () => {
     }
     return(
         <div className="ticker">
-            <div className="title-box">Current Event</div>
+            <div className="title-box">Current Events</div>
             <div className="newsList"></div>
             <div className="select-box">
                 <div className="label">Dashboard</div>
-                <Select defaultValue="occ" style={{ width: 120 }} onChange={handleChange}>
+                <Select defaultValue="occ" style={{ width: 120 }} onChange={handleChange} className="selector">
                     <Option value="occ">OCC</Option>
                     <Option value="lucy">Lucy</Option>
                     </Select>

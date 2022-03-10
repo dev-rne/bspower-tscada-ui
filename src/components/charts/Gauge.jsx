@@ -2,7 +2,7 @@ import ReactECharts from 'echarts-for-react';
 import {graphic} from 'echarts'
 
 const Gauge = ({data}) => {
-    return <ReactECharts option={option(data)} />
+    return <ReactECharts option={option(data)}  className="gauge"/>
 }
 
 const option = (data) => {
@@ -12,9 +12,11 @@ const option = (data) => {
         type: 'gauge',
         startAngle: 180,
         endAngle: 0,
+        radius:"125%",
+      center: ['50%', '80%'],
         axisLine: {
           lineStyle: {
-            width: 30,
+            width: 12,
             color: [
                 [1, graphic.LinearGradient(0, 0, 1, 0, [
                   {
@@ -54,11 +56,11 @@ const option = (data) => {
           show:false
         },
         splitLine: {
-          distance: -30,
-          length: 30,
+          distance: -12,
+          length: 12,
           lineStyle: {
-            color: '#fff',
-            width: 3
+            color: '#041019',
+            width: 2
           }
         },
         axisLabel: {

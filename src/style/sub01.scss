@@ -1,0 +1,53 @@
+.subject01{
+    width: 100%;
+    height: 100vh;
+    background: $background;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+
+    .contents{
+        height: calc(100% - 50px);
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 40px);
+        gap: 20px;
+
+        .main-contents{
+            height: 65%;
+            width: 100%;
+            display: flex;
+            gap: 12px;
+            
+            .sectionBox{
+                border: 1px solid $blueBorder;
+                border-radius: 8px;
+                background: $pannelGradient;
+                padding: 10px;
+            }
+
+            .left-box{
+                width: 25%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .center-box{
+                width: 50%;
+            }
+
+            .right-box{
+                width: 25%;
+            }
+        }
+
+        .event-console{
+            width: 100%;
+            height: calc(35% - 110px);
+        }
+
+    }
+}
