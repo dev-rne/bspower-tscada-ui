@@ -1,0 +1,103 @@
+.event-console {
+    border: 1px solid $blueBorder;
+    border-radius: 8px;
+    background: $pannelGradient;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .title {
+        color: $white;
+        padding: 0 10px;
+    }
+
+    .table {
+        width: 100%;
+        flex: 1;
+        overflow: hidden;
+        border-radius: 4px;
+        border: 1px solid $select;
+        background-color: $dark;
+
+        .thead {
+            width: calc(100% - 8px);
+            display: flex;
+            height: 20%;
+
+            .th {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-right: 1px solid $select;
+                color: $white;
+            }
+            .th:last-child {
+                border: none;
+            }
+        }
+
+        .tbody {
+            width: 100%;
+            height: 90%;
+            overflow-y: auto;
+            .tr {
+                width: 100%;
+                display: flex;
+                border-top: 1px solid $select;
+                color: $white;
+
+                .td {
+                    padding: 8px 4px;
+                    border-right: 1px solid $select;
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                }
+                .td:last-child {
+                    border: none;
+                }
+            }
+        }
+        .level {
+            width: 6%;
+            justify-content: center;
+            .circle {
+                width: 13px;
+                height: 13px;
+                margin-right: 10px;
+                border-radius: 10px;
+                &.critical {
+                    border: 1px solid rgb(206, 44, 44);
+                }
+                &.warn {
+                    border: 1px solid rgb(231, 147, 38);
+                }
+                &.normal {
+                    border: 1px solid rgb(59, 113, 199);
+                }
+            }
+        }
+        .model {
+            width: 9%;
+        }
+        .occurredTime {
+            width: 12%;
+        }
+        .device {
+            width: 13%;
+        }
+        .location {
+            width: 10%;
+        }
+        .IP {
+            width: 10%;
+        }
+        .eventName {
+            width: 10%;
+        }
+        .console {
+            width: 30%;
+        }
+    }
+}

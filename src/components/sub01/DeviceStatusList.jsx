@@ -1,46 +1,46 @@
-import { Table, Progress } from 'antd';
 import jsonData from '@data/deviceStatusList.json';
+import TableComp from '@components/component/Table';
 
-const columns = (value) => {
-    return [
-        {
+const cpu = [
+    {
         title: 'No',
-        dataIndex: 'key',
-        render: (key) => <div className="no">{key}</div>
-        },
-        {
-          title: 'Device Name',
-          dataIndex: 'name',
-          render: name => <div className="name">{name}</div>
-        },
-        {
-          title: `${value}(%)`,
-          dataIndex: 'value',
-          render: (value) => (
-            <Progress
-                strokeColor={{
-                    '0%': '#108ee9',
-                    '100%': '#87d068',
-                }}
-                percent={value}
-                />
-          ),
-        },
-      ];
-}
+        class: 'key',
+    },
+    {
+        title: 'Device Name',
+        class: 'name',
+    },
+    {
+        title: 'CPU(%)',
+        class: 'progress',
+    },
+];
+
+const memory = [
+    {
+        title: 'No',
+        class: 'key',
+    },
+    {
+        title: 'Device Name',
+        class: 'name',
+    },
+    {
+        title: 'Memory(%)',
+        class: 'progress',
+    },
+];
 
 const DeviceStatusList = () => {
-    return(
-        <div className="status-list">
-            <div className="title">
-            EMS Server performance status
-            </div>
-            <div className="table-box">
-            <Table columns={columns('CPU')} dataSource={jsonData.cpu} pagination={false} />
-            <Table columns={columns('Memory')} dataSource={jsonData.memory} pagination={false} />
+    return (
+        <div className='status-list sectionBox'>
+            <div className='title'>EMS Server performance status</div>
+            <div className='table-box'>
+                <TableComp jsonData={jsonData.cpu} thead={cpu} />
+                <TableComp jsonData={jsonData.memory} thead={memory} />
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default DeviceStatusList;

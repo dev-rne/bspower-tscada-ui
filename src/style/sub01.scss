@@ -1,4 +1,4 @@
-.subject01{
+.subject01 {
     width: 100%;
     height: 100vh;
     background: $background;
@@ -7,27 +7,28 @@
     overflow: hidden;
     align-items: center;
 
-    .contents{
+    .contents {
         height: calc(100% - 50px);
         display: flex;
         flex-direction: column;
         width: calc(100% - 40px);
-        gap: 20px;
+        gap: 10px;
 
-        .main-contents{
+        .main-contents {
             height: 65%;
             width: 100%;
             display: flex;
             gap: 12px;
-            
-            .sectionBox{
+            margin-top: 10px;
+
+            .sectionBox {
                 border: 1px solid $blueBorder;
                 border-radius: 8px;
                 background: $pannelGradient;
                 padding: 10px;
             }
 
-            .left-box{
+            .left-box {
                 width: 25%;
                 height: 100%;
                 display: flex;
@@ -35,19 +36,19 @@
                 gap: 12px;
             }
 
-            .center-box{
+            .center-box {
                 width: 50%;
             }
 
-            .right-box{
+            .right-box {
                 width: 25%;
             }
         }
 
-        .event-console{
+        .event-console {
             width: 100%;
-            height: calc(35% - 110px);
+            height: calc(35% - 100px);
+            margin-top: 10px;
         }
-
     }
 }

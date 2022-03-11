@@ -1,35 +1,35 @@
-.subject01{
-    .left-box{
-        .gaugecomp{
+.subject01 {
+    .left-box {
+        .gaugecomp {
             width: 100%;
             height: 40%;
             display: flex;
             flex-direction: column;
             gap: 10px;
 
-            .title{
+            .title {
                 color: $white;
                 padding: 0 10px;
             }
 
-            .content{
+            .content {
                 width: 100%;
-                flex:1;
+                flex: 1;
                 display: flex;
                 gap: 10px;
 
-                .gauge-box{
+                .gauge-box {
                     width: calc(100% / 3);
                     display: flex;
                     height: 100%;
                     flex-direction: column;
                     gap: 6px;
 
-                    .gauge{
+                    .gauge {
                         height: 60% !important;
                     }
 
-                    p{
+                    p {
                         width: 100%;
                         display: flex;
                         justify-content: center;
@@ -38,25 +38,25 @@
                     }
                 }
 
-                .critical{
-                    p{
+                .critical {
+                    p {
                         color: $critical;
                     }
                 }
 
-                .warning{
-                    p{
+                .warning {
+                    p {
                         color: $warn;
                     }
                 }
 
-                .major{
-                    p{
+                .major {
+                    p {
                         color: $noraml;
                     }
                 }
 
-                .data{
+                .data {
                     height: 25%;
                     font-size: 30px;
                     font-weight: 700;
@@ -68,100 +68,128 @@
             }
         }
 
-        .top-list{
+        .top-list {
             width: 100%;
             height: 60%;
             display: flex;
             flex-direction: column;
             gap: 10px;
 
-            .title-box{
+            .title-box {
                 display: flex;
                 width: 100%;
                 justify-content: space-between;
                 align-items: center;
 
-                .title{
+                .title {
                     color: $white;
                     padding: 0 10px;
                 }
-                .ant-radio-group{
+                .ant-radio-group {
                     margin-bottom: 0 !important;
                     line-height: 1;
                 }
 
-                .ant-radio-button-wrapper{
+                .ant-radio-button-wrapper {
                     background: $dark;
-                    border: 1px solid #2A3B49;
+                    border: 1px solid #2a3b49;
                     color: #4c6477;
                     height: auto;
                     line-height: 1;
                     padding: 6px 16px;
                 }
-                .ant-radio-button-wrapper:not(:first-child):before{
+                .ant-radio-button-wrapper:not(:first-child):before {
                     display: none;
                 }
 
-                .ant-radio-button-wrapper:focus-within{
+                .ant-radio-button-wrapper:focus-within {
                     box-shadow: none;
                 }
 
-                .ant-radio-button-wrapper-checked{
+                .ant-radio-button-wrapper-checked {
                     color: white;
                     border: 1px solid $select;
-                    background: $gray
+                    background: $gray;
                 }
             }
 
-            .table{
+            .table {
                 width: 100%;
-                flex:1;
+                flex: 1;
                 overflow: hidden;
                 border-radius: 4px;
                 border: 1px solid $select;
+                background-color: $dark;
 
-                .ant-table-wrapper{
-                    height: 100%;
+                .thead {
+                    width: calc(100% - 8px);
+                    display: flex;
+                    height: 10%;
 
-                    .ant-spin-nested-loading{
-                        height: 100%;
+                    .th {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-right: 1px solid $select;
+                        color: $white;
+                    }
+                    .th:last-child {
+                        border: none;
+                    }
+                }
 
-                        .ant-spin-container{
+                .tbody {
+                    width: 100%;
+                    height: 90%;
+                    overflow-y: auto;
+                    .tr {
+                        width: 100%;
+                        display: flex;
+                        border-top: 1px solid $select;
+                        color: $white;
+
+                        .td {
+                            padding: 2px;
+                            border-right: 1px solid $select;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 14px;
+                        }
+                        .td:last-child {
+                            border: none;
+                        }
+                    }
+                }
+                .key {
+                    width: 13%;
+                }
+                .name {
+                    width: 35%;
+                }
+                .progress {
+                    width: 52%;
+
+                    .progressBar {
+                        padding-left: 8px;
+                        .ant-progress-outer {
                             height: 100%;
-
-                            .ant-table{
+                            .ant-progress-inner {
+                                border-radius: 0;
+                                background: rgba(0, 0, 0, 0);
                                 height: 100%;
-                                background: $background;
-
-                                .ant-table-container{
-                                    height: 100%;
-                                    .ant-table-content{
-                                        height: 100%;
-                                    }
-                                }
-                                .ant-table-cell{
-                                    padding: 4px !important;
-                                    background: transparent;
-                                    color: $white;
-                                    font-size: 12px;
-                                }
-
-                                .ant-table-cell::before{
-                                    background: $blueBorder;
-                                }
-                                .ant-table-thead>tr>th{
-                                    border-bottom: 1px solid $blueBorder;
-                                }
-
-                                .ant-table-tbody>tr>td{
-                                    border-bottom: 1px solid $blueBorder;
+                                .ant-progress-bg {
+                                    height: 12px !important;
+                                    border-radius: 0;
                                 }
                             }
+                        }
+                        .ant-progress-text {
+                            color: $white;
                         }
                     }
                 }
             }
-
         }
     }
 }
