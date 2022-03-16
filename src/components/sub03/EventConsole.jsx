@@ -3,7 +3,7 @@ import EventTable from '@components/component/EventTable';
 
 const EventConsole = () => {
     return (
-        <div className='event-console sectionBox'>
+        <div className='event-console'>
             <div className='title'>Events Console</div>
             <EventTable tableData={jsonData} />
         </div>

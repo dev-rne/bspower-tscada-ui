@@ -10,13 +10,16 @@ const option = (data) => {
     series: [
       {
         type: 'gauge',
+        min: 0,
+        max: 130,
         startAngle: 180,
         endAngle: 0,
-        radius:"125%",
-      center: ['50%', '80%'],
+        splitNumber:1,
+        radius:"130%",
+        center: ['50%', '75%'],
         axisLine: {
           lineStyle: {
-            width: 12,
+            width: 15,
             color: [
                 [1, graphic.LinearGradient(0, 0, 1, 0, [
                   {
@@ -55,16 +58,19 @@ const option = (data) => {
         axisTick: {
           show:false
         },
-        splitLine: {
-          distance: -12,
-          length: 12,
-          lineStyle: {
-            color: '#041019',
-            width: 2
-          }
+        splitLine: {show:false
         },
         axisLabel: {
-          show:false
+          show:true,
+          distance: -20,
+          color:"#aaa",
+          formatter: '{a|{value}}',
+          rich:{
+            a: {
+              color: 'white',
+              padding:[25,0,0,0],
+          },
+          }
         },
         detail:{
           show:false
@@ -74,6 +80,30 @@ const option = (data) => {
             value: data
           }
         ]
+      },
+      {
+        type: 'gauge',
+        min: 0,
+        max: 130,
+        startAngle: 162,
+        endAngle: 18,
+        splitNumber:8,
+        radius:"130%",
+        center: ['50%', '75%'],
+        axisLine: {
+          show:false
+        },
+        splitLine: {
+          distance: -10,
+          length: 15,
+          lineStyle: {
+            color: '#153149a1',
+            width: 2
+          }
+        },
+        axisLabel: {
+          show:false,
+        },
       }
     ]
    }

@@ -14,7 +14,7 @@ const DeviceStatus = () => {
     };
 
     return (
-        <div className='device-status'>
+        <div className='device-status sectionBox'>
             <div className='title'>T-SCADA Management status by Device</div>
             <div className='content'>
                 {deviceStatus.device.map((list, i) => {

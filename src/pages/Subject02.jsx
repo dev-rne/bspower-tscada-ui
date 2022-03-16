@@ -1,6 +1,10 @@
 import TopNavi from '@components/component/TopNavi';
 import Ticker from '@components/component/Ticker';
 import EventConsole from '@components/sub02/EventConsole';
+import ManagementStatus from '@components/sub02/ManagementStatus';
+import EventTrend from '@components/sub02/EventTrend'
+import DeviceEvents from '@components/sub02/DeviceEvents';
+import EmsServer from '@components/sub02/EmsServer'
 
 const Subject02 = () => {
     return (
@@ -8,7 +12,12 @@ const Subject02 = () => {
             <TopNavi />
             <div className='contents'>
                 <Ticker />
-                <div className='main-contents'></div>
+                <div className='main-contents'>
+                    <EventTrend/>
+                    <DeviceEvents/>
+                    <EmsServer/>
+                </div>
+                <ManagementStatus />
                 <EventConsole />
             </div>
         </div>

@@ -1,0 +1,42 @@
+{
+    "event":[
+        {
+            "name":"Critical",
+            "img":"critical",
+            "event":1,
+            "eventList":[
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down"
+            ]
+        },
+        {
+            "name":"Warning",
+            "img":"warn",
+            "event":12,
+            "eventList":[
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down",
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down",
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down",
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down",
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down",
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down"
+            ]
+        },
+        {
+            "name":"Major",
+            "img":"major",
+            "event":15,
+            "eventList":[
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down",
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down",
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down",
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down",
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down",
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down",
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down",
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down",
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down",
+                "Occured Event 2022-01-30 12:56:11 Siding1 2floor HVAC Down"
+            ]
+        }
+    ]
+}

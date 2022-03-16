@@ -1,0 +1,42 @@
+.subject02 {
+    width: 100%;
+    height: 100vh;
+    background: $background;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+
+    .contents {
+        height: calc(100% - 50px);
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 40px);
+        gap: 16px;
+
+        .main-contents {
+            height: 43%;
+            width: 100%;
+            display: flex;
+            gap: 12px;
+
+            .sectionBox {
+                border: 1px solid $blueBorder;
+                border-radius: 8px;
+                background: $pannelGradient;
+                padding: 10px;
+            }
+        }
+
+        .management-status{
+            width: 100%;
+            height: 22%;
+        }
+
+        .event-console {
+            width: 100%;
+            height: calc(35% - 100px);
+            background: $pannelGradient;
+        }
+    }
+}

@@ -20,7 +20,7 @@
                 flex: 1;
                 display: flex;
                 gap: 10px;
-                padding: 12px;
+                padding: 6px 12px;
                 background: $dark;
                 justify-content: space-between;
 
@@ -30,6 +30,11 @@
                     color: $white;
                     align-items: center;
                     justify-content: center;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    padding: 6px;
+                    border-radius: 8px;
+
                     .name {
                         font-size: 14px;
                     }
@@ -39,6 +44,10 @@
                         font-weight: 700;
                     }
                 }
+
+                .device-box:hover{
+                    background: rgba(255,255,255,0.1);
+                }
             }
         }
 
@@ -46,27 +55,52 @@
             width: 100%;
             height: 70%;
             position: relative;
-            img {
+            .bgbox{
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
-                object-fit: fill;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                img {
+                    object-fit: fill;
+                }
+                .imgbox{
+                    width: 100%;
+                    flex: 1;
+                    border: 1px solid $blueBorder;
+                    border-top: none;
+                    background: linear-gradient(to bottom, #0c2031, #1531496e);
+                    border-bottom-right-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
             }
-
+           
             .title {
                 color: $white;
                 padding: 0 10px;
                 width: 100%;
-                height: 20px;
+                height: 16px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
             .content {
                 width: 100%;
-                height: calc(100% - 20px);
+                height: calc(100% - 16px);
             }
+        }
+    }
+
+}
+.modal{
+    .ant-modal-content{
+        background: $blue;
+        color: $white;
+        border: 1px solid $select;
+        .anticon{
+            color: $white;
         }
     }
 }
