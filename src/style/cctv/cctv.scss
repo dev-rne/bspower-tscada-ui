@@ -1,0 +1,25 @@
+.cctv-back {
+    width: 100%;
+    height: 100vh;
+    // background: url("@cctv/Subject_05_bg.png") no-repeat;
+    padding: 20px;
+    background: $background;
+    .table-div {
+        border: 1px solid #244666;
+        background: #0c1f30;
+        border-radius: 6px;
+        padding: 15px;
+    }
+    .ant-table {
+        background: #000;
+        color: #a6bacd;
+    }
+
+    .ant-table.ant-table-middle .ant-table-thead > tr > th {
+        background: #0f2334;
+    }
+
+    .ant-table.ant-table-middle .ant-table-tbody > tr > td {
+        background: #051019;
+    }
+}

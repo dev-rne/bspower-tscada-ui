@@ -1,16 +1,22 @@
-.ant-select-dropdown{
+.ant-select-dropdown {
     background: $blue;
     border: 1px solid $blueBorder;
-    .ant-select-item{
-        color: white  !important;
+    .ant-select-item {
+        color: white !important;
     }
 
-    .ant-select-item-option-selected{
+    .ant-select-item-option-selected {
         background: $select;
         color: white !important;
     }
 
-    .ant-select-item-option-active{
+    .ant-select-item-option-active {
         background: $primary;
     }
+}
+.ant-modal-header {
+    background: #051019;
+}
+.ant-modal-content {
+    background: #051019;
 }
