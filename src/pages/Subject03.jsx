@@ -1,11 +1,11 @@
 import TopNavi from '@components/component/TopNavi';
 import EventConsole from '@components/sub03/EventConsole';
-import bg from '@assets/bg.png';
 import ControlBox from '@components/sub03/ControlBox';
 import DeviceStatus from '@components/sub03/DeviceStatus';
 import EventStatus from '@components/sub03/EventStatus';
 import CctvComp from '@components/sub03/CctvComp';
 import EventGauge from '@components/sub03/EventGauge';
+import {UnityGameComponent} from '@components/component/UnityView';
 
 const Subject03 = () => {
     return(
@@ -22,7 +22,7 @@ const Subject03 = () => {
                     <EventConsole />
                     <ControlBox />
                 </div>
-                <img src={bg} alt="" className='bg'/>
+                <UnityGameComponent />
             </div>
         </div>
     )
