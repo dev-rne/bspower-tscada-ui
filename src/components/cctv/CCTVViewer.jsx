@@ -6,11 +6,7 @@ const CCTVViewer = (props) => {
     const { rtspUrl, scale, qscale } = props;
     const playerRef = useRef();
     const canvasRef = useRef();
-    const [visible, setVisible] = useState(false);
     useEffect(() => {
-        // 인스턴스를 삭제
-        console.log("aaaa:: " + playerRef.current);
-        console.log("aaaa rtspUrl:: " + rtspUrl);
         playerRef.current = new JSMpeg.RTSPPlayer({
             canvas: canvasRef.current,
             // url: "ws://127.0.0.2:8000/api/stream",
@@ -26,12 +22,7 @@ const CCTVViewer = (props) => {
         };
     }, []);
     useEffect(() => {
-        setVisible(false);
-        console.log("aaaa:: " + playerRef.current);
-        console.log("rtspUrl:: " + rtspUrl);
         setTimeout(() => {
-            console.log("bbbbbbbbbbbb");
-            setVisible(true);
             playerRef.current = new JSMpeg.RTSPPlayer({
                 canvas: canvasRef.current,
                 // url: "ws://127.0.0.2:8000/api/stream",
@@ -48,7 +39,7 @@ const CCTVViewer = (props) => {
         }, 1000);
     }, [rtspUrl]);
 
-    return <canvas ref={canvasRef} />;
+    return <canvas ref={canvasRef} width="960" height="540" />;
 };
 
 export default CCTVViewer;

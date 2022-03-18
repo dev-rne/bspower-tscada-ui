@@ -9,6 +9,7 @@
         background: #0c1f30;
         border-radius: 6px;
         padding: 15px;
+        height: calc(100% - 50px);
     }
     .ant-table {
         background: #000;
@@ -21,5 +22,78 @@
 
     .ant-table.ant-table-middle .ant-table-tbody > tr > td {
         background: #051019;
+        vertical-align: middle;
+    }
+    .select-cctvarea {
+        // margin-bottom: 15px;
+        height: 50px;
+        .select-title {
+            float: left;
+            padding: 9px 30px 8px;
+            color: #a6bacd;
+            background: #040f17;
+            text-align: center;
+        }
+        .select {
+            float: left;
+        }
+    }
+}
+.control-area {
+    width: 100%;
+    margin-top: 10px;
+    height: 139px;
+    color: #a6bacd;
+    font-size: 18px;
+    .control-info {
+        margin-top: 40px;
+        width: 50%;
+        float: left;
+        span {
+            color: #e7c662;
+        }
+    }
+    .control-comp {
+        position: relative;
+        float: right;
+        width: 316px;
+        height: 139px;
+        background: url("../../../public/cctv/control-bg.png") no-repeat;
+        .control-icon {
+            position: absolute;
+            font-size: 18px;
+            opacity: 0.6;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .control-icon:hover {
+            opacity: 1;
+        }
+        .control-icon.minus {
+            font-size: 24px;
+            top: 52px;
+            right: 17px;
+        }
+        .control-icon.plus {
+            font-size: 24px;
+            top: 52px;
+            left: 17px;
+        }
+        .control-icon.up {
+            top: 13px;
+            left: 145px;
+        }
+        .control-icon.down {
+            bottom: 13px;
+            left: 145px;
+        }
+        .control-icon.left {
+            top: 52px;
+            left: 102px;
+        }
+        .control-icon.right {
+            top: 52px;
+            right: 102px;
+        }
     }
 }
