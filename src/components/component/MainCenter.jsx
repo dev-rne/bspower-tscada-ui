@@ -4,73 +4,6 @@ import React, { Fragment, useState } from "react";
 const MainCenter = (props) => {
     const { height, width, type, value, conf, alarmMsg, alarmAddress } = props;
     const [clickIdx, setClickIdx] = useState(-1);
-
-    const aniArrSet = () => {
-        if (value.path === "WEST") {
-            return [
-                {
-                    coords: [
-                        [333, 150],
-                        [0, 150],
-                    ],
-                    lineStyle: {
-                        curveness: 0,
-                    },
-                },
-                {
-                    coords: [
-                        [666, 300],
-                        [333, 150],
-                    ],
-                    lineStyle: {
-                        curveness: -0.2,
-                    },
-                },
-                {
-                    coords: [
-                        [1000, 300],
-                        [666, 300],
-                    ],
-                    lineStyle: {
-                        curveness: 0,
-                    },
-                },
-            ];
-        } else if (value.path === "EAST") {
-            return [
-                {
-                    coords: [
-                        [333, 150],
-                        [0, 150],
-                    ],
-                    lineStyle: {
-                        curveness: 0,
-                    },
-                },
-                {
-                    coords: [
-                        [666, 0],
-                        [333, 150],
-                    ],
-                    lineStyle: {
-                        curveness: 0.2,
-                    },
-                },
-                {
-                    coords: [
-                        [1000, 0],
-                        [666, 0],
-                    ],
-                    lineStyle: {
-                        curveness: 0,
-                    },
-                },
-            ];
-        } else {
-            return [];
-        }
-    };
-
     const colorSet = (str) => {
         // let color = "#999";
         // if (value.path === str) color = "#0066ff";
@@ -96,392 +29,584 @@ const MainCenter = (props) => {
         <Fragment>
             <div
                 style={{
-                    position: "absolute",
-                    marginTop: 20,
                     width: "100%",
-                    height: 285,
-                    backgroundColor: "rgba(0,0,0,0.2)",
+                    backgroundColor: "transparent",
                     visibility: "visible",
                     borderRadius: 4,
                 }}
-            />
-            <ReactEcharts
-                style={{
-                    width: width === undefined ? "100%" : width,
-                    height: height === undefined ? "325px" : height,
-                }}
-                option={{
-                    title: {
-                        // text: 'OSWU S6-P1',
-                        text: "",
-                        textStyle: {
-                            color: "#999",
-                            fontWeight: "normal",
-                            fontSize: 36,
-                            width: 300,
-                            height: 200,
+            >
+                <ReactEcharts
+                    style={{
+                        width: width === undefined ? "100%" : width,
+                        height: height === undefined ? "400px" : height,
+                    }}
+                    option={{
+                        title: {
+                            // text: 'OSWU S6-P1',
+                            text: "",
+                            textStyle: {
+                                color: "#999",
+                                fontWeight: "normal",
+                                fontSize: 36,
+                                width: 300,
+                                height: 200,
+                            },
+                            // textAlign: 'center',
+                            // textVerticalAlign: 'middle',
+                            left: "center",
+                            top: "middle",
                         },
-                        // textAlign: 'center',
-                        // textVerticalAlign: 'middle',
-                        left: "center",
-                        top: "middle",
-                    },
-                    tooltip: {
-                        show: false,
-                    },
-                    xAxis: {
-                        show: false,
-                        type: "value",
-                    },
-                    yAxis: {
-                        show: false,
-                        type: "value",
-                    },
-                    animationDurationUpdate: 1500,
-                    animationEasingUpdate: "quinticInOut",
-                    series: [
-                        {
-                            type: "graph",
-                            zlevel: 5,
-                            // layout: 'none',
-                            color: "#0066ff",
-                            // symbol: "roundRect",
-                            symbol: "image://http://localhost:3000/cctv/station-icon.png",
-                            //symbolSize: 50,
-                            symbolSize: [92, 77],
-                            roam: false,
-                            label: {
-                                show: true,
+                        tooltip: {
+                            show: false,
+                        },
+                        xAxis: {
+                            show: false,
+                            type: "value",
+                        },
+                        yAxis: {
+                            show: false,
+                            type: "value",
+                        },
+                        animationDurationUpdate: 1500,
+                        animationEasingUpdate: "quinticInOut",
+                        series: [
+                            {
+                                type: "graph",
+                                zlevel: 5,
+                                color: "#0066ff",
+                                symbol: "roundRect",
+                                symbolSize: [94, 78],
+                                roam: false,
+                                label: {
+                                    show: true,
+                                },
+                                edgeSymbol: ["circle", "circle"],
+                                edgeSymbolSize: [4, 4],
+                                edgeLabel: {
+                                    fontSize: 20,
+                                },
+                                draggable: false,
+                                coordinateSystem: "cartesian2d",
+                                data: [
+                                    {
+                                        name: "TSETSII",
+                                        value: [0, 280],
+                                        symbol: "image://../../cctv/station-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"TSETSII"}}`,
+                                                `{b|${"STATION"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                    {
+                                        name: "BB1",
+                                        value: [100, 280],
+                                        symbol: "image://../../cctv/bb-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"BASE"}}`,
+                                                `{b|${"STATION 1"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                    {
+                                        name: "SS1",
+                                        value: [200, 280],
+                                        symbol: "image://../../cctv/ss-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"SIDING"}}`,
+                                                `{b|${"STATION 1"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                    {
+                                        name: "BB2",
+                                        value: [300, 280],
+                                        symbol: "image://../../cctv/bb-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"BASE"}}`,
+                                                `{b|${"STATION 2"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                    {
+                                        name: "SS2",
+                                        value: [400, 280],
+                                        symbol: "image://../../cctv/ss-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"SIDING"}}`,
+                                                `{b|${"STATION 2"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                    {
+                                        name: "BB3",
+                                        value: [500, 210],
+                                        symbol: "image://../../cctv/bb-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"BASE"}}`,
+                                                `{b|${"STATION 3"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                    {
+                                        name: "SS3",
+                                        value: [400, 140],
+                                        symbol: "image://../../cctv/ss-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"SIDING"}}`,
+                                                `{b|${"STATION 3"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                    {
+                                        name: "SS4",
+                                        value: [300, 140],
+                                        symbol: "image://../../cctv/ss-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"SIDING"}}`,
+                                                `{b|${"STATION 4"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                    {
+                                        name: "BB4",
+                                        value: [200, 140],
+                                        symbol: "image://../../cctv/bb-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"BASE"}}`,
+                                                `{b|${"STATION 4"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                    {
+                                        name: "SS5",
+                                        value: [100, 140],
+                                        symbol: "image://../../cctv/ss-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"SIDING"}}`,
+                                                `{b|${"STATION 5"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                    {
+                                        name: "BB5",
+                                        value: [0, 70],
+                                        symbol: "image://../../cctv/bb-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"BASE"}}`,
+                                                `{b|${"STATION 5"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                    {
+                                        name: "SS6",
+                                        value: [100, 0],
+                                        symbol: "image://../../cctv/ss-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"SIDING"}}`,
+                                                `{b|${"STATION 6"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                    {
+                                        name: "BB6",
+                                        value: [200, 0],
+                                        symbol: "image://../../cctv/bb-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"BASE"}}`,
+                                                `{b|${"STATION 6"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                    {
+                                        name: "BB7",
+                                        value: [300, 0],
+                                        symbol: "image://../../cctv/bb-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"BASE"}}`,
+                                                `{b|${"STATION 7"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                    {
+                                        name: "ZUUNBAYAN",
+                                        value: [400, 0],
+                                        symbol: "image://../../cctv/station-icon.png",
+                                        symbolOffset: [0, "-40%"],
+                                        label: {
+                                            position: "bottom",
+                                            align: "center",
+                                            formatter: [
+                                                `{a|${"ZUUNBAYAN"}}`,
+                                                `{b|${"STATION"}}`,
+                                            ].join("\n"),
+                                            rich: {
+                                                a: { color: "white" },
+                                                b: { color: "white" },
+                                            },
+                                        },
+                                    },
+                                ],
+                                // links: [],
+                                links: [
+                                    {
+                                        source: "TSETSII",
+                                        target: "BB1",
+                                        lineStyle: {
+                                            color: "rgba(255,255,255,0.2)",
+                                            curveness: 0,
+                                        },
+                                    },
+                                    {
+                                        source: "BB1",
+                                        target: "SS1",
+                                        lineStyle: {
+                                            color: "rgba(255,255,255,0.2)",
+                                            curveness: 0,
+                                        },
+                                    },
+                                    {
+                                        source: "SS1",
+                                        target: "BB2",
+                                        lineStyle: {
+                                            color: "rgba(255,255,255,0.2)",
+                                            curveness: 0,
+                                        },
+                                    },
+                                    {
+                                        source: "BB2",
+                                        target: "SS2",
+                                        lineStyle: {
+                                            color: "rgba(255,255,255,0.2)",
+                                            curveness: 0,
+                                        },
+                                    },
+                                    {
+                                        source: "SS2",
+                                        target: "BB3",
+                                        lineStyle: {
+                                            color: "rgba(255,255,255,0.2)",
+                                            curveness: 0.3,
+                                        },
+                                    },
+                                    {
+                                        source: "BB3",
+                                        target: "SS3",
+                                        lineStyle: {
+                                            color: "rgba(255,255,255,0.2)",
+                                            curveness: 0.3,
+                                        },
+                                    },
+                                    {
+                                        source: "SS3",
+                                        target: "SS4",
+                                        lineStyle: {
+                                            color: "rgba(255,255,255,0.2)",
+                                            curveness: 0,
+                                        },
+                                    },
+                                    {
+                                        source: "SS4",
+                                        target: "BB4",
+                                        lineStyle: {
+                                            color: "rgba(255,255,255,0.2)",
+                                            curveness: 0,
+                                        },
+                                    },
+                                    {
+                                        source: "BB4",
+                                        target: "SS5",
+                                        lineStyle: {
+                                            color: "rgba(255,255,255,0.2)",
+                                            curveness: 0,
+                                        },
+                                    },
+                                    {
+                                        source: "SS5",
+                                        target: "BB5",
+                                        lineStyle: {
+                                            color: "rgba(255,255,255,0.2)",
+                                            curveness: -0.3,
+                                        },
+                                    },
+                                    {
+                                        source: "BB5",
+                                        target: "SS6",
+                                        lineStyle: {
+                                            color: "rgba(255,255,255,0.2)",
+                                            curveness: -0.3,
+                                        },
+                                    },
+                                    {
+                                        source: "SS6",
+                                        target: "BB6",
+                                        lineStyle: {
+                                            color: "rgba(255,255,255,0.2)",
+                                            curveness: 0,
+                                        },
+                                    },
+                                    {
+                                        source: "BB6",
+                                        target: "BB7",
+                                        lineStyle: {
+                                            color: "rgba(255,255,255,0.2)",
+                                            curveness: 0,
+                                        },
+                                    },
+                                    {
+                                        source: "BB7",
+                                        target: "ZUUNBAYAN",
+                                        lineStyle: {
+                                            color: "rgba(255,255,255,0.2)",
+                                            curveness: 0,
+                                        },
+                                    },
+                                ],
+                                lineStyle: {
+                                    opacity: 0.9,
+                                    width: 2,
+                                    curveness: 0,
+                                },
                             },
-                            edgeSymbol: ["arrow", "circle"],
-                            edgeSymbolSize: [10, 4],
-                            edgeLabel: {
-                                fontSize: 20,
-                            },
-                            // itemStyle: {
-                            //     shadowColor: "#0066ff",
-                            //     shadowBlur: 15,
-                            // },
-                            draggable: false,
-                            coordinateSystem: "cartesian2d",
-                            data: [
-                                {
-                                    name: "전송장비",
-                                    x: 100,
-                                    y: 300,
-                                    value: [0, 150],
-                                    // fixed: true,
-                                    label: {
-                                        align: "center",
-                                        // formatter: ['{a|전송장비}', '{b|+2dBm}'].join('\n'),
-                                        formatter: [
-                                            // '{a|전송장비}',
-                                            // '{b|}',
-                                            `{a|${"전송장비"}}`,
-                                            `{b|${"sss"}}`,
-                                            // '{b|}',
-                                        ].join("\n"),
-                                        rich: {
-                                            a: {
-                                                color: "white",
-                                                lineHeight: 0,
-                                            },
-                                            b: {
-                                                color: "white",
-                                                lineHeight: 70,
-                                                fontSize: 14,
-                                            },
-                                        },
-                                    },
+                            {
+                                type: "lines",
+                                coordinateSystem: "cartesian2d",
+                                z: 1,
+                                zlevel: 2,
+                                animation: false,
+                                effect: {
+                                    show: true,
+                                    period: 1.5,
+                                    trailLength: 0.01,
+                                    symbolSize: 5,
+                                    symbol: "circle",
+                                    loop: true,
+                                    color: "rgba(55,155,255,0.5)",
                                 },
-                                {
-                                    name: "P1 COM",
-                                    x: 300,
-                                    y: 300,
-                                    value: [333, 150],
-                                    // fixed: true,
-                                    itemStyle: {},
-                                    label: {
-                                        align: "center",
-                                        // formatter: ['{a|감시장비 P2 COM}', '{b|+2dBm}'].join('\n'),
-                                        // formatter: ['{a|감시장비 P2 COM}', '{b|}'].join('\n'),
-                                        formatter: [
-                                            // `{a|${conf.comName !== null ? conf.comName : 'COM'}}`,
-                                            `{a|${"COM"}}`,
-                                            `{b|${"10"}}`,
-                                        ].join("\n"),
-                                        rich: {
-                                            a: {
-                                                color: "white",
-                                                lineHeight: 0,
-                                            },
-                                            b: {
-                                                color: "white",
-                                                lineHeight: 70,
-                                                fontSize: 14,
-                                            },
-                                        },
-                                    },
-                                },
-                                {
-                                    name: "P1 WEST",
-                                    x: 500,
-                                    y: 200,
-                                    value: [666, 300],
-                                    itemStyle: {
-                                        color: colorSet("WEST"),
-                                        shadowColor: colorSet("WEST"),
-                                        // color: value.path === 'WEST' ? '#0066ff' : '#999',
-                                        // shadowColor: value.path === 'WEST' ? '#0066ff' : '#999',
-                                    },
-                                    label: {
-                                        align: "center",
-                                        // formatter: ['{a|감시장비 P4 WEST}', '{b|{-2dBm}}'].join('\n'),
-                                        formatter: [
-                                            // '{a|감시장비 P4 WEST}',
-                                            `{a|${"WEST"}}`,
-                                            `{b|${"10"}}`,
-                                        ].join("\n"),
-                                        rich: {
-                                            a: {
-                                                color: "white",
-                                                lineHeight: 0,
-                                            },
-                                            b: {
-                                                color: "white",
-                                                lineHeight: 70,
-                                                fontSize: 14,
-                                            },
-                                        },
-                                    },
-                                },
-                                {
-                                    name: "P1 EAST",
-                                    x: 500,
-                                    y: 400,
-                                    value: [666, 0],
-                                    itemStyle: {
-                                        color: colorSet("EAST"),
-                                        shadowColor: colorSet("EAST"),
-                                        // color: value.path === 'EAST' ? '#0066ff' : '#999',
-                                        // shadowColor: value.path === 'EAST' ? '#0066ff' : '#999',
-                                    },
-                                    label: {
-                                        align: "center",
-                                        // formatter: ['{a|감시장비 P4 EAST}', '{b|-2dBm}'].join('\n'),
-                                        formatter: [
-                                            // '{a|감시장비 P4 EAST}',
-                                            `{a|${"EAST"}}`,
-                                            `{b|${"10"}}`,
-                                        ].join("\n"),
-                                        rich: {
-                                            a: {
-                                                color: "white",
-                                                lineHeight: 0,
-                                            },
-                                            b: {
-                                                color: "white",
-                                                lineHeight: 70,
-                                                fontSize: 14,
-                                            },
-                                        },
-                                    },
-                                },
-                                {
-                                    name: "선번 1",
-                                    x: 700,
-                                    y: 200,
-                                    value: [1000, 300],
-                                    itemStyle: {
-                                        color: "#0066ff",
-                                        shadowColor: "#0066ff",
-                                    },
-                                    label: {
-                                        align: "center",
-                                        // formatter: ['{a|OFD정보}', '{b|선번}'].join('\n'),
-                                        formatter: [
-                                            "{a|OFD정보}",
-                                            `{b|${"선번"}}`,
-                                        ].join("\n"),
-                                        rich: {
-                                            a: {
-                                                color: "white",
-                                                lineHeight: 0,
-                                            },
-                                            b: {
-                                                color: "white",
-                                                lineHeight: 70,
-                                                fontSize: 14,
-                                            },
-                                        },
-                                    },
-                                },
-                                {
-                                    name: "선번 2",
-                                    x: 700,
-                                    y: 400,
-                                    value: [1000, 0],
-                                    itemStyle: {
-                                        color: "#0066ff",
-                                        shadowColor: "#0066ff",
-                                    },
-                                    label: {
-                                        align: "center",
-                                        // formatter: ['{a|OFD정보}', '{b|선번}'].join('\n'),
-                                        formatter: [
-                                            "{a|OFD정보}",
-                                            `{b|${"선번"}}`,
-                                        ].join("\n"),
-                                        rich: {
-                                            a: {
-                                                color: "white",
-                                                lineHeight: 0,
-                                            },
-                                            b: {
-                                                color: "white",
-                                                lineHeight: 70,
-                                                fontSize: 14,
-                                            },
-                                        },
-                                    },
-                                },
-                            ],
-                            // links: [],
-                            links: [
-                                // {
-                                //     source: "main start",
-                                //     target: "main end",
-                                //     // symbolSize: [5, 20],
-                                //     label: {
-                                //         show: false,
-                                //     },
-                                //     lineStyle: {
-                                //         color: "#06b844",
-                                //     },
-                                // },
-                                // {
-                                //     source: "sub start",
-                                //     target: "sub end",
-                                //     // symbolSize: [5, 20],
-                                //     label: {
-                                //         show: false,
-                                //     },
-                                // },
-                                {
-                                    source: "전송장비",
-                                    target: "P1 COM",
-                                    label: {
-                                        show: false,
-                                    },
-                                    lineStyle: {
-                                        color: "rgba(255,255,255,0.2)",
-                                        curveness: 0,
-                                    },
-                                },
-                                {
-                                    source: "P1 COM",
-                                    target: "P1 WEST",
-                                    label: {
-                                        show: false,
-                                    },
-                                    lineStyle: {
-                                        color: "rgba(255,255,255,0.2)",
+                                lineStyle: {
+                                    normal: {
+                                        color: "#22AC38",
+                                        width: 0,
                                         curveness: 0.1,
                                     },
                                 },
-                                {
-                                    source: "P1 COM",
-                                    target: "P1 EAST",
-                                    label: {
-                                        show: false,
+                                data: [
+                                    {
+                                        coords: [
+                                            [0, 280],
+                                            [100, 280],
+                                        ],
+                                        lineStyle: { curveness: 0 },
                                     },
-                                    lineStyle: {
-                                        color: "rgba(255,255,255,0.2)",
-                                        curveness: -0.1,
+                                    {
+                                        coords: [
+                                            [100, 280],
+                                            [200, 280],
+                                        ],
+                                        lineStyle: { curveness: 0 },
                                     },
-                                },
-                                {
-                                    source: "P1 WEST",
-                                    target: "선번 1",
-                                    label: {
-                                        show: false,
+                                    {
+                                        coords: [
+                                            [200, 280],
+                                            [300, 280],
+                                        ],
+                                        lineStyle: { curveness: 0 },
                                     },
-                                    lineStyle: {
-                                        color: "rgba(255,255,255,0.2)",
+                                    {
+                                        coords: [
+                                            [300, 280],
+                                            [400, 280],
+                                        ],
+                                        lineStyle: { curveness: 0 },
                                     },
-                                },
-                                {
-                                    source: "P1 EAST",
-                                    target: "선번 2",
-                                    label: {
-                                        show: false,
+                                    {
+                                        coords: [
+                                            [400, 280],
+                                            [500, 210],
+                                        ],
+                                        lineStyle: { curveness: 0.3 },
                                     },
-                                    lineStyle: {
-                                        color: "rgba(255,255,255,0.2)",
+                                    {
+                                        coords: [
+                                            [500, 210],
+                                            [400, 140],
+                                        ],
+                                        lineStyle: { curveness: 0.3 },
                                     },
-                                },
-                            ],
-                            lineStyle: {
-                                opacity: 0.9,
-                                width: 2,
-                                curveness: 0,
+                                    {
+                                        coords: [
+                                            [400, 140],
+                                            [300, 140],
+                                        ],
+                                        lineStyle: { curveness: 0 },
+                                    },
+                                    {
+                                        coords: [
+                                            [300, 140],
+                                            [200, 140],
+                                        ],
+                                        lineStyle: { curveness: 0 },
+                                    },
+                                    {
+                                        coords: [
+                                            [200, 140],
+                                            [100, 140],
+                                        ],
+                                        lineStyle: { curveness: 0 },
+                                    },
+                                    {
+                                        coords: [
+                                            [100, 140],
+                                            [0, 70],
+                                        ],
+                                        lineStyle: { curveness: -0.3 },
+                                    },
+                                    {
+                                        coords: [
+                                            [0, 70],
+                                            [100, 0],
+                                        ],
+                                        lineStyle: { curveness: -0.3 },
+                                    },
+                                    {
+                                        coords: [
+                                            [100, 0],
+                                            [200, 0],
+                                        ],
+                                        lineStyle: { curveness: 0 },
+                                    },
+                                    {
+                                        coords: [
+                                            [200, 0],
+                                            [300, 0],
+                                        ],
+                                        lineStyle: { curveness: 0 },
+                                    },
+                                    {
+                                        coords: [
+                                            [300, 0],
+                                            [400, 0],
+                                        ],
+                                        lineStyle: { curveness: 0 },
+                                    },
+                                ],
                             },
-                        },
-                        {
-                            type: "lines",
-                            coordinateSystem: "cartesian2d",
-                            z: 1,
-                            zlevel: 2,
-                            animation: false,
-                            effect: {
-                                show: true,
-                                period: 1.5,
-                                trailLength: 0.01,
-                                symbolSize: 5,
-                                symbol: "circle",
-                                loop: true,
-                                color: "rgba(55,155,255,0.5)",
-                            },
-                            lineStyle: {
-                                normal: {
-                                    color: "#22AC38",
-                                    width: 0,
-                                    curveness: 0.1,
-                                },
-                            },
-                            data: [
-                                {
-                                    coords: [
-                                        [333, 150],
-                                        [0, 150],
-                                    ],
-                                    lineStyle: {
-                                        curveness: 0,
-                                    },
-                                },
-                                {
-                                    coords: [
-                                        [666, 300],
-                                        [333, 150],
-                                    ],
-                                    lineStyle: {
-                                        curveness: -0.1,
-                                    },
-                                },
-                                {
-                                    coords: [
-                                        [1000, 300],
-                                        [666, 300],
-                                    ],
-                                    lineStyle: {
-                                        curveness: 0,
-                                    },
-                                },
-                            ],
-                        },
-                    ],
-                }}
-            />
+                        ],
+                    }}
+                />
+            </div>
         </Fragment>
     );
 };
