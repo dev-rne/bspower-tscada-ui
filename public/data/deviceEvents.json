@@ -1,0 +1,82 @@
+{
+    "thead":[
+        {
+            "class":"title",
+            "title":"Device"
+        },
+        {
+            "class":"previous",
+            "title":"Events of Previous day"
+        },
+        {
+            "class":"today",
+            "title":"Events of Today"
+        },
+        {
+            "class":"critical",
+            "title":"Critical events"
+        }
+    ],
+    "tbody":[
+        {
+            "title":"FOTS",
+            "previous": 0,
+            "today": 0,
+            "critical":0
+        },
+        {
+            "title":"IP-PBX",
+            "previous": 21,
+            "today": 0,
+            "critical":0
+        },
+        {
+            "title":"Broadcast",
+            "previous": 12,
+            "today": 0,
+            "critical":0
+        },
+        {
+            "title":"TETRA",
+            "previous": 1,
+            "today": 0,
+            "critical":0
+        },
+        {
+            "title":"DADG",
+            "previous": 1,
+            "today": 0,
+            "critical":0
+        },
+        {
+            "title":"Rectifier",
+            "previous": 6,
+            "today": 1,
+            "critical":0
+        },
+        {
+            "title":"UPS",
+            "previous": 14,
+            "today": 0,
+            "critical":0
+        },
+        {
+            "title":"DOOR",
+            "previous": 3,
+            "today": 2,
+            "critical":1
+        },
+        {
+            "title":"FIRE",
+            "previous": 0,
+            "today": 0,
+            "critical":0
+        },
+        {
+            "title":"HVC",
+            "previous": 1,
+            "today": 0,
+            "critical":0
+        }
+    ]
+}
