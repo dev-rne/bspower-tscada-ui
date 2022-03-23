@@ -4,6 +4,7 @@
     // background: url("@cctv/Subject_05_bg.png") no-repeat;
     padding: 20px;
     background: $background;
+    user-select: none;
     .table-div {
         border: 1px solid #244666;
         background: #0c1f30;
@@ -27,6 +28,7 @@
     .select-cctvarea {
         // margin-bottom: 15px;
         height: 50px;
+
         .select-title {
             float: left;
             padding: 9px 30px 8px;
