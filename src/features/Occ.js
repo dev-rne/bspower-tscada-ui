@@ -1,5 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+// cctv 7개 리스트
+export const cctvListData = createAsyncThunk("cctvAPI", async () => {
+    const response = await axios.get("./data/occCctvList.json");
+    return response.data;
+});
 
 export const fetchEventData = createAsyncThunk("eventAPI", async () => {
     const response = await axios.get("./data/eventConsole.json");
@@ -10,11 +15,12 @@ export const occ = createSlice({
     name: "occ",
     initialState: {
         selectFloor: "0", // 0, 100, 200
-        selectCctv: "1", // 1 ~ 7 1F : 1,2,3  2F : 4, 5, 6, 7
+        selectCctv: "4", // 1 ~ 7 1F : 4, 5,6,7  2F : 1, 2, 3
         floor_1: [],
         floor_2: [],
         rtspurl: "",
         eventData: [],
+        cctvList: { floor_1: [], floor_2: [] },
     },
     reducers: {
         setFloorVal: (state, action) => {
@@ -32,15 +38,14 @@ export const occ = createSlice({
         setRtspurl: (state, action) => {
             state.rtspurl = action.payload;
         },
-        // eventAPI: async (state) => {
-        //     let response = await axios.get("./data/eventConsole.json");
-        //     console.log("data :: " + JSON.stringify(response));
-        //     state.eventData = response.data;
-        // },
     },
     extraReducers: {
         [fetchEventData.fulfilled]: (state, action) => {
             state.eventData = action.payload;
+        },
+        [cctvListData.fulfilled]: (state, action) => {
+            state.cctvList = action.payload;
+            state.rtspurl = state.cctvList.floor_1[0].rtspurl;
         },
     },
 });

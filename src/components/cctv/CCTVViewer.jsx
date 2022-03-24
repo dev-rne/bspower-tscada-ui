@@ -8,23 +8,7 @@ const CCTVViewer = (props) => {
     const canvasRef = useRef();
     const [remove, setRemove] = useState(false);
     useEffect(() => {
-        // playerRef.current = new JSMpeg.RTSPPlayer({
-        //     canvas: canvasRef.current,
-        //     // url: "ws://127.0.0.2:8000/api/stream",
-        //     url: "ws://210.94.128.240:8000/api/stream",
-        //     params: {
-        //         rtspUrl,
-        //         scale,
-        //         qscale,
-        //     },
-        // });
-        // return () => {
-        //     playerRef.current.destroy();
-        // };
-    }, []);
-    useEffect(() => {
         // canvasRef.current.destroy();
-        console.log("playerRef.current : " + playerRef.current);
         setRemove(true);
         setTimeout(() => {
             setRemove(false);
