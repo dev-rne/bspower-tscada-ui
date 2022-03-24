@@ -37,9 +37,9 @@ const EventTable = (props) => {
     return (
         <div className="table">
             <div className="thead">
-                {thead.map((list) => {
+                {thead.map((list,i) => {
                     return (
-                        <div className={list.class + " th"}>{list.title}</div>
+                        <div className={list.class + " th"} key={i}>{list.title}</div>
                     );
                 })}
             </div>
@@ -56,11 +56,7 @@ const EventTable = (props) => {
                                     ) : (
                                         <div className="normal circle"></div>
                                     )}{" "}
-                                    {list.level === "critical"
-                                        ? "심각"
-                                        : list.level === "warn"
-                                        ? "이상"
-                                        : "정상"}
+                                    {list.level}
                                 </div>
                                 <div className="td model">{list.model}</div>
                                 <div className="td occurredTime">

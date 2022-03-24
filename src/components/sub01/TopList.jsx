@@ -3,7 +3,7 @@ import { useState } from 'react';
 import jsonData from '@data/toplist.json';
 import TableComp from '@components/component/Table';
 
-const TopList = () => {
+const TopList = ({dataList}) => {
     const [radio, setRadio] = useState('rx');
 
     const handleModeChange = (e) => {
@@ -55,7 +55,7 @@ const TopList = () => {
                 </Radio.Group>
             </div>
             <TableComp
-                jsonData={radio === 'rx' ? jsonData.RX : jsonData.TX}
+                jsonData={radio === 'rx' ? dataList.RX : dataList.TX}
                 thead={radio === 'rx' ? RX : TX}
             />
         </div>

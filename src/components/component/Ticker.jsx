@@ -1,14 +1,26 @@
 import { Select } from "antd";
+import Marquee from "react-fast-marquee";
+
 const { Option } = Select;
 
-const Ticker = () => {
+const Ticker = ({dataList}) => {
     const handleChange = (value) => {
         console.log(`selected ${value}`);
     };
     return (
         <div className="ticker">
             <div className="title-box">Current Events</div>
-            <div className="newsList"></div>
+            <div className="newsList">
+                <Marquee speed={50} pauseOnHover={true}>
+                {
+                    dataList.map((list,i) => {
+                        return(
+                              <div className={ list.level + " li"} key={i}>{list.console}</div>
+                        )
+                    })
+                }
+                </Marquee>
+            </div>
             <div className="select-box">
                 <div className="label">Dashboard</div>
                 <Select

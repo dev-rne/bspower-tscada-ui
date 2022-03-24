@@ -17,6 +17,27 @@
     }
     .newsList{
         width: 75%;
+
+        .overlay{
+            display: none;
+        }
+        .marquee{
+            overflow: hidden;
+            .li{
+                margin-right: 20px;
+                font-size: 14px;
+
+                &.critical{
+                    color: $critical;
+                }
+                &.warn{
+                    color: $warn;
+                }
+                &.normal{
+                    color: $noraml;
+                }
+            }
+        }
     }
     .select-box{
         width: 15%;
