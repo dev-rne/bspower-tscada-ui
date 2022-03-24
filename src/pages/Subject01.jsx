@@ -7,48 +7,30 @@ import StationMap from "@components/sub01/StationMap";
 import EventTrend from "@components/sub01/EventTrend";
 import DeviceStatusList from "@components/sub01/DeviceStatusList";
 import EventConsole from "@components/sub01/EventConsole";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect,  useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setEventData, setDeviceStatusData, setStatusTopListData } from "@features/main";
-import axios from "axios";
+import { eventDataAPI, deviceStatusAPI, statusTop10API,EMSStatusAPI } from "../features/main";
+
 
 const Subject01 = () => {
-    const { eventData, deviceStatus, topList } =  useSelector((state) => state.main);
+    const { eventData, deviceStatus, topList , emsList} =  useSelector((state) => state.main);
     const dispatch = useDispatch();
     const eventTimeout = useRef(null);
 
     useEffect(() => {
-        deviceStatusAPI();
-        eventDataAPI();
         eventDataCall();
-        statusTop10API();
     }, []);
 
     const eventDataCall = () => {
+        clearTimeout(eventTimeout.current);
+        dispatch(eventDataAPI());
+        dispatch(deviceStatusAPI());
+        dispatch(statusTop10API());
+        dispatch(EMSStatusAPI());
         eventTimeout.current = setTimeout(() => {
-            eventDataAPI();
-        }, 10000);
-        eventTimeout.current = setTimeout(() => {
-            deviceStatusAPI();
+            eventDataCall()
         }, 10000);
     };
-
-    const eventDataAPI = async () => {
-        let response = await axios.get("./data/eventConsole.json");
-        dispatch(setEventData(response.data));
-    };
-
-    const deviceStatusAPI = async () => {
-        let response = await axios.get("./data/deviceStatus.json");
-        dispatch(setDeviceStatusData(response.data));
-    };
-
-    const statusTop10API = async () => {
-        let response = await axios.get("./data/toplist.json");
-        dispatch(setStatusTopListData(response.data));
-    };
-
-    
 
     return (
         <div className="subject01">
@@ -68,7 +50,7 @@ const Subject01 = () => {
 
                     <div className="right-box">
                         <EventTrend />
-                        <DeviceStatusList />
+                        <DeviceStatusList dataList={emsList}/>
                     </div>
                 </div>
                 <EventConsole dataList={eventData} />

@@ -1,233 +1,252 @@
 .subject03 {
     .contents {
-       .left-box{
-        position: absolute;
-        z-index: 1;
-        top: 20px;
-        left: 30px;
-        width: 25%;
-        border-radius: 6px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        height: calc(72% - 60px);
-
-        .event-status{
-            width: 100%;
-            height: 20%;
-            display: flex;
-            flex-direction: column;
-            background: #153149a1;
-
-            .event-box{
-                display: flex;
-                width: 100%;
-                height: 55%;
-                
-                .event{
-                    background: rgba(0,0,0,0.2);
-                    position: relative;
-                    display: flex;
-                    border-right: 1px solid #5f6b77;
-                    border-bottom: 1px solid #5f6b77;
-                    align-items: center;
-                    gap: 10px;
-                    width: calc(100% / 3);
-                    justify-content: space-around;
-                    align-items: center;
-                    padding-top: 3%;
-                    cursor: pointer;
-
-                    &.select{
-                        border-bottom: none;
-                        background: rgba(0,0,0,0);
-                    }
-
-                    .name{
-                        position: absolute;
-                        color: white;
-                        width: 50%;
-                        right: 0;
-                        top: 0;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        height: 30%;
-                        overflow: hidden;
-                        span{
-                            z-index: 1;
-                            font-size: 14px;
-                            margin-left: 6px;
-                            font-weight: 600;
-                            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-                        }
-
-                        .box{
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            transform: skew(30deg);
-                            transform-origin: 0 0;
-                        }
-                    }
-
-                    &.critical{
-                        .box{
-                            background: #C72727;
-                        }
-                    }
-
-                    &.warn{
-                        .box{
-                            background: #D87626;
-                        }
-                    }
-
-                    &.major{
-                        .box{
-                            background: #27BB43;
-                        }
-                    }
-                    .value{
-                        font-size: 24px;
-                        color: white;
-                        font-weight: 600;
-                    }
-                    img{
-                        width: 25%;
-                    }
-                }
-
-                .event:last-child{
-                    border-right: none;
-                }
-            }
-
-            .ticker-box{
-                width: 100%;
-                height: 45%;
-                padding: 20px;
-
-                .overFlowBox{
-                    position: relative;
-                    overflow: hidden;
-                    width: 100%;
-                    height: 100%;
-
-                    .tickerList{
-                        position: absolute;
-                        top: 50%;
-                        left: 0;
-                        transform: translateY(-50%);
-                        display: flex;
-                        gap: 10px;
-    
-                        .list{
-                            color: white;
-                            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-                            white-space: nowrap;
-                        }
-                    }
-                }
-
-            }
-        }
-
-        .cctv-comp{
-            width: 100%;
-            height: 45%;
-            display: flex;
-            flex-direction: column;
-            background: #153149a1;
-            padding: 16px;
-            justify-content: space-between;
-
-            .tap-box{
-                display: flex;
-                width: 100%;
-                height: 10%;
-                justify-content: space-between;
-                .cctv{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    color: white;
-                    opacity: 0.7;
-                    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-                    cursor: pointer;
-                    border-radius: 6px;
-                    transition: 0.2s;
-                    font-size: 14px;
-                    width: calc(25% - 15px);
-                    position: relative;
-                    height: 100%;
-
-                    &.select{
-                        color: white;
-                        background: $blue;
-                        opacity: 1;
-                    }
-                }
-                .cctv::after{
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    right: -10px;
-                    width: 1px;
-                    height: 100%;
-                    background: white;
-                    opacity: 0.7;
-                }
-                .cctv:last-child::after{
-                    display: none;
-                }
-            }
-
-            .cam-box{
-                width: 100%;
-                height: calc(90% - 12px);
-                overflow: hidden;
-                img{
-                    width: 100%;
-                    position: relative;
-                }
-            }
-        }
-
-        .event-gauge{
-            width: 100%;
+        .left-box {
+            position: absolute;
+            z-index: 1;
+            top: 20px;
+            left: 30px;
+            width: 25%;
+            border-radius: 6px;
             display: flex;
             flex-direction: column;
             gap: 12px;
-            background: #153149a1;
-            padding: 16px;
-            height: calc(35% - 24px);
+            height: calc(72% - 60px);
 
-            .title {
-                color: white;
-                text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-            }
-            .gauge-charts{
-                display: flex;
+            .event-status {
                 width: 100%;
-                height: 90%;
-                .chart{
-                    width: 50%;
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                height: 20%;
+                display: flex;
+                flex-direction: column;
+                background: #153149a1;
 
-                    .chart-name{
-                        font-size: 14px;
-                        margin-top: -16px;
+                .event-box {
+                    display: flex;
+                    width: 100%;
+                    height: 55%;
+
+                    .event {
+                        background: rgba(0, 0, 0, 0.2);
+                        position: relative;
+                        display: flex;
+                        border-right: 1px solid #5f6b77;
+                        border-bottom: 1px solid #5f6b77;
+                        align-items: center;
+                        gap: 10px;
+                        width: calc(100% / 3);
+                        justify-content: space-around;
+                        align-items: center;
+                        padding-top: 3%;
+                        cursor: pointer;
+
+                        &.select {
+                            border-bottom: none;
+                            background: rgba(0, 0, 0, 0);
+                        }
+
+                        .name {
+                            position: absolute;
+                            color: white;
+                            width: 50%;
+                            right: 0;
+                            top: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 30%;
+                            overflow: hidden;
+                            span {
+                                z-index: 1;
+                                font-size: 14px;
+                                margin-left: 6px;
+                                font-weight: 600;
+                                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+                            }
+
+                            .box {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                transform: skew(30deg);
+                                transform-origin: 0 0;
+                            }
+                        }
+
+                        &.critical {
+                            .box {
+                                background: #c72727;
+                            }
+                        }
+
+                        &.warn {
+                            .box {
+                                background: #d87626;
+                            }
+                        }
+
+                        &.major {
+                            .box {
+                                background: #27bb43;
+                            }
+                        }
+                        .value {
+                            font-size: 24px;
+                            color: white;
+                            font-weight: 600;
+                        }
+                        img {
+                            width: 25%;
+                        }
+                    }
+
+                    .event:last-child {
+                        border-right: none;
+                    }
+                }
+
+                .ticker-box {
+                    width: 100%;
+                    height: 45%;
+                    padding: 20px;
+
+                    .overFlowBox {
+                        position: relative;
+                        overflow: hidden;
+                        width: 100%;
+                        height: 100%;
+
+                        .tickerList {
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            transform: translateY(-50%);
+                            display: flex;
+                            gap: 10px;
+
+                            .list {
+                                color: white;
+                                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .cctv-comp {
+                width: 100%;
+                height: 370px;
+                display: flex;
+                flex-direction: column;
+                background: #153149a1;
+                padding: 16px;
+                justify-content: space-between;
+
+                .tap-box {
+                    display: flex;
+                    width: 100%;
+                    height: 75px;
+                    justify-content: space-between;
+                    .cctv {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         color: white;
+                        opacity: 0.7;
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                        cursor: pointer;
+                        border-radius: 6px;
+                        transition: 0.2s;
+                        font-size: 14px;
+                        width: calc(25% - 15px);
+                        position: relative;
+                        padding: 3px 0;
+                        height: 100%;
+
+                        &.select {
+                            color: white;
+                            background: $blue;
+                            opacity: 1;
+                        }
+                    }
+                    .gubun {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 1px;
+                        height: 100%;
+                        background: white;
+                        opacity: 0.7;
+                    }
+                    // .cctv::after {
+                    //     content: "";
+                    //     position: absolute;
+                    //     top: 0;
+                    //     right: -10px;
+                    //     width: 1px;
+                    //     height: 100%;
+                    //     background: white;
+                    //     opacity: 0.7;
+                    // }
+                    // .cctv:last-child::after {
+                    //     display: none;
+                    // }
+                }
+
+                .cam-box {
+                    width: 100%;
+                    height: calc(80% - 12px);
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        position: relative;
+                    }
+                }
+            }
+
+            .event-gauge {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                background: #153149a1;
+                padding: 16px;
+                height: calc(35% - 24px);
+
+                .title {
+                    color: white;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+                }
+                .gauge-charts {
+                    display: flex;
+                    width: 100%;
+                    height: 90%;
+                    .chart {
+                        width: 50%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        .chart-name {
+                            font-size: 14px;
+                            margin-top: -16px;
+                            color: white;
+                        }
                     }
                 }
             }
         }
-       }
+    }
+    .ant-tabs-tabpane {
+        display: flex;
+        justify-content: space-between;
+    }
+    .ant-tabs-card.ant-tabs-small > .ant-tabs-nav .ant-tabs-tab {
+        padding: 3px 20px;
+    }
+    .ant-tabs-top > .ant-tabs-nav {
+        margin-bottom: 10px;
     }
 }

@@ -1,4 +1,3 @@
-import jsonData from '@data/deviceStatusList.json';
 import TableComp from '@components/component/Table';
 
 const cpu = [
@@ -31,13 +30,13 @@ const memory = [
     },
 ];
 
-const DeviceStatusList = () => {
+const DeviceStatusList = ({dataList}) => {
     return (
         <div className='status-list sectionBox'>
-            <div className='title'>EMS Server performance status</div>
+            <div className='title'>EMS Server performance status Top5</div>
             <div className='table-box'>
-                <TableComp jsonData={jsonData.cpu} thead={cpu} />
-                <TableComp jsonData={jsonData.memory} thead={memory} />
+                <TableComp jsonData={dataList.cpu} thead={cpu} />
+                <TableComp jsonData={dataList.memory} thead={memory} />
             </div>
         </div>
     );
