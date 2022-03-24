@@ -27,9 +27,11 @@ const CctvComp = () => {
         setCctv(idx);
         if (idx < 4) {
             // 2층
-            dispatch(setRtspurl(cctvList.floor_2[idx - 1].rtspurl));
+            if (cctvList.floor_2.length !== 0)
+                dispatch(setRtspurl(cctvList.floor_2[idx - 1].rtspurl));
         } else {
-            dispatch(setRtspurl(cctvList.floor_1[idx - 4].rtspurl));
+            if (cctvList.floor_1.length !== 0)
+                dispatch(setRtspurl(cctvList.floor_1[idx - 4].rtspurl));
         }
     }, [selectCctv]);
 
@@ -38,9 +40,11 @@ const CctvComp = () => {
         dispatch(setCctvVal(String(value)));
         if (value < 4) {
             // 2층
-            dispatch(setRtspurl(cctvList.floor_2[value - 1].rtspurl));
+            if (cctvList.floor_2.length !== 0)
+                dispatch(setRtspurl(cctvList.floor_2[value - 1].rtspurl));
         } else {
-            dispatch(setRtspurl(cctvList.floor_1[value - 4].rtspurl));
+            if (cctvList.floor_1.length !== 0)
+                dispatch(setRtspurl(cctvList.floor_1[value - 4].rtspurl));
         }
     };
 
