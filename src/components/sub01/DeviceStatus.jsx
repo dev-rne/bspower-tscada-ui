@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from 'antd';
-import deviceStatus from '@data/deviceStatus.json'
 
-const DeviceStatus = () => {
+const DeviceStatus = ({dataList}) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     const showModal = () => {
@@ -17,7 +16,7 @@ const DeviceStatus = () => {
         <div className='device-status'>
             <div className='title'>T-SCADA Management status by Device</div>
             <div className='content'>
-                {deviceStatus.device.map((list, i) => {
+                {dataList && dataList.map((list, i) => {
                     return (
                         <div className='device-box' key={i} onClick={showModal}>
                             <div className='name'>{list.name}</div>

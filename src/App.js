@@ -8,8 +8,8 @@ function App() {
     return (
         <Routes>
             <Route path="/" element={<Subject01 />} />
-            <Route path="/sub2" element={<Subject02 />} />
-            <Route path="/sub3" element={<Subject03 />} />
+            <Route path="/station" element={<Subject02 />} />
+            <Route path="/occ" element={<Subject03 />} />
             <Route path="/cctv" element={<Cctv />} />
         </Routes>
     );

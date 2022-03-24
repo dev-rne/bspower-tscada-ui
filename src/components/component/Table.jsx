@@ -4,16 +4,16 @@ const Table = ({ thead, jsonData }) => {
     return (
         <div className='table'>
             <div className='thead'>
-                {thead.map((list) => {
+                {thead.map((list,i) => {
                     return (
-                        <div className={list.class + ' th'}>{list.title}</div>
+                        <div className={list.class + ' th'} key={i}>{list.title}</div>
                     );
                 })}
             </div>
             <div className='tbody'>
-                {jsonData.map((list) => {
+                {jsonData && jsonData.map((list,i) => {
                     return (
-                        <div className='tr'>
+                        <div className='tr' key={i}>
                             <div className='td key'>{list.key}</div>
                             <div className='td name'>{list.name}</div>
                             <div className='td progress'>

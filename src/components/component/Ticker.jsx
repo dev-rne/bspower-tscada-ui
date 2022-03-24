@@ -1,20 +1,46 @@
 import { Select } from "antd";
+import Marquee from "react-fast-marquee";
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from "react-redux";
+import { setPagination } from "@features/main";
+
 const { Option } = Select;
 
-const Ticker = () => {
+const Ticker = ({dataList}) => {
+    const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const {page} =  useSelector((state) => state.main);
+
     const handleChange = (value) => {
-        console.log(`selected ${value}`);
+        dispatch(setPagination(value));
+        if(value === 'dashboard'){
+            navigate('/')
+        }else if(value === 'occ'){
+            navigate('/occ')
+        }else{
+            navigate(`/station#${value}`)
+        }
     };
     return (
         <div className="ticker">
             <div className="title-box">Current Events</div>
-            <div className="newsList"></div>
+            <div className="newsList">
+                <Marquee speed={50} pauseOnHover={true}>
+                {
+                    dataList && dataList.map((list,i) => {
+                        return(
+                              <div className={ list.level + " li"} key={i}>{list.console}</div>
+                        )
+                    })
+                }
+                </Marquee>
+            </div>
             <div className="select-box">
                 <div className="label">Dashboard</div>
                 <Select
-                    defaultValue="dashboard"
+                    defaultValue={page}
                     style={{ width: 120 }}
-                    onChange={handleChange}
+                    onSelect={handleChange}
                     className="selector"
                 >
                     <Option value="dashboard">Dashboard</Option>

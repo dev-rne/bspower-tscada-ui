@@ -7,49 +7,50 @@ import StationMap from "@components/sub01/StationMap";
 import EventTrend from "@components/sub01/EventTrend";
 import DeviceStatusList from "@components/sub01/DeviceStatusList";
 import EventConsole from "@components/sub01/EventConsole";
-import axios from "axios";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect,  useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { eventDataAPI, deviceStatusAPI, statusTop10API,EMSStatusAPI } from "../features/main";
+
 
 const Subject01 = () => {
-    const [eventData, setEventData] = useState([]);
+    const { eventData, deviceStatus, topList , emsList} =  useSelector((state) => state.main);
+    const dispatch = useDispatch();
     const eventTimeout = useRef(null);
+
     useEffect(() => {
         eventDataCall();
     }, []);
 
     const eventDataCall = () => {
         clearTimeout(eventTimeout.current);
-        eventDataAPI();
+        dispatch(eventDataAPI());
+        dispatch(deviceStatusAPI());
+        dispatch(statusTop10API());
+        dispatch(EMSStatusAPI());
         eventTimeout.current = setTimeout(() => {
-            eventDataCall();
+            eventDataCall()
         }, 10000);
-    };
-
-    const eventDataAPI = async () => {
-        let response = await axios.get("./data/eventConsole.json");
-        console.log(JSON.stringify(response.data));
-        setEventData(response.data);
     };
 
     return (
         <div className="subject01">
             <TopNavi />
             <div className="contents">
-                <Ticker />
+                <Ticker dataList={eventData} />
                 <div className="main-contents">
                     <div className="left-box">
-                        <GaugeComp />
-                        <TopList />
+                        <GaugeComp dataList={eventData}/>
+                        <TopList dataList={topList} />
                     </div>
 
                     <div className="center-box">
-                        <DeviceStatus />
+                        <DeviceStatus dataList={deviceStatus.device} />
                         <StationMap />
                     </div>
 
                     <div className="right-box">
                         <EventTrend />
-                        <DeviceStatusList />
+                        <DeviceStatusList dataList={emsList}/>
                     </div>
                 </div>
                 <EventConsole dataList={eventData} />
