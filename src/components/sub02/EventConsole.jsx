@@ -1,11 +1,16 @@
-import jsonData from '@data/eventConsole.json';
+import React, { useEffect, useState } from "react";
 import EventTable from '@components/component/EventTable';
 
-const EventConsole = () => {
+const EventConsole = (props) => {
+    const { dataList } = props;
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        setData(dataList);
+    }, [dataList]);
     return (
         <div className='event-console sectionBox'>
             <div className='title'>Events Console</div>
-            <EventTable tableData={jsonData} />
+            <EventTable tableData={data} />
         </div>
     );
 };

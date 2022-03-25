@@ -1,15 +1,19 @@
 import { Select } from "antd";
 import Marquee from "react-fast-marquee";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { setPagination } from "@features/main";
+import {useEffect} from 'react';
 
 const { Option } = Select;
 
 const Ticker = ({dataList}) => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    const {page} =  useSelector((state) => state.main);
+    const location = useLocation()
+    const page =  useSelector((state) => {
+        return state.main.page
+    });
 
     const handleChange = (value) => {
         dispatch(setPagination(value));
@@ -21,6 +25,16 @@ const Ticker = ({dataList}) => {
             navigate(`/station#${value}`)
         }
     };
+
+    useEffect(()=>{
+        if(location.pathname === '/'){
+            dispatch(setPagination('dashboard'));
+        }else if(location.pathname === '/occ'){
+            dispatch(setPagination('occ'));
+        }else{
+            dispatch(setPagination(location.hash.slice(1)))
+        }
+    },[])
     return (
         <div className="ticker">
             <div className="title-box">Current Events</div>
@@ -38,7 +52,8 @@ const Ticker = ({dataList}) => {
             <div className="select-box">
                 <div className="label">Dashboard</div>
                 <Select
-                    defaultValue={page}
+                    value={page}
+                    defaultValue="dashboard"
                     style={{ width: 120 }}
                     onSelect={handleChange}
                     className="selector"

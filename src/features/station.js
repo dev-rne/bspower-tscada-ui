@@ -5,12 +5,12 @@ export const eventDataAPI = createAsyncThunk("eventAPI", async () => {
     const response = await axios.get("./data/eventConsole.json");
     return response.data;
 });
-export const deviceStatusAPI = createAsyncThunk("deviceAPI", async () => {
-    const response = await axios.get("./data/deviceStatus.json");
+export const DeviceStatusAPI = createAsyncThunk("statusAPI", async () => {
+    const response = await axios.get("./data/deviceEvents.json");
     return response.data;
 });
-export const statusTop10API = createAsyncThunk("top10API", async () => {
-    const response = await axios.get("./data/toplist.json");
+export const DeviceManagementAPI = createAsyncThunk("managementAPI", async () => {
+    const response = await axios.get("./data/deviceStatus.json");
     return response.data;
 });
 export const EMSStatusAPI = createAsyncThunk("emsAPI", async () => {
@@ -19,29 +19,25 @@ export const EMSStatusAPI = createAsyncThunk("emsAPI", async () => {
 });
 
 
-export const main = createSlice({
-    name: "main",
+export const station = createSlice({
+    name: "station",
     initialState: {
-        page: 'dashboard',
         eventData: [],
         deviceStatus:[],
-        topList:[],
-        emsList:[]
+        deviceManagement:[],
+        emsList:[],
     },
     reducers: {
-        setPagination: (state, action) => {
-            state.page = action.payload;
-        }
     },
     extraReducers: {
         [eventDataAPI.fulfilled]: (state, action) => {
             state.eventData = action.payload;
         },
-        [deviceStatusAPI.fulfilled]: (state, action) => {
+        [DeviceStatusAPI.fulfilled]: (state, action) => {
             state.deviceStatus = action.payload;
         },
-        [statusTop10API.fulfilled]: (state, action) => {
-            state.topList = action.payload;
+        [DeviceManagementAPI.fulfilled]: (state, action) => {
+            state.deviceManagement = action.payload;
         },
         [EMSStatusAPI.fulfilled]: (state, action) => {
             state.emsList = action.payload;
@@ -49,6 +45,4 @@ export const main = createSlice({
     },
 });
 
-export const {setPagination } = main.actions;
-
-export default main.reducer;
+export default station.reducer;

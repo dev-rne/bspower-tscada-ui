@@ -35,8 +35,8 @@ const DeviceStatusList = ({dataList}) => {
         <div className='status-list sectionBox'>
             <div className='title'>EMS Server performance status Top5</div>
             <div className='table-box'>
-                <TableComp jsonData={dataList.cpu} thead={cpu} />
-                <TableComp jsonData={dataList.memory} thead={memory} />
+                <TableComp jsonData={dataList.cpu} thead={cpu} unit="per"/>
+                <TableComp jsonData={dataList.memory} thead={memory} unit="per"/>
             </div>
         </div>
     );

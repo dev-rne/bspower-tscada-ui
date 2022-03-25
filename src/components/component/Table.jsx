@@ -1,6 +1,11 @@
 import { Progress } from 'antd';
 
-const Table = ({ thead, jsonData }) => {
+const Table = ({ thead, jsonData, unit }) => {
+    let standardNumber = 0;
+    if(jsonData){
+        standardNumber = jsonData[0].value;
+    }
+
     return (
         <div className='table'>
             <div className='thead'>
@@ -23,8 +28,8 @@ const Table = ({ thead, jsonData }) => {
                                         '0%': '#108ee9',
                                         '100%': '#87d068',
                                     }}
-                                    format={(p) => p / 10}
-                                    percent={list.value * 10}
+                                    format={(p) => unit === 'per' ?  p.toFixed() :  (p / 100).toFixed(2)}
+                                    percent={list.value / standardNumber * 100}
                                 />
                             </div>
                         </div>

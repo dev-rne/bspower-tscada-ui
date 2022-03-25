@@ -1,6 +1,5 @@
-import table from '@data/deviceEvents.json';
 
-const DeviceEvents = () => {
+const DeviceEvents = ({thead, tbody}) => {
     return (
         <div className='device-events sectionBox'>
           <div className="title-box">
@@ -10,7 +9,7 @@ const DeviceEvents = () => {
 
             <div className="table">
                 <div className="thead">
-                    {table.thead.map((list, idx) => {
+                    {thead && thead.map((list, idx) => {
                         return(
                             <div className={list.class + ' th'} key={idx}>
                                 {list.title}</div>
@@ -18,8 +17,8 @@ const DeviceEvents = () => {
                     })}
                 </div>
                 <div className="tbody">
-                    {
-                        table.tbody.map((list,idx) => {
+                    {tbody && 
+                        tbody.map((list,idx) => {
                             return(
                                 <div className="tr" key={idx}>
                                     <div className="td title">{list.title}</div>

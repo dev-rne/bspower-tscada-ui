@@ -1,6 +1,5 @@
 import { Radio } from 'antd';
 import { useState } from 'react';
-import jsonData from '@data/toplist.json';
 import TableComp from '@components/component/Table';
 
 const TopList = ({dataList}) => {
@@ -57,6 +56,7 @@ const TopList = ({dataList}) => {
             <TableComp
                 jsonData={radio === 'rx' ? dataList.RX : dataList.TX}
                 thead={radio === 'rx' ? RX : TX}
+                unit="mbps"
             />
         </div>
     );
