@@ -1,18 +1,48 @@
-.top-navi{
+.top-navi {
     width: 100%;
     display: flex;
     padding: 20px 40px;
     justify-content: space-between;
     align-items: center;
     height: 50px;
-    
-    .title{
+
+    .title {
         color: rgba(255, 255, 255, 0.9);
         font-size: 20px;
     }
-    .timebar{
+    .timebar {
         color: $white;
         font-size: 14px;
         font-weight: 300;
+        display: flex;
+        align-items: center;
+        .select-box {
+            float: left;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            height: 30px;
+            background: #040f17;
+            margin-right: 20px;
+
+            .selector {
+                width: 100% !important;
+
+                .ant-select-selector {
+                    background: $gray;
+                    border: none;
+                    color: white;
+
+                    .ant-select-selection-item {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+                .ant-select-arrow {
+                    color: white;
+                }
+            }
+        }
     }
 }

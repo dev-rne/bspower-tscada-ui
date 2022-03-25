@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import TopNavi from "@components/component/TopNavi";
+import TopNaviOcc from "@components/component/TopNaviOcc";
 import EventConsole from "@components/sub03/EventConsole";
 // import ControlBox from "@components/sub03/ControlBox";
 import DeviceStatus from "@components/sub03/DeviceStatus";
@@ -33,10 +33,10 @@ const Subject03 = () => {
 
     return (
         <div className="subject03">
-            <TopNavi />
+            <TopNaviOcc />
             <div className="contents">
                 <div className="left-box">
-                    <EventStatus />
+                    <EventStatus dataList={eventData} />
                     <CctvComp />
                     {/* <EventGauge/> */}
                 </div>

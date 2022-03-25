@@ -17,21 +17,25 @@ export const EMSStatusAPI = createAsyncThunk("emsAPI", async () => {
     const response = await axios.get("./data/deviceStatusList.json");
     return response.data;
 });
-
+export const eventTrendAPI = createAsyncThunk("eventTrendAPI", async () => {
+    const response = await axios.get("./data/eventsTrend.json");
+    return response.data;
+});
 
 export const main = createSlice({
     name: "main",
     initialState: {
-        page: 'dashboard',
+        page: "dashboard",
         eventData: [],
-        deviceStatus:[],
-        topList:[],
-        emsList:[]
+        deviceStatus: [],
+        topList: [],
+        emsList: [],
+        eventTrend: { critical: [], warn: [], major: [] },
     },
     reducers: {
         setPagination: (state, action) => {
             state.page = action.payload;
-        }
+        },
     },
     extraReducers: {
         [eventDataAPI.fulfilled]: (state, action) => {
@@ -45,10 +49,13 @@ export const main = createSlice({
         },
         [EMSStatusAPI.fulfilled]: (state, action) => {
             state.emsList = action.payload;
-        }
+        },
+        [eventTrendAPI.fulfilled]: (state, action) => {
+            state.eventTrend = action.payload;
+        },
     },
 });
 
-export const {setPagination } = main.actions;
+export const { setPagination } = main.actions;
 
 export default main.reducer;

@@ -7,13 +7,19 @@ import StationMap from "@components/sub01/StationMap";
 import EventTrend from "@components/sub01/EventTrend";
 import DeviceStatusList from "@components/sub01/DeviceStatusList";
 import EventConsole from "@components/sub01/EventConsole";
-import React, { useEffect,  useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { eventDataAPI, deviceStatusAPI, statusTop10API,EMSStatusAPI } from "../features/main";
-
+import {
+    eventDataAPI,
+    deviceStatusAPI,
+    statusTop10API,
+    EMSStatusAPI,
+    eventTrendAPI,
+} from "../features/main";
 
 const Subject01 = () => {
-    const { eventData, deviceStatus, topList , emsList} =  useSelector((state) => state.main);
+    const { eventData, deviceStatus, topList, emsList, eventTrend } =
+        useSelector((state) => state.main);
     const dispatch = useDispatch();
     const eventTimeout = useRef(null);
 
@@ -27,8 +33,9 @@ const Subject01 = () => {
         dispatch(deviceStatusAPI());
         dispatch(statusTop10API());
         dispatch(EMSStatusAPI());
+        dispatch(eventTrendAPI());
         eventTimeout.current = setTimeout(() => {
-            eventDataCall()
+            eventDataCall();
         }, 10000);
     };
 
@@ -39,7 +46,7 @@ const Subject01 = () => {
                 <Ticker dataList={eventData} />
                 <div className="main-contents">
                     <div className="left-box">
-                        <GaugeComp dataList={eventData}/>
+                        <GaugeComp dataList={eventData} />
                         <TopList dataList={topList} />
                     </div>
 
@@ -49,8 +56,8 @@ const Subject01 = () => {
                     </div>
 
                     <div className="right-box">
-                        <EventTrend />
-                        <DeviceStatusList dataList={emsList}/>
+                        <EventTrend dataList={eventTrend} />
+                        <DeviceStatusList dataList={emsList} />
                     </div>
                 </div>
                 <EventConsole dataList={eventData} />

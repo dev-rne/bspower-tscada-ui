@@ -1,16 +1,23 @@
-import TopNavi from '@components/component/TopNavi';
-import Ticker from '@components/component/Ticker';
-import EventConsole from '@components/sub02/EventConsole';
-import ManagementStatus from '@components/sub02/ManagementStatus';
-import EventTrend from '@components/sub02/EventTrend';
-import DeviceEvents from '@components/sub02/DeviceEvents';
-import EmsServer from '@components/sub02/EmsServer';
+import TopNavi from "@components/component/TopNavi";
+import Ticker from "@components/component/Ticker";
+import EventConsole from "@components/sub02/EventConsole";
+import ManagementStatus from "@components/sub02/ManagementStatus";
+import EventTrend from "@components/sub02/EventTrend";
+import DeviceEvents from "@components/sub02/DeviceEvents";
+import EmsServer from "@components/sub02/EmsServer";
 import { useSelector, useDispatch } from "react-redux";
-import React, { useEffect,  useRef } from "react";
-import { eventDataAPI, EMSStatusAPI, DeviceManagementAPI ,DeviceStatusAPI} from "../features/station";
+import React, { useEffect, useRef } from "react";
+import {
+    eventTrendAPI,
+    eventDataAPI,
+    EMSStatusAPI,
+    DeviceManagementAPI,
+    DeviceStatusAPI,
+} from "../features/station";
 
 const Subject02 = () => {
-    const { eventData,deviceStatus, deviceManagement, emsList} =  useSelector((state) => state.station);
+    const { eventData, deviceStatus, deviceManagement, emsList, eventTrend } =
+        useSelector((state) => state.station);
     const dispatch = useDispatch();
     const eventTimeout = useRef(null);
 
@@ -24,20 +31,24 @@ const Subject02 = () => {
         dispatch(DeviceManagementAPI());
         dispatch(DeviceStatusAPI());
         dispatch(EMSStatusAPI());
+        dispatch(eventTrendAPI());
         eventTimeout.current = setTimeout(() => {
-            eventDataCall()
+            eventDataCall();
         }, 10000);
     };
 
     return (
-        <div className='subject02'>
+        <div className="subject02">
             <TopNavi />
-            <div className='contents'>
-                <Ticker  dataList={eventData} />
-                <div className='main-contents'>
-                    <EventTrend/>
-                    <DeviceEvents thead={deviceStatus.thead} tbody={deviceStatus.tbody}/>
-                    <EmsServer dataList={emsList}/>
+            <div className="contents">
+                <Ticker dataList={eventData} />
+                <div className="main-contents">
+                    <EventTrend dataList={eventTrend} />
+                    <DeviceEvents
+                        thead={deviceStatus.thead}
+                        tbody={deviceStatus.tbody}
+                    />
+                    <EmsServer dataList={emsList} />
                 </div>
                 <ManagementStatus dataList={deviceManagement.device} />
                 <EventConsole dataList={eventData} />

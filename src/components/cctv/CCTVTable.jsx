@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Table, Modal, Select } from "antd";
 import CCTVViewer from "./CCTVViewer";
-import axios from "axios";
 import {
     DownOutlined,
     UpOutlined,
@@ -24,9 +23,6 @@ const CCTVTable = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log("cctvList:: ", cctvList);
-        console.log("cctvList:: ", cctvList.length);
-
         let arr = cctvList.map((obj, idx) => {
             let stationInfo = idx % 2 === 0 ? "TSETSII" : "SS2";
             let newObject = Object.assign({ station: stationInfo }, obj);
@@ -112,10 +108,6 @@ const CCTVTable = () => {
             type: type,
         };
         dispatch(cctvControl(obj));
-        // const response = axios.get(
-        //     "/openapi/v1/" + cctvInfo.device_id + "/" + type
-        // );
-        // console.log("divisce ip response ::" + response);
     };
 
     function handleChange(value) {

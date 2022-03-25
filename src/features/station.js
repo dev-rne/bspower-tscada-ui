@@ -9,26 +9,32 @@ export const DeviceStatusAPI = createAsyncThunk("statusAPI", async () => {
     const response = await axios.get("./data/deviceEvents.json");
     return response.data;
 });
-export const DeviceManagementAPI = createAsyncThunk("managementAPI", async () => {
-    const response = await axios.get("./data/deviceStatus.json");
-    return response.data;
-});
+export const DeviceManagementAPI = createAsyncThunk(
+    "managementAPI",
+    async () => {
+        const response = await axios.get("./data/deviceStatus.json");
+        return response.data;
+    }
+);
 export const EMSStatusAPI = createAsyncThunk("emsAPI", async () => {
     const response = await axios.get("./data/deviceStatusList.json");
     return response.data;
 });
-
+export const eventTrendAPI = createAsyncThunk("eventTrendAPI", async () => {
+    const response = await axios.get("./data/eventsTrend.json");
+    return response.data;
+});
 
 export const station = createSlice({
     name: "station",
     initialState: {
         eventData: [],
-        deviceStatus:[],
-        deviceManagement:[],
-        emsList:[],
+        deviceStatus: [],
+        deviceManagement: [],
+        emsList: [],
+        eventTrend: { critical: [], warn: [], major: [] },
     },
-    reducers: {
-    },
+    reducers: {},
     extraReducers: {
         [eventDataAPI.fulfilled]: (state, action) => {
             state.eventData = action.payload;
@@ -41,7 +47,10 @@ export const station = createSlice({
         },
         [EMSStatusAPI.fulfilled]: (state, action) => {
             state.emsList = action.payload;
-        }
+        },
+        [eventTrendAPI.fulfilled]: (state, action) => {
+            state.eventTrend = action.payload;
+        },
     },
 });
 

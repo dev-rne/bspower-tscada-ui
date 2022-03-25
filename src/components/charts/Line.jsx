@@ -1,80 +1,102 @@
-import ReactECharts from 'echarts-for-react';
+import ReactECharts from "echarts-for-react";
 
-const Line = ({data}) => {
-    return <ReactECharts option={option(data)}  className="line" style={{width:'100%',height:"100%"}}/>
-}
+const Line = (props) => {
+    const { critical, warn, major } = props;
+    return (
+        <ReactECharts
+            option={{
+                color: ["#32CF32", "#F6872C", "#F62C2C"],
+                tooltip: {
+                    trigger: "axis",
+                },
+                legend: {
+                    show: true,
+                    bottom: 0,
+                    textStyle: {
+                        color: "#b4c7da",
+                        fontSize: 10,
+                    },
+                    itemStyle: {
+                        opacity: 0,
+                    },
+                },
+                grid: {
+                    top: 15,
+                    left: "10%",
+                    right: 20,
+                    bottom: 50,
+                },
+                xAxis: {
+                    type: "time",
+                    boundaryGap: false,
+                    axisTick: {
+                        lineStyle: {
+                            color: "rgba(85,117,145,0.3)",
+                        },
+                    },
+                    splitLine: {
+                        show: false,
+                    },
+                    axisLabel: {
+                        color: "#A6BACD",
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: "rgba(85,117,145,0.3)",
+                        },
+                    },
+                },
+                yAxis: {
+                    type: "value",
+                    axisTick: {
+                        show: false,
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: "rgba(85,117,145,0.3)",
+                        },
+                    },
+                    axisLabel: {
+                        color: "#A6BACD",
+                    },
+                },
+                series: [
+                    {
+                        type: "line",
+                        name: "major",
+                        data: major,
+                        symbolSize: 4,
+                        symbol: "circle",
+                        lineStyle: {
+                            width: 1,
+                        },
+                    },
+                    {
+                        type: "line",
+                        name: "warn",
+                        data: warn,
+                        symbolSize: 4,
+                        symbol: "circle",
+                        lineStyle: {
+                            width: 1,
+                        },
+                    },
+                    {
+                        type: "line",
+                        name: "critical",
+                        data: critical,
+                        symbolSize: 4,
+                        symbol: "circle",
+                        lineStyle: {
+                            width: 1,
+                        },
+                    },
+                ],
+            }}
+            className="line"
+            style={{ width: "100%", height: "100%" }}
+        />
+    );
+};
 
-const option = (data) => {
-  const seriesData = data.map(list => {
-    return {
-      type:'line',
-      name: list.title,
-      data: list.data,
-      symbolSize:4,
-      symbol:"circle",
-      lineStyle:{
-        width:1
-      }
-    }
-  })
-   return {
-    tooltip: {
-      trigger: 'axis'
-    },
-    legend:{
-      show:true,
-      bottom:0,
-      textStyle:{
-        color: '#b4c7da',
-        fontSize:10
-      },
-      itemStyle:{
-        opacity:0
-      }
-    },
-    grid:{
-      top:15,
-      left:'10%',
-      right:20,
-      bottom:'25%',
-    },
-    xAxis: {
-      type: 'category',
-      boundaryGap: false,
-      data: [1029,1030,1031,1101,1102,1103,1104],
-      axisTick: {
-        lineStyle: {
-            color: 'rgba(85,117,145,0.3)',
-        },
-      },
-      splitLine: {
-          show: false,
-      },
-      axisLabel: {
-          color: '#A6BACD',
-      },
-      axisLine: {
-        lineStyle: {
-            color: 'rgba(85,117,145,0.3)',
-        },
-    },
-    },
-    yAxis: {
-      type: 'value',
-      axisTick: {
-        show: false,
-    },
-    splitLine: {
-        lineStyle: {
-            color: 'rgba(85,117,145,0.3)',
-        },
-    },
-    axisLabel: {
-        color: '#A6BACD',
-    },
-    },
-    series: seriesData
-   }
-  };
-
-  export default Line;
+export default Line;

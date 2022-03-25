@@ -2,29 +2,7 @@ import ReactEcharts from "echarts-for-react";
 import React, { Fragment, useState } from "react";
 
 const MainCenter = (props) => {
-    const { height, width, type, value, conf, alarmMsg, alarmAddress } = props;
-    const [clickIdx, setClickIdx] = useState(-1);
-    const colorSet = (str) => {
-        // let color = "#999";
-        // if (value.path === str) color = "#0066ff";
-        // if (alarmAddress !== undefined) {
-        //     const idx = alarmAddress.indexOf(str);
-        //     if (idx >= 0) {
-        //         if (alarmMsg.indexOf("LOS") >= 0) color = "#ff4e4b";
-        //         if (alarmMsg.indexOf("SD") >= 0) color = "#a6a801";
-        //     }
-        // }
-        return "#0066ff";
-    };
-    const comNameSet = (name, idx) => {
-        let nameArr = name.split("_");
-        if (nameArr.length > 1) {
-            return nameArr[idx];
-        } else {
-            return "";
-        }
-    };
-
+    const { height, width } = props;
     return (
         <Fragment>
             <div
@@ -91,7 +69,7 @@ const MainCenter = (props) => {
                                     {
                                         name: "TSETSII",
                                         value: [0, 280],
-                                        symbol: "image://../../cctv/station-icon.png",
+                                        symbol: "image://../../cctv/station-icon-alert.png",
                                         symbolOffset: [0, "-40%"],
                                         label: {
                                             position: "bottom",
@@ -199,7 +177,7 @@ const MainCenter = (props) => {
                                     {
                                         name: "SS3",
                                         value: [400, 140],
-                                        symbol: "image://../../cctv/ss-icon.png",
+                                        symbol: "image://../../cctv/ss-icon-alert.png",
                                         symbolOffset: [0, "-40%"],
                                         label: {
                                             position: "bottom",
