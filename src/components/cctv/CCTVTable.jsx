@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Table, Modal, Space, Select } from "antd";
+import { Table, Modal, Select } from "antd";
 import CCTVViewer from "./CCTVViewer";
 import axios from "axios";
 import {
@@ -10,6 +10,8 @@ import {
     PlusOutlined,
     MinusOutlined,
 } from "@ant-design/icons";
+import { useDispatch, useSelector } from "react-redux";
+import { cctvControl } from "../../features/cctv";
 
 const CCTVTable = () => {
     const [datas, setDatas] = useState([]);
@@ -18,31 +20,21 @@ const CCTVTable = () => {
     const [cctvInfo, setCctvInfo] = useState({});
     const [isModalVisible, setIsModalVisible] = useState(false);
     const { Option } = Select;
+    const { cctvList } = useSelector((state) => state.cctv);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        (async () => {
-            const response = await axios.get("/openapi/v1/devicelist");
-            console.log(response);
-            setDatas(
-                response.data.result.map((obj, idx) => {
-                    let stationInfo = idx % 2 === 0 ? "TSETSII" : "SS2";
-                    let newObject = Object.assign(obj, {
-                        station: stationInfo,
-                    });
-                    return newObject;
-                })
-            );
-            setFilterDatas(
-                response.data.result.map((obj, idx) => {
-                    let stationInfo = idx % 2 === 0 ? "TSETSII" : "SS2";
-                    let newObject = Object.assign(obj, {
-                        station: stationInfo,
-                    });
-                    return newObject;
-                })
-            );
-        })();
-    }, []);
+        console.log("cctvList:: ", cctvList);
+        console.log("cctvList:: ", cctvList.length);
+
+        let arr = cctvList.map((obj, idx) => {
+            let stationInfo = idx % 2 === 0 ? "TSETSII" : "SS2";
+            let newObject = Object.assign({ station: stationInfo }, obj);
+            return newObject;
+        });
+        setDatas(arr);
+        setFilterDatas(arr);
+    }, [cctvList]);
     const columns = [
         {
             title: "CCTV Name",
@@ -114,10 +106,16 @@ const CCTVTable = () => {
     };
 
     const controllCall = (type) => {
-        const response = axios.get(
-            "/openapi/v1/" + cctvInfo.device_id + "/" + type
-        );
-        console.log("divisce ip response ::" + response);
+        console.log("type", type);
+        let obj = {
+            id: cctvInfo.device_id,
+            type: type,
+        };
+        dispatch(cctvControl(obj));
+        // const response = axios.get(
+        //     "/openapi/v1/" + cctvInfo.device_id + "/" + type
+        // );
+        // console.log("divisce ip response ::" + response);
     };
 
     function handleChange(value) {

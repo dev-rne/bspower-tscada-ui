@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import TopNavi from "@components/component/TopNavi";
 import EventConsole from "@components/sub03/EventConsole";
 // import ControlBox from "@components/sub03/ControlBox";
@@ -8,7 +8,7 @@ import CctvComp from "@components/sub03/CctvComp";
 // import EventGauge from "@components/sub03/EventGauge";
 import { UnityGameComponent } from "@components/component/UnityView";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchEventData, cctvListData } from "../features/Occ";
+import { fetchEventData, cctvListData } from "../features/occ";
 import { deviceStatusAPI } from "../features/main";
 
 const Subject03 = () => {

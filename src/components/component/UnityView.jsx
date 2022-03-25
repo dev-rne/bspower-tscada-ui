@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Unity, { UnityContext } from "react-unity-webgl";
 import { useSelector, useDispatch } from "react-redux";
-import { setFloorVal, setCctvVal } from "../../features/Occ";
+import { setFloorVal, setCctvVal } from "../../features/occ";
 
 const buildUrl = "Build";
 

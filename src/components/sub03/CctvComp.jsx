@@ -1,14 +1,7 @@
 import { useEffect, useState } from "react";
-import cctvImg from "@assets/cctv.png";
 import { useSelector, useDispatch } from "react-redux";
 import CCTVViewer from "@components/cctv/CCTVViewer";
-import {
-    setFloorVal,
-    setCctvVal,
-    setFloor_1,
-    setFloor_2,
-    setRtspurl,
-} from "../../features/Occ";
+import { setFloorVal, setCctvVal, setRtspurl } from "../../features/occ";
 import { Tabs } from "antd";
 
 const CctvComp = () => {
