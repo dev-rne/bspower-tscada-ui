@@ -1,5 +1,43 @@
 const EventTable = (props) => {
-    const { tableData } = props;
+    const { tableData, dashboard } = props;
+    const dashboardThead = [
+        {
+            class: "level",
+            title: "Level",
+        },
+        {
+            class: "model",
+            title: "Model",
+        },
+        {
+            class: "occurredTime",
+            title: "Occerred Time",
+        },
+        {
+            class: "device",
+            title: "Device name",
+        },
+        {
+            class: "location",
+            title: "Level",
+        },
+        {
+            class: "IP",
+            title: "IP",
+        },
+        {
+            class: "station",
+            title: "Station",
+        },
+        {
+            class: "eventName",
+            title: "Events name",
+        },
+        {
+            class: "console",
+            title: "Event console",
+        },
+    ];
     const thead = [
         {
             class: "level",
@@ -34,10 +72,18 @@ const EventTable = (props) => {
             title: "Event console",
         },
     ];
+    
     return (
         <div className="table">
             <div className="thead">
-                {thead.map((list,i) => {
+                {
+                dashboard ?
+                dashboardThead.map((list,i) => {
+                    return (
+                        <div className={list.class + " th"} key={i}>{list.title}</div>
+                    );
+                }) :
+                thead.map((list,i) => {
                     return (
                         <div className={list.class + " th"} key={i}>{list.title}</div>
                     );
@@ -67,6 +113,7 @@ const EventTable = (props) => {
                                     {list.location}
                                 </div>
                                 <div className="td IP">{list.IP}</div>
+                                {dashboard ? <div className="td station">{list.station}</div> : ''}
                                 <div className="td eventName">
                                     {list.eventName}
                                 </div>

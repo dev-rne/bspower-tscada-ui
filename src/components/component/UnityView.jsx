@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Unity, { UnityContext } from "react-unity-webgl";
 import { useSelector, useDispatch } from "react-redux";
-import { setFloorVal, setCctvVal } from "../../features/occ";
+import { setFloorVal, setCctvVal, setUnityReady } from "../../features/occ";
 
 const buildUrl = "Build";
 
@@ -20,7 +20,7 @@ export const UnityGameComponent = () => {
 
     useEffect(() => {
         unityContext.on("loaded", () => {
-            console.log("loaded");
+            setTimeout(() => dispatch(setUnityReady()), 2500)
         });
 
         unityContext.on("CCtvPageOpen", function (val) {

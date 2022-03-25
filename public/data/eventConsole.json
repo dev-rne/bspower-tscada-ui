@@ -8,6 +8,7 @@
         "location": "Polestar-AP 2",
         "IP": "192.268.232.12",
         "eventName": "CPU 사용률",
+        "station": "1231313",
         "console": "사용률[1.1 % ( > 1%, 3회연속)]"
     },
     {
@@ -19,6 +20,7 @@
         "location": "S4048-BB2",
         "IP": "192.168.254.10",
         "eventName": "포트",
+        "station": "1231313",
         "console": "가용성 [DOWN ( = DOWN, 2회연속)]"
     },
     {
@@ -30,6 +32,7 @@
         "location": "S4048-BB2",
         "IP": "192.268.232.12",
         "eventName": "포트",
+        "station": "1231313",
         "console": "가용성 [DOWN ( = DOWN, 2회연속)]"
     },
     {
@@ -41,6 +44,7 @@
         "location": "S4048-BB2",
         "IP": "192.168.254.10",
         "eventName": "응답시간",
+        "station": "1231313",
         "console": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
     },
     {
@@ -52,6 +56,7 @@
         "location": "S4048-BB2",
         "IP": "192.268.232.12",
         "eventName": "응답시간",
+        "station": "1231313",
         "console": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
     },
     {
@@ -63,6 +68,7 @@
         "location": "Polestar-AP 2",
         "IP": "192.268.232.12",
         "eventName": "CPU 사용률",
+        "station": "1231313",
         "console": "사용률[1.1 % ( > 1%, 3회연속)]"
     },
     {
@@ -74,6 +80,7 @@
         "location": "S4048-BB2",
         "IP": "192.168.254.10",
         "eventName": "포트",
+        "station": "1231313",
         "console": "가용성 [DOWN ( = DOWN, 2회연속)]"
     },
     {
@@ -85,6 +92,7 @@
         "location": "S4048-BB2",
         "IP": "192.268.232.12",
         "eventName": "포트",
+        "station": "1231313",
         "console": "가용성 [DOWN ( = DOWN, 2회연속)]"
     },
     {
@@ -96,6 +104,7 @@
         "location": "S4048-BB2",
         "IP": "192.168.254.10",
         "eventName": "응답시간",
+        "station": "1231313",
         "console": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
     },
     {
@@ -107,6 +116,7 @@
         "location": "S4048-BB2",
         "IP": "192.268.232.12",
         "eventName": "응답시간",
+        "station": "1231313",
         "console": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
     },
     {
@@ -118,6 +128,7 @@
         "location": "Polestar-AP 2",
         "IP": "192.268.232.12",
         "eventName": "CPU 사용률",
+        "station": "1231313",
         "console": "사용률[1.1 % ( > 1%, 3회연속)]"
     },
     {
@@ -129,6 +140,7 @@
         "location": "S4048-BB2",
         "IP": "192.168.254.10",
         "eventName": "포트",
+        "station": "1231313",
         "console": "가용성 [DOWN ( = DOWN, 2회연속)]"
     },
     {
@@ -140,6 +152,7 @@
         "location": "S4048-BB2",
         "IP": "192.268.232.12",
         "eventName": "포트",
+        "station": "1231313",
         "console": "가용성 [DOWN ( = DOWN, 2회연속)]"
     },
     {
@@ -151,6 +164,7 @@
         "location": "S4048-BB2",
         "IP": "192.168.254.10",
         "eventName": "응답시간",
+        "station": "1231313",
         "console": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
     },
     {
@@ -162,6 +176,7 @@
         "location": "S4048-BB2",
         "IP": "192.268.232.12",
         "eventName": "응답시간",
+        "station": "1231313",
         "console": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
     }
 ]
