@@ -1,13 +1,11 @@
-import deviceList from '@data/deviceStatus.json'
-
-const ManagementStatus = () => {
+const ManagementStatus = ({dataList}) => {
     return (
         <div className='management-status'>
            <div className='title'>Management status by Device</div>
            <div className="contents">
-               {deviceList.device.map((list,idx) => {
+               {dataList && dataList.map((list,idx) => {
                    return(
-                    <div className="device">
+                    <div className="device" key={idx}>
                         <div className="img-box">
                             <img src={require(`@assets/icons/icon_main${idx + 1}.png`)} alt=''/>
                             <div className="name">{list.name}</div>
