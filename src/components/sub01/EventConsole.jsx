@@ -12,7 +12,7 @@ const EventConsole = (props) => {
     return (
         <div className="event-console">
             <div className="title">Events Console</div>
-            <EventTable tableData={data} />
+            <EventTable tableData={data} dashboard={true}/>
         </div>
     );
 };

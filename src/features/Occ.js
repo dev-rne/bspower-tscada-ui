@@ -21,6 +21,7 @@ export const occ = createSlice({
         rtspurl: "",
         eventData: [],
         cctvList: { floor_1: [], floor_2: [] },
+        unityReady:false
     },
     reducers: {
         setFloorVal: (state, action) => {
@@ -38,6 +39,9 @@ export const occ = createSlice({
         setRtspurl: (state, action) => {
             state.rtspurl = action.payload;
         },
+        setUnityReady: (state) => {
+            state.unityReady = true;
+        },
     },
     extraReducers: {
         [fetchEventData.fulfilled]: (state, action) => {
@@ -51,7 +55,7 @@ export const occ = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setCctvVal, setFloorVal, setFloor_1, setFloor_2, setRtspurl } =
+export const { setCctvVal, setFloorVal, setFloor_1, setFloor_2, setRtspurl,setUnityReady } =
     occ.actions;
 
 export default occ.reducer;

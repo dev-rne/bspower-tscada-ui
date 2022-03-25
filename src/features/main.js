@@ -49,6 +49,6 @@ export const main = createSlice({
     },
 });
 
-export const {setPagination } = main.actions;
+export const { setPagination } = main.actions;
 
 export default main.reducer;

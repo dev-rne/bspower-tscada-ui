@@ -10,10 +10,11 @@ import { UnityGameComponent } from "@components/component/UnityView";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchEventData, cctvListData } from "../features/occ";
 import { deviceStatusAPI } from "../features/main";
+import { motion } from "framer-motion";
 
 const Subject03 = () => {
     const eventTimeout = useRef(null);
-    const { eventData } = useSelector((state) => state.occ);
+    const { eventData, unityReady } = useSelector((state) => state.occ);
     const { deviceStatus } = useSelector((state) => state.main);
     const dispatch = useDispatch();
     useEffect(() => {
@@ -31,6 +32,11 @@ const Subject03 = () => {
         }, 10000);
     };
 
+    const variants = {
+        on: { opacity: 1},
+        off: {opacity: 0, transition:{ duration:0.4}, transitionEnd:{display:"none"}}
+    }
+
     return (
         <div className="subject03">
             <TopNavi />
@@ -46,6 +52,10 @@ const Subject03 = () => {
                     {/* <ControlBox /> */}
                 </div>
                 <UnityGameComponent />
+                <motion.div className="loading-box" animate={unityReady ? "off" : "on"}
+                  variants={variants} initial={{ display:"flex"}}>
+                <div className="loader"></div>
+             </motion.div>
             </div>
         </div>
     );

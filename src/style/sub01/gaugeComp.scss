@@ -24,9 +24,12 @@
                     height: 100%;
                     flex-direction: column;
                     gap: 6px;
+                    align-items: center;
+                    justify-content: center;
 
-                    .gauge {
-                        height: 60% !important;
+                    img {
+                       width: 40%;
+                       margin-bottom: 10px;
                     }
 
                     p {
@@ -34,7 +37,6 @@
                         display: flex;
                         justify-content: center;
                         font-size: 18px;
-                        height: 10%;
                     }
                 }
 

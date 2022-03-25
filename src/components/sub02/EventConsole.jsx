@@ -7,10 +7,14 @@ const EventConsole = (props) => {
     useEffect(() => {
         setData(dataList);
     }, [dataList]);
+
+   
     return (
         <div className='event-console sectionBox'>
-            <div className='title'>Events Console</div>
-            <EventTable tableData={data} />
+            <div className="title-box">
+                <div className='title'>Events Console</div>
+            </div>
+            <EventTable tableData={data} dashboard={false}/>
         </div>
     );
 };
