@@ -102,12 +102,35 @@
     }
 }
 
-
-
-.subject01{
-    .event-console{
-        .table{
-            
+.subject01 {
+    .event-console {
+        .title {
+            .event-btn-area {
+                float: right;
+                .event-btn {
+                    padding: 2px 20px;
+                    float: left;
+                    margin-left: 20px;
+                    text-shadow: 1px 1px 1px #000;
+                    border-radius: 4px;
+                    opacity: 0.4;
+                    cursor: pointer;
+                    &.critical {
+                        background: rgb(206, 44, 44);
+                    }
+                    &.warn {
+                        background: rgb(231, 147, 38);
+                    }
+                    &.major {
+                        background: rgb(92, 199, 59);
+                    }
+                    &.active {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .table {
             .model {
                 width: 8%;
             }
@@ -126,7 +149,7 @@
             .eventName {
                 width: 8%;
             }
-            .station{
+            .station {
                 width: 7%;
             }
             .console {
