@@ -75,19 +75,19 @@
 
                         &.critical {
                             .box {
-                                background: #c72727;
+                                background: $critical;
                             }
                         }
 
-                        &.warn {
+                        &.trouble {
                             .box {
-                                background: #d87626;
+                                background: $trouble;
                             }
                         }
 
-                        &.major {
+                        &.attention {
                             .box {
-                                background: #27bb43;
+                                background: $attention;
                             }
                         }
                         .value {

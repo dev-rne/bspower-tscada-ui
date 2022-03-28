@@ -8,19 +8,19 @@
         "location": "Polestar-AP 2",
         "IP": "192.268.232.12",
         "eventName": "CPU 사용률",
-        "station": "1231313",
+        "station": "dashboard",
         "console": "사용률[1.1 % ( > 1%, 3회연속)]"
     },
     {
         "key": 2,
-        "level": "warn",
+        "level": "trouble",
         "model": "네트워크",
         "occurredTime": "2019/10/17  11:19:00",
         "device": "Vlan2",
         "location": "S4048-BB2",
         "IP": "192.168.254.10",
         "eventName": "포트",
-        "station": "1231313",
+        "station": "occ",
         "console": "가용성 [DOWN ( = DOWN, 2회연속)]"
     },
     {
@@ -32,31 +32,31 @@
         "location": "S4048-BB2",
         "IP": "192.268.232.12",
         "eventName": "포트",
-        "station": "1231313",
+        "station": "ss4",
         "console": "가용성 [DOWN ( = DOWN, 2회연속)]"
     },
     {
         "key": 4,
-        "level": "normal",
+        "level": "attention",
         "model": "서버",
         "occurredTime": "2019/10/17  11:19:00",
         "device": "TenGigabitEthernet 1/45",
         "location": "S4048-BB2",
         "IP": "192.168.254.10",
         "eventName": "응답시간",
-        "station": "1231313",
+        "station": "dashboard",
         "console": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
     },
     {
         "key": 5,
-        "level": "warn",
+        "level": "trouble",
         "model": "서버",
         "occurredTime": "2019/10/17  11:19:00",
         "device": "TenGigabitEthernet 1/45",
         "location": "S4048-BB2",
         "IP": "192.268.232.12",
         "eventName": "응답시간",
-        "station": "1231313",
+        "station": "ss3",
         "console": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
     },
     {
@@ -68,19 +68,19 @@
         "location": "Polestar-AP 2",
         "IP": "192.268.232.12",
         "eventName": "CPU 사용률",
-        "station": "1231313",
+        "station": "ss7",
         "console": "사용률[1.1 % ( > 1%, 3회연속)]"
     },
     {
         "key": 2,
-        "level": "warn",
+        "level": "trouble",
         "model": "네트워크",
         "occurredTime": "2019/10/17  11:19:00",
         "device": "Vlan2",
         "location": "S4048-BB2",
         "IP": "192.168.254.10",
         "eventName": "포트",
-        "station": "1231313",
+        "station": "zuunbayan",
         "console": "가용성 [DOWN ( = DOWN, 2회연속)]"
     },
     {
@@ -92,31 +92,31 @@
         "location": "S4048-BB2",
         "IP": "192.268.232.12",
         "eventName": "포트",
-        "station": "1231313",
+        "station": "tsetsii",
         "console": "가용성 [DOWN ( = DOWN, 2회연속)]"
     },
     {
         "key": 4,
-        "level": "normal",
+        "level": "attention",
         "model": "서버",
         "occurredTime": "2019/10/17  11:19:00",
         "device": "TenGigabitEthernet 1/45",
         "location": "S4048-BB2",
         "IP": "192.168.254.10",
         "eventName": "응답시간",
-        "station": "1231313",
+        "station": "dashboard",
         "console": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
     },
     {
         "key": 5,
-        "level": "warn",
+        "level": "trouble",
         "model": "서버",
         "occurredTime": "2019/10/17  11:19:00",
         "device": "TenGigabitEthernet 1/45",
         "location": "S4048-BB2",
         "IP": "192.268.232.12",
         "eventName": "응답시간",
-        "station": "1231313",
+        "station": "ss1",
         "console": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
     },
     {
@@ -128,19 +128,19 @@
         "location": "Polestar-AP 2",
         "IP": "192.268.232.12",
         "eventName": "CPU 사용률",
-        "station": "1231313",
+        "station": "ss5",
         "console": "사용률[1.1 % ( > 1%, 3회연속)]"
     },
     {
         "key": 2,
-        "level": "warn",
+        "level": "trouble",
         "model": "네트워크",
         "occurredTime": "2019/10/17  11:19:00",
         "device": "Vlan2",
         "location": "S4048-BB2",
         "IP": "192.168.254.10",
         "eventName": "포트",
-        "station": "1231313",
+        "station": "ss5",
         "console": "가용성 [DOWN ( = DOWN, 2회연속)]"
     },
     {
@@ -152,31 +152,31 @@
         "location": "S4048-BB2",
         "IP": "192.268.232.12",
         "eventName": "포트",
-        "station": "1231313",
+        "station": "occ",
         "console": "가용성 [DOWN ( = DOWN, 2회연속)]"
     },
     {
         "key": 4,
-        "level": "normal",
+        "level": "attention",
         "model": "서버",
         "occurredTime": "2019/10/17  11:19:00",
         "device": "TenGigabitEthernet 1/45",
         "location": "S4048-BB2",
         "IP": "192.168.254.10",
         "eventName": "응답시간",
-        "station": "1231313",
+        "station": "occ",
         "console": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
     },
     {
         "key": 5,
-        "level": "warn",
+        "level": "trouble",
         "model": "서버",
         "occurredTime": "2019/10/17  11:19:00",
         "device": "TenGigabitEthernet 1/45",
         "location": "S4048-BB2",
         "IP": "192.268.232.12",
         "eventName": "응답시간",
-        "station": "1231313",
+        "station": "ss3",
         "console": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
     }
 ]

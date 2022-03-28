@@ -13,7 +13,7 @@ const DeviceStatus = ({dataList}) => {
     };
 
     return (
-        <div className='device-status'>
+        <div className='device-status sectionBox'>
             <div className='title'>T-SCADA Management status by Device</div>
             <div className='content'>
                 {dataList && dataList.map((list, i) => {

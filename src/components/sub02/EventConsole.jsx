@@ -1,103 +1,84 @@
 import React, { useEffect, useState } from "react";
 import EventTable from "@components/component/EventTable";
+import { Badge } from 'antd';
 
 const EventConsole = (props) => {
     const { dataList } = props;
+
     const critical = dataList.filter((list) => list.level === "critical");
-    const warn = dataList.filter((list) => list.level === "warn");
-    const major = dataList.filter((list) => list.level === "normal");
+    const trouble = dataList.filter((list) => list.level === "trouble");
+    const attention = dataList.filter((list) => list.level === "attention");
+
     const [data, setData] = useState([]);
+
     const [evnetInfo, setEventInfo] = useState({
         critical: true,
-        warn: true,
-        major: true,
+        trouble: true,
+        attention: true,
     });
+
     useEffect(() => {
         let dataArr = dataList.filter((obj) => {
             let bool = false;
             if (evnetInfo.critical && obj.level === "critical") bool = true;
-            if (evnetInfo.warn && obj.level === "warn") bool = true;
-            if (evnetInfo.major && obj.level === "normal") bool = true;
+            if (evnetInfo.trouble && obj.level === "trouble") bool = true;
+            if (evnetInfo.attention && obj.level === "attention") bool = true;
 
             if (bool) return obj;
         });
         setData(dataArr);
         // setData(dataList);
-    }, [dataList]);
-
-    useEffect(() => {
-        console.log("evnetInfo ::: " + JSON.stringify(evnetInfo));
-        let dataArr = dataList.filter((obj) => {
-            let bool = false;
-            if (evnetInfo.critical && obj.level === "critical") bool = true;
-            if (evnetInfo.warn && obj.level === "warn") bool = true;
-            if (evnetInfo.major && obj.level === "normal") bool = true;
-
-            if (bool) return obj;
-        });
-        setData(dataArr);
-    }, [evnetInfo]);
+    }, [dataList, evnetInfo]);
 
     return (
         <div className="event-console sectionBox">
             <div className="title-box">
                 <div className="title">
-                    Events Console
+                    Events Console </div>
                     <div className="event-btn-area">
+                    <Badge size="small" count={attention.length} color="#fda605" className={evnetInfo.attention ? "badgeActive" : ""}>
                         <div
-                            className={
-                                "event-btn major" +
-                                `${evnetInfo.major ? " active" : ""}`
+                            className={evnetInfo.attention ? "active event-btn attention" : "event-btn attention"
                             }
-                            onClick={(e) => {
-                                evnetInfo.major = evnetInfo.major
-                                    ? false
-                                    : true;
+                            onClick={() =>  {
+                                evnetInfo.attention = !evnetInfo.attention;
                                 setEventInfo({
-                                    major: evnetInfo.major,
-                                    warn: evnetInfo.warn,
-                                    critical: evnetInfo.critical,
+                                    ...evnetInfo,
+                                    attention: evnetInfo.attention,
                                 });
                             }}
                         >
-                            major<span>{"(" + major.length + ")"}</span>
-                        </div>
+                            attention
+                        </div></Badge>
+                        <Badge size="small" count={critical.length} color="#ff6f1c"  className={evnetInfo.trouble ? "badgeActive" : ""}>
                         <div
-                            className={
-                                "event-btn warn" +
-                                `${evnetInfo.warn ? " active" : ""}`
-                            }
+                            className={evnetInfo.trouble ? "active event-btn trouble" : "event-btn trouble"}
                             onClick={() => {
-                                evnetInfo.warn = evnetInfo.warn ? false : true;
+                                evnetInfo.trouble = !evnetInfo.trouble;
                                 setEventInfo({
-                                    major: evnetInfo.major,
-                                    warn: evnetInfo.warn,
-                                    critical: evnetInfo.critical,
+                                    ...evnetInfo,
+                                    trouble: evnetInfo.trouble,
                                 });
                             }}
                         >
-                            warn<span>{"(" + warn.length + ")"}</span>
-                        </div>
+                            trouble
+                        </div></Badge>
+                        <Badge size="small" count={trouble.length} color="#f51212"  className={evnetInfo.critical ? "badgeActive" : ""}>
                         <div
                             className={
-                                "event-btn critical" +
-                                `${evnetInfo.critical ? " active" : ""}`
-                            }
+                                evnetInfo.critical ? "active event-btn critical" : "event-btn critical"}
                             onClick={() => {
-                                evnetInfo.critical = evnetInfo.critical
-                                    ? false
-                                    : true;
+                                evnetInfo.critical = !evnetInfo.critical
                                 setEventInfo({
-                                    major: evnetInfo.major,
-                                    warn: evnetInfo.warn,
+                                    ...evnetInfo,
                                     critical: evnetInfo.critical,
                                 });
                             }}
                         >
-                            critical<span>{"(" + critical.length + ")"}</span>
-                        </div>
+                            critical
+                        </div> </Badge>
                     </div>
-                </div>
+               
             </div>
             <EventTable tableData={data} dashboard={false} />
         </div>

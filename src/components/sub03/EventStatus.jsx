@@ -5,16 +5,16 @@ import Marquee from "react-fast-marquee";
 const EventStatus = (props) => {
     const { dataList } = props;
     const critical = dataList.filter((list) => list.level === "critical");
-    const warn = dataList.filter((list) => list.level === "warn");
-    const normal = dataList.filter((list) => list.level === "normal");
-    const [event, setEvent] = useState("major");
+    const trouble = dataList.filter((list) => list.level === "trouble");
+    const attention = dataList.filter((list) => list.level === "attention");
+    const [event, setEvent] = useState("critical");
     const [eventList, setEventList] = useState([]);
 
     useEffect(() => {
         console.log("eventList :: " + eventList);
         if (event === "critical") setEventList(critical);
-        if (event === "warn") setEventList(warn);
-        if (event === "major") setEventList(normal);
+        if (event === "trouble") setEventList(trouble);
+        if (event === "attention") setEventList(attention);
     }, [event, dataList]);
 
     const handleEvent = (value) => {
@@ -45,29 +45,29 @@ const EventStatus = (props) => {
                 </div>
                 <div
                     className={
-                        event === "warn" ? "warn select event" : "warn event"
+                        event === "trouble" ? "trouble select event" : "trouble event"
                     }
-                    onClick={() => handleEvent("warn")}
+                    onClick={() => handleEvent("trouble")}
                 >
                     <div className="name">
                         <div className="box"></div>
-                        <span>Warning</span>
+                        <span>Trouble</span>
                     </div>
-                    <img src={require(`@assets/warn.png`)} alt="" />
-                    <div className="value">{warn.length}</div>
+                    <img src={require(`@assets/trouble.png`)} alt="" />
+                    <div className="value">{trouble.length}</div>
                 </div>
                 <div
                     className={
-                        event === "major" ? "major select event" : "major event"
+                        event === "attention" ? "attention select event" : "attention event"
                     }
-                    onClick={() => handleEvent("major")}
+                    onClick={() => handleEvent("attention")}
                 >
                     <div className="name">
                         <div className="box"></div>
-                        <span>Major</span>
+                        <span>Attention</span>
                     </div>
-                    <img src={require(`@assets/major.png`)} alt="" />
-                    <div className="value">{normal.length}</div>
+                    <img src={require(`@assets/attention.png`)} alt="" />
+                    <div className="value">{attention.length}</div>
                 </div>
             </div>
             <div className="ticker-box">

@@ -2,74 +2,74 @@ const EventTable = (props) => {
     const { tableData, dashboard } = props;
     const dashboardThead = [
         {
-            class: "level",
-            title: "Level",
+            class: "severity",
+            title: "Severity",
         },
         {
-            class: "model",
-            title: "Model",
+            class: "alarm",
+            title: "Alarm Name",
         },
         {
-            class: "occurredTime",
-            title: "Occerred Time",
+            class: "occurrence",
+            title: "Time of Occurrence",
         },
         {
-            class: "device",
-            title: "Device name",
+            class: "duration",
+            title: "Duration",
         },
         {
-            class: "location",
-            title: "Level",
+            class: "system",
+            title: "System Name",
         },
         {
-            class: "IP",
-            title: "IP",
+            class: "resource",
+            title: "Resource Name",
         },
         {
             class: "station",
             title: "Station",
         },
         {
-            class: "eventName",
-            title: "Events name",
+            class: "target",
+            title: "Target",
         },
         {
-            class: "console",
-            title: "Event console",
+            class: "condition",
+            title: "Condition Log",
         },
     ];
     const thead = [
         {
-            class: "level",
-            title: "Level",
+            class: "severity",
+            title: "Severity",
         },
         {
-            class: "model",
-            title: "Model",
+            class: "alarm",
+            title: "Alarm Name",
         },
         {
-            class: "occurredTime",
-            title: "Occerred Time",
+            class: "occurrence",
+            title: "Time of Occurrence",
         },
         {
-            class: "device",
-            title: "Device name",
+            class: "duration",
+            title: "Duration",
         },
         {
-            class: "location",
-            title: "Level",
+            class: "system",
+            title: "System Name",
         },
         {
-            class: "IP",
-            title: "IP",
+            class: "resource",
+            title: "Resource Name",
         },
         {
-            class: "eventName",
-            title: "Events name",
+            class: "target",
+            title: "Target",
         },
         {
-            class: "console",
-            title: "Event console",
+            class: "condition",
+            title: "Condition Log",
         },
     ];
     
@@ -94,30 +94,32 @@ const EventTable = (props) => {
                     tableData.map((list, i) => {
                         return (
                             <div className="tr" key={i}>
-                                <div className="td level">
+                                <div className="td severity">
                                     {list.level === "critical" ? (
                                         <div className="critical circle"></div>
-                                    ) : list.level === "warn" ? (
-                                        <div className="warn circle"></div>
+                                    ) : list.level === "trouble" ? (
+                                        <div className="trouble circle"></div>
                                     ) : (
-                                        <div className="normal circle"></div>
-                                    )}{" "}
-                                    {list.level}
+                                        <div className="attention circle"></div>
+                                    )}
+                                    <div className="value">
+                                        {list.level}
+                                    </div>
                                 </div>
-                                <div className="td model">{list.model}</div>
-                                <div className="td occurredTime">
+                                <div className="td alarm">{list.model}</div>
+                                <div className="td occurrence">
                                     {list.occurredTime}
                                 </div>
-                                <div className="td device">{list.device}</div>
-                                <div className="td location">
+                                <div className="td duration">{list.device}</div>
+                                <div className="td system">
                                     {list.location}
                                 </div>
-                                <div className="td IP">{list.IP}</div>
+                                <div className="td resource">{list.IP}</div>
                                 {dashboard ? <div className="td station">{list.station}</div> : ''}
-                                <div className="td eventName">
+                                <div className="td target">
                                     {list.eventName}
                                 </div>
-                                <div className="td console">{list.console}</div>
+                                <div className="td condition">{list.console}</div>
                             </div>
                         );
                     })}

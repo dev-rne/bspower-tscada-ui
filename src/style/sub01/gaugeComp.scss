@@ -25,11 +25,11 @@
                     flex-direction: column;
                     gap: 6px;
                     align-items: center;
-                    justify-content: center;
+                    justify-content: end;
 
                     img {
-                       width: 40%;
-                       margin-bottom: 10px;
+                       width: 45%;
+                       margin-bottom: 4px;
                     }
 
                     p {
@@ -48,13 +48,13 @@
 
                 .warning {
                     p {
-                        color: $warn;
+                        color: $trouble;
                     }
                 }
 
                 .major {
                     p {
-                        color: $noraml;
+                        color: $attention;
                     }
                 }
 
@@ -66,6 +66,8 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    margin-bottom: 10px;
+
                 }
             }
         }

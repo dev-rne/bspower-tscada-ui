@@ -1,43 +1,13 @@
 {"device": [
     {
-        "name": "FOTS",
-        "value": 210,
-        "mng_cnt":210,
-        "mxg_cnt":150
-    },
-    {
         "name": "IP-PBX",
         "value": 134,
         "mng_cnt":210,
         "mxg_cnt":150
     },
     {
-        "name": "Broadcast",
-        "value": 116,
-        "mng_cnt":210,
-        "mxg_cnt":150
-    },
-    {
-        "name": "TETRA",
-        "value": 128,
-        "mng_cnt":210,
-        "mxg_cnt":150
-    },
-    {
-        "name": "SADG",
+        "name": "CCTV",
         "value": 14,
-        "mng_cnt":210,
-        "mxg_cnt":150
-    },
-    {
-        "name": "Rectifier",
-        "value": 15,
-        "mng_cnt":210,
-        "mxg_cnt":150
-    },
-    {
-        "name": "UPS",
-        "value": 16,
         "mng_cnt":210,
         "mxg_cnt":150
     },
@@ -54,8 +24,38 @@
         "mxg_cnt":150
     },
     {
-        "name": "HVAC",
+        "name": "Broadcast",
+        "value": 116,
+        "mng_cnt":210,
+        "mxg_cnt":150
+    },
+    {
+        "name": "FOTS",
+        "value": 210,
+        "mng_cnt":210,
+        "mxg_cnt":150
+    },
+    {
+        "name": "Rectifier",
+        "value": 15,
+        "mng_cnt":210,
+        "mxg_cnt":150
+    },
+    {
+        "name": "UPS",
+        "value": 16,
+        "mng_cnt":210,
+        "mxg_cnt":150
+    },
+    {
+        "name": "DG",
         "value": 7,
+        "mng_cnt":210,
+        "mxg_cnt":150
+    },
+    {
+        "name": "TETRA",
+        "value": 128,
         "mng_cnt":210,
         "mxg_cnt":150
     }

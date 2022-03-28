@@ -7,9 +7,45 @@
     flex-direction: column;
     gap: 10px;
 
-    .title {
-        color: $white;
-        padding: 0 10px;
+    .title-box{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        padding-right: 10px;
+
+        .title {
+            color: $white;
+            padding: 0 10px;
+        }
+
+        .event-btn-area {
+            float: right;
+            .event-btn {
+                padding: 4px 20px;
+                float: left;
+                margin-left: 20px;
+                border-radius: 20px;
+                opacity: 0.4;
+                border: 1px solid rgba(255, 255, 255, 0.274);
+                cursor: pointer;
+                background: rgba(0,0,0,0.1);
+                transition: 0.3s;
+                &.critical {
+                    border: 1px solid $redDown;
+                }
+                &.trouble {
+                    border: 1px solid $orrangeDown;
+                }
+                &.attention {
+                    border: 1px solid $yellowDown;
+                }
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+        
     }
 
     .table {
@@ -24,6 +60,8 @@
             width: calc(100% - 8px);
             display: flex;
             height: 20%;
+            font-size: 14px;
+            background: #091a29;
 
             .th {
                 display: flex;
@@ -59,7 +97,7 @@
                 }
             }
         }
-        .level {
+        .severity {
             width: 6%;
             justify-content: center;
             .circle {
@@ -68,93 +106,88 @@
                 margin-right: 10px;
                 border-radius: 10px;
                 &.critical {
-                    border: 1px solid rgb(206, 44, 44);
+                    border: 1px solid $critical;
+
                 }
-                &.warn {
-                    border: 1px solid rgb(231, 147, 38);
+                &.trouble {
+                    border: 1px solid $trouble;
                 }
-                &.normal {
-                    border: 1px solid rgb(92, 199, 59);
+                &.attention {
+                    border: 1px solid $attention;
                 }
             }
+            .value{
+                width: 60%;
+                white-space: nowrap;
+            }
         }
-        .model {
+       
+        .alarm {
             width: 9%;
         }
-        .occurredTime {
+        .occurrence {
             width: 12%;
         }
-        .device {
-            width: 13%;
+        .duration {
+            width: 14%;
         }
-        .location {
+        .system {
+            width: 8%;
+        }
+        .resource {
             width: 10%;
         }
-        .IP {
-            width: 10%;
+        .target {
+            width: 15%;
         }
-        .eventName {
-            width: 10%;
-        }
-        .console {
-            width: 30%;
+        .condition {
+            width: 26%;
         }
     }
+    
 }
 
 .subject01 {
     .event-console {
-        .title {
-            .event-btn-area {
-                float: right;
-                .event-btn {
-                    padding: 2px 20px;
-                    float: left;
-                    margin-left: 20px;
-                    text-shadow: 1px 1px 1px #000;
-                    border-radius: 4px;
-                    opacity: 0.4;
-                    cursor: pointer;
-                    &.critical {
-                        background: rgb(206, 44, 44);
-                    }
-                    &.warn {
-                        background: rgb(231, 147, 38);
-                    }
-                    &.major {
-                        background: rgb(92, 199, 59);
-                    }
-                    &.active {
-                        opacity: 1;
-                    }
-                }
-            }
-        }
         .table {
-            .model {
-                width: 8%;
+            .alarm {
+                width: 9%;
             }
-            .occurredTime {
-                width: 10%;
-            }
-            .device {
+            .occurrence {
                 width: 12%;
             }
-            .location {
+            .duration {
+                width: 14%;
+            }
+            .system {
+                width: 6%;
+            }
+            .resource {
                 width: 10%;
             }
-            .IP {
-                width: 10%;
+            .station{
+                width: 6%;
             }
-            .eventName {
-                width: 8%;
+            .target {
+                width: 13%;
             }
-            .station {
-                width: 7%;
-            }
-            .console {
-                width: 30%;
+            .condition {
+                width: 24%;
             }
         }
     }
+}
+
+.ant-badge-status{
+    .ant-badge-count{
+        text-shadow: 0px 0px 2px rgba(0,0,0,0.7);
+        opacity: 0.5;
+        transition: 0.3s;
+    }
+    &.badgeActive{
+        .ant-badge-count{
+            opacity: 1;
+        }
+    }
+ 
 }

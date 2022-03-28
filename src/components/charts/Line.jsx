@@ -5,7 +5,7 @@ const Line = (props) => {
     return (
         <ReactECharts
             option={{
-                color: ["#32CF32", "#F6872C", "#F62C2C"],
+                color: ["#ffea29", "#ff823a", "#f51212"],
                 tooltip: {
                     trigger: "axis",
                 },
@@ -63,7 +63,7 @@ const Line = (props) => {
                 series: [
                     {
                         type: "line",
-                        name: "major",
+                        name: "attention",
                         data: major,
                         symbolSize: 4,
                         symbol: "circle",
@@ -73,7 +73,7 @@ const Line = (props) => {
                     },
                     {
                         type: "line",
-                        name: "warn",
+                        name: "trouble",
                         data: warn,
                         symbolSize: 4,
                         symbol: "circle",

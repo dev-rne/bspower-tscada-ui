@@ -30,11 +30,11 @@
                 &.critical{
                     color: $critical;
                 }
-                &.warn{
-                    color: $warn;
+                &.trouble{
+                    color: $trouble;
                 }
-                &.normal{
-                    color: $noraml;
+                &.attention{
+                    color: $attention;
                 }
             }
         }
