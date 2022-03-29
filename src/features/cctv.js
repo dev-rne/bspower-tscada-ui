@@ -2,11 +2,16 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 // cctv 7개 리스트
 export const cctvListData = createAsyncThunk("cctvListAPI", async () => {
-    const response = await axios.get("/openapi/v1/devicelist");
+    // http://222.112.53.201:6507
+    const response = await axios.get(
+        "http://222.112.53.201:6507/openapi/v1/devicelist"
+    );
     return response.data;
 });
 export const cctvControl = createAsyncThunk("cctvControlAPI", async (obj) => {
-    const response = await axios.get("/openapi/v1/" + obj.id + "/" + obj.type);
+    const response = await axios.get(
+        "http://222.112.53.201:6507/openapi/v1/" + obj.id + "/" + obj.type
+    );
     return response.data;
 });
 

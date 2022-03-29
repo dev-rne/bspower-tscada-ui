@@ -1,82 +1,82 @@
 {
-    "thead":[
+    "thead": [
         {
-            "class":"title",
-            "title":"Device"
+            "class": "title",
+            "title": "Device"
         },
         {
-            "class":"previous",
-            "title":"Events of Previous day"
+            "class": "previous",
+            "title": "Events of Previous day"
         },
         {
-            "class":"today",
-            "title":"Events of Today"
+            "class": "today",
+            "title": "Events of Today"
         },
         {
-            "class":"critical",
-            "title":"Critical events"
+            "class": "critical",
+            "title": "Critical events"
         }
     ],
-    "tbody":[
+    "tbody": [
         {
-            "title":"FOTS",
-            "previous": 0,
-            "today": 0,
-            "critical":0
-        },
-        {
-            "title":"IP-PBX",
+            "title": "IP-PBX",
             "previous": 21,
             "today": 0,
-            "critical":0
+            "critical": 0
         },
         {
-            "title":"Broadcast",
-            "previous": 12,
-            "today": 0,
-            "critical":0
-        },
-        {
-            "title":"TETRA",
+            "title": "CCTV",
             "previous": 1,
             "today": 0,
-            "critical":0
+            "critical": 0
         },
         {
-            "title":"DADG",
-            "previous": 1,
-            "today": 0,
-            "critical":0
-        },
-        {
-            "title":"Rectifier",
-            "previous": 6,
-            "today": 1,
-            "critical":0
-        },
-        {
-            "title":"UPS",
-            "previous": 14,
-            "today": 0,
-            "critical":0
-        },
-        {
-            "title":"DOOR",
+            "title": "DOOR",
             "previous": 3,
             "today": 2,
-            "critical":1
+            "critical": 1
         },
         {
-            "title":"FIRE",
+            "title": "FIRE",
             "previous": 0,
             "today": 0,
-            "critical":0
+            "critical": 0
         },
         {
-            "title":"HVC",
+            "title": "Broadcast",
+            "previous": 12,
+            "today": 0,
+            "critical": 0
+        },
+        {
+            "title": "FOTS",
+            "previous": 0,
+            "today": 0,
+            "critical": 0
+        },
+        {
+            "title": "Rectifier",
+            "previous": 6,
+            "today": 1,
+            "critical": 0
+        },
+        {
+            "title": "UPS",
+            "previous": 14,
+            "today": 0,
+            "critical": 0
+        },
+        {
+            "title": "SADG",
             "previous": 1,
             "today": 0,
-            "critical":0
+            "critical": 0
+        },
+        {
+            "title": "TETRA",
+            "previous": 1,
+            "today": 0,
+            "critical": 0
         }
     ]
 }

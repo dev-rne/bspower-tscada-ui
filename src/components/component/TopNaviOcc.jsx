@@ -8,9 +8,9 @@ import { useSelector, useDispatch } from "react-redux";
 const { Option } = Select;
 
 const TopNavi = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const dispatch = useDispatch();
-    const location = useLocation()
+    const location = useLocation();
     const page = useSelector((state) => {
         return state.main.page;
     });
@@ -26,21 +26,20 @@ const TopNavi = () => {
         }
     };
 
-    useEffect(()=>{
-        if(location.pathname === '/'){
-            dispatch(setPagination('dashboard'));
-        }else if(location.pathname === '/occ'){
-            dispatch(setPagination('occ'));
-        }else{
-            dispatch(setPagination(location.hash.slice(1)))
+    useEffect(() => {
+        if (location.pathname === "/") {
+            dispatch(setPagination("dashboard"));
+        } else if (location.pathname === "/occ") {
+            dispatch(setPagination("occ"));
+        } else {
+            dispatch(setPagination(location.hash.slice(1)));
         }
-    },[])
+    }, []);
 
     return (
         <div className="top-navi">
             <div className="title">
-                Mongolia TT-ZV line Signalling & Telecommunication System
-                Constrction
+                Mongolia TT-ZB line Signalling & Telecommunication System
             </div>
             <div className="timebar">
                 <div className="select-box">
