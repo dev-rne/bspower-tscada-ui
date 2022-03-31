@@ -2,7 +2,7 @@
     .left-box {
         .gaugecomp {
             width: 100%;
-            height: 40%;
+            height: 30%;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -28,7 +28,7 @@
                     justify-content: end;
 
                     img {
-                       width: 45%;
+                       width: 40%;
                        margin-bottom: 4px;
                     }
 
@@ -36,7 +36,7 @@
                         width: 100%;
                         display: flex;
                         justify-content: center;
-                        font-size: 18px;
+                        font-size: 16px;
                     }
                 }
 
@@ -60,7 +60,7 @@
 
                 .data {
                     height: 25%;
-                    font-size: 30px;
+                    font-size: 24px;
                     font-weight: 700;
                     color: white;
                     display: flex;
@@ -72,9 +72,9 @@
             }
         }
 
-        .top-list {
+        .device-events {
             width: 100%;
-            height: 60%;
+            height: 70%;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -87,74 +87,69 @@
 
                 .title {
                     color: $white;
-                    padding: 0 10px;
-                }
-                .ant-radio-group {
-                    margin-bottom: 0 !important;
-                    line-height: 1;
-                }
-
-                .ant-radio-button-wrapper {
-                    background: $dark;
-                    border: 1px solid #2a3b49;
-                    color: #4c6477;
-                    height: auto;
-                    line-height: 1;
-                    padding: 6px 16px;
-                }
-                .ant-radio-button-wrapper:not(:first-child):before {
-                    display: none;
-                }
-
-                .ant-radio-button-wrapper:focus-within {
-                    box-shadow: none;
-                }
-
-                .ant-radio-button-wrapper-checked {
-                    color: white;
-                    border: 1px solid $select;
-                    background: $gray;
                 }
             }
 
             .table {
                 width: 100%;
-                flex: 1;
+                height: 100%;
                 overflow: hidden;
+                border: 1px solid $gray;
+                background: $dark;
                 border-radius: 4px;
-                border: 1px solid $select;
-                background-color: $dark;
-
+    
+                .station{
+                    width: 35%;
+                }
+                .attention{
+                    width: calc(65% / 3);
+                }
+                .trouble{
+                    width: calc(65% / 3);
+                }
+                .critical{
+                    width: calc(65% / 3);
+                }
                 .thead {
-                    width: calc(100% - 8px);
                     display: flex;
-                    height: 10%;
-
+                    height: 15%;
+    
                     .th {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        border-right: 1px solid $select;
+                        border-right: 1px solid $gray;
                         color: $white;
+                        font-size: 16px;
+                        font-weight: 600;
                     }
                     .th:last-child {
                         border: none;
                     }
-                }
 
+                    .attention{
+                        color: $attention
+                    }
+                    .trouble{
+                        color: $trouble
+                    }
+                    .critical{
+                        color: $critical
+                    }
+                }
+    
                 .tbody {
                     width: 100%;
-                    height: 90%;
-                    overflow-y: auto;
+                    height: 85%;
                     .tr {
                         width: 100%;
                         display: flex;
-                        border-top: 1px solid $select;
+                        border-top: 1px solid $gray;
                         color: $white;
-
+                        height: calc(100% / 8);
+    
                         .td {
-                            padding: 2px;
-                            border-right: 1px solid $select;
+                            border-right: 1px solid $gray;
                             display: flex;
                             align-items: center;
                             justify-content: center;
@@ -162,34 +157,6 @@
                         }
                         .td:last-child {
                             border: none;
-                        }
-                    }
-                }
-                .key {
-                    width: 13%;
-                }
-                .name {
-                    width: 35%;
-                }
-                .progress {
-                    width: 52%;
-
-                    .progressBar {
-                        padding-left: 8px;
-                        .ant-progress-outer {
-                            height: 100%;
-                            .ant-progress-inner {
-                                border-radius: 0;
-                                background: rgba(0, 0, 0, 0);
-                                height: 100%;
-                                .ant-progress-bg {
-                                    height: 12px !important;
-                                    border-radius: 0;
-                                }
-                            }
-                        }
-                        .ant-progress-text {
-                            color: $white;
                         }
                     }
                 }

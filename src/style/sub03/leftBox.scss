@@ -101,14 +101,14 @@
                         }
                         img.alert {
                             animation-duration: 1s;
-                            animation: blink-effect 1s infinite;
+                            animation: blink-effect 1.5s infinite;
                         }
                         @keyframes blink-effect {
                             0% {
                                 opacity: 1;
                             }
                             50% {
-                                filter: sepia(100%) brightness(50%);
+                                filter: sepia(60%) brightness(100%);
                                 opacity: 0.5;
                             }
                             100% {
@@ -170,15 +170,15 @@
                 .tap-box {
                     display: flex;
                     width: 100%;
-                    height: 75px;
-                    justify-content: space-between;
+                    height: 30px;
+                    align-items: center;
+                    
                     .cctv {
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         color: white;
-                        opacity: 0.7;
-                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                        opacity: 0.5;
                         cursor: pointer;
                         border-radius: 6px;
                         transition: 0.2s;
@@ -190,8 +190,19 @@
 
                         &.select {
                             color: white;
-                            background: $blue;
                             opacity: 1;
+                            text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+                        }
+
+                        &.select::after {
+                            content: "";
+                            position: absolute;
+                            top: 95%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 90%;
+                            height: 1px;
+                            background: rgba(255, 255, 255, 0.445);
                         }
                     }
                     .gubun {
@@ -199,8 +210,8 @@
                         justify-content: center;
                         align-items: center;
                         width: 1px;
-                        height: 100%;
-                        background: white;
+                        height: 70%;
+                        background: rgba(255, 255, 255, 0.562);
                         opacity: 0.7;
                     }
                     // .cctv::after {
@@ -216,11 +227,24 @@
                     // .cctv:last-child::after {
                     //     display: none;
                     // }
+
+                    .ant-tabs{
+                        display: flex;
+                        flex-direction: row;
+                        gap: 10px;
+                        align-items: center;
+                    }
+
+                    .ant-tabs-tabpane{
+                        align-items: center;
+                    justify-content: space-around;
+
+                    }
                 }
 
                 .cam-box {
                     width: 100%;
-                    height: calc(80% - 12px);
+                    height: calc(100% - 42px);
                     overflow: hidden;
                     img {
                         width: 100%;
@@ -271,6 +295,31 @@
         padding: 3px 20px;
     }
     .ant-tabs-top > .ant-tabs-nav {
-        margin-bottom: 10px;
+        margin-bottom: 0;
+    }
+    .ant-tabs-top > .ant-tabs-nav::before {
+        border-bottom:none;
+    }
+    .ant-tabs-nav-list{
+        background:  $dark;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    .ant-tabs-card{
+        .ant-tabs-nav{
+            .ant-tabs-tab{
+                border: none;
+                background: transparent;
+                margin: 0;
+            }
+            .ant-tabs-tab-active{
+                background: $primary;
+                border-radius: 20px;
+                .ant-tabs-tab-btn{
+                    color: white;
+
+                }
+            }
+        }
     }
 }

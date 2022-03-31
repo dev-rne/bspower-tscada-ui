@@ -41,6 +41,7 @@
                 justify-content: space-between;
 
                 .device-box {
+                    width: calc(100% / 10);
                     display: flex;
                     flex-direction: column;
                     color: white;

@@ -37,7 +37,11 @@ const EventStatus = (props) => {
                         <span>Critical</span>
                     </div>
                     <img
-                        className="alert"
+                        className={
+                            event === "critical"
+                                ? "alert"
+                                : ""
+                        }
                         src={require(`@assets/critical.png`)}
                         alt=""
                     />
@@ -53,7 +57,11 @@ const EventStatus = (props) => {
                         <div className="box"></div>
                         <span>Trouble</span>
                     </div>
-                    <img src={require(`@assets/trouble.png`)} alt="" />
+                    <img src={require(`@assets/trouble.png`)} alt="" className={
+                            event === "trouble"
+                                ? "alert"
+                                : ""
+                        } />
                     <div className="value">{trouble.length}</div>
                 </div>
                 <div
@@ -66,7 +74,11 @@ const EventStatus = (props) => {
                         <div className="box"></div>
                         <span>Attention</span>
                     </div>
-                    <img src={require(`@assets/attention.png`)} alt="" />
+                    <img src={require(`@assets/attention.png`)} alt="" className={
+                            event === "attention"
+                                ? "alert"
+                                : ""
+                        }/>
                     <div className="value">{attention.length}</div>
                 </div>
             </div>

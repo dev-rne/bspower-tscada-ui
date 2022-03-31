@@ -16,7 +16,7 @@ const MainCenter = (props) => {
                 <ReactEcharts
                     style={{
                         width: width === undefined ? "100%" : width,
-                        height: height === undefined ? "400px" : height,
+                        height: height === undefined ? "410px" : height,
                     }}
                     option={{
                         title: {
@@ -33,6 +33,12 @@ const MainCenter = (props) => {
                             // textVerticalAlign: 'middle',
                             left: "center",
                             top: "middle",
+                        },
+                        grid: {
+                            top: "15%",
+                            left: "10%",
+                            right: "10%",
+                            bottom: "15%",
                         },
                         tooltip: {
                             show: false,
@@ -53,7 +59,7 @@ const MainCenter = (props) => {
                                 zlevel: 5,
                                 color: "#0066ff",
                                 symbol: "roundRect",
-                                symbolSize: [94, 78],
+                                symbolSize: [114, 90],
                                 roam: false,
                                 label: {
                                     show: true,
@@ -61,7 +67,7 @@ const MainCenter = (props) => {
                                 edgeSymbol: ["circle", "circle"],
                                 edgeSymbolSize: [4, 4],
                                 edgeLabel: {
-                                    fontSize: 20,
+                                    fontSize: 24,
                                 },
                                 draggable: false,
                                 coordinateSystem: "cartesian2d",
@@ -70,7 +76,7 @@ const MainCenter = (props) => {
                                         name: "TSETSII",
                                         value: [0, 280],
                                         symbol: "image://../../cctv/station-icon-alert.png",
-                                        symbolOffset: [0, "-40%"],
+                                        symbolOffset: [0, "-30%"],
                                         label: {
                                             position: "bottom",
                                             align: "center",
@@ -88,7 +94,7 @@ const MainCenter = (props) => {
                                         name: "BB1",
                                         value: [100, 280],
                                         symbol: "image://../../cctv/bb-icon.png",
-                                        symbolOffset: [0, "-40%"],
+                                        symbolOffset: [0, "-30%"],
                                         label: {
                                             position: "bottom",
                                             align: "center",
@@ -106,13 +112,13 @@ const MainCenter = (props) => {
                                         name: "SS1",
                                         value: [200, 280],
                                         symbol: "image://../../cctv/ss-icon.png",
-                                        symbolOffset: [0, "-40%"],
+                                        symbolOffset: [0, "-30%"],
                                         label: {
                                             position: "bottom",
                                             align: "center",
                                             formatter: [
-                                                `{a|${"SIDING"}}`,
-                                                `{b|${"STATION 1"}}`,
+                                                `{a|${"Khongor"}}`,
+                                                `{b|${"Tolgoi"}}`,
                                             ].join("\n"),
                                             rich: {
                                                 a: { color: "white" },
@@ -124,7 +130,7 @@ const MainCenter = (props) => {
                                         name: "BB2",
                                         value: [300, 280],
                                         symbol: "image://../../cctv/bb-icon.png",
-                                        symbolOffset: [0, "-40%"],
+                                        symbolOffset: [0, "-30%"],
                                         label: {
                                             position: "bottom",
                                             align: "center",
@@ -142,13 +148,13 @@ const MainCenter = (props) => {
                                         name: "SS2",
                                         value: [400, 280],
                                         symbol: "image://../../cctv/ss-icon.png",
-                                        symbolOffset: [0, "-40%"],
+                                        symbolOffset: [0, "-30%"],
                                         label: {
                                             position: "bottom",
                                             align: "center",
                                             formatter: [
-                                                `{a|${"SIDING"}}`,
-                                                `{b|${"STATION 2"}}`,
+                                                `{a|${"Ar"}}`,
+                                                `{b|${"Khonglidog"}}`,
                                             ].join("\n"),
                                             rich: {
                                                 a: { color: "white" },
@@ -160,7 +166,7 @@ const MainCenter = (props) => {
                                         name: "BB3",
                                         value: [500, 210],
                                         symbol: "image://../../cctv/bb-icon.png",
-                                        symbolOffset: [0, "-40%"],
+                                        symbolOffset: [0, "-30%"],
                                         label: {
                                             position: "bottom",
                                             align: "center",
@@ -178,13 +184,12 @@ const MainCenter = (props) => {
                                         name: "SS3",
                                         value: [400, 140],
                                         symbol: "image://../../cctv/ss-icon-alert.png",
-                                        symbolOffset: [0, "-40%"],
+                                        symbolOffset: [0, "-30%"],
                                         label: {
                                             position: "bottom",
                                             align: "center",
                                             formatter: [
-                                                `{a|${"SIDING"}}`,
-                                                `{b|${"STATION 3"}}`,
+                                                `{a|${"Bayanbulag"}}`
                                             ].join("\n"),
                                             rich: {
                                                 a: { color: "white" },
@@ -196,13 +201,13 @@ const MainCenter = (props) => {
                                         name: "SS4",
                                         value: [300, 140],
                                         symbol: "image://../../cctv/ss-icon.png",
-                                        symbolOffset: [0, "-40%"],
+                                        symbolOffset: [0, "-30%"],
                                         label: {
                                             position: "bottom",
                                             align: "center",
                                             formatter: [
-                                                `{a|${"SIDING"}}`,
-                                                `{b|${"STATION 4"}}`,
+                                                `{a|${"Khunkhar"}}`,
+                                                `{b|${"Zag"}}`,
                                             ].join("\n"),
                                             rich: {
                                                 a: { color: "white" },
@@ -214,7 +219,7 @@ const MainCenter = (props) => {
                                         name: "BB4",
                                         value: [200, 140],
                                         symbol: "image://../../cctv/bb-icon.png",
-                                        symbolOffset: [0, "-40%"],
+                                        symbolOffset: [0, "-30%"],
                                         label: {
                                             position: "bottom",
                                             align: "center",
@@ -232,13 +237,13 @@ const MainCenter = (props) => {
                                         name: "SS5",
                                         value: [100, 140],
                                         symbol: "image://../../cctv/ss-icon.png",
-                                        symbolOffset: [0, "-40%"],
+                                        symbolOffset: [0, "-30%"],
                                         label: {
                                             position: "bottom",
                                             align: "center",
                                             formatter: [
-                                                `{a|${"SIDING"}}`,
-                                                `{b|${"STATION 5"}}`,
+                                                `{a|${"Bor"}}`,
+                                                `{b|${"Khoshuu"}}`,
                                             ].join("\n"),
                                             rich: {
                                                 a: { color: "white" },
@@ -250,7 +255,7 @@ const MainCenter = (props) => {
                                         name: "BB5",
                                         value: [0, 70],
                                         symbol: "image://../../cctv/bb-icon.png",
-                                        symbolOffset: [0, "-40%"],
+                                        symbolOffset: [0, "-30%"],
                                         label: {
                                             position: "bottom",
                                             align: "center",
@@ -273,8 +278,8 @@ const MainCenter = (props) => {
                                             position: "bottom",
                                             align: "center",
                                             formatter: [
-                                                `{a|${"SIDING"}}`,
-                                                `{b|${"STATION 6"}}`,
+                                                `{a|${"Khulagniin"}}`,
+                                                `{b|${"Shand"}}`,
                                             ].join("\n"),
                                             rich: {
                                                 a: { color: "white" },

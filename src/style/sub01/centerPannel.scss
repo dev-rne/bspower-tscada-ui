@@ -3,50 +3,71 @@
         gap: 12px;
         display: flex;
         flex-direction: column;
-        .device-status {
-            width: 100%;
-            height: 30%;
+        .management-status{
             display: flex;
             flex-direction: column;
             gap: 10px;
-
+            border: 1px solid $blueBorder;
+            border-radius: 8px;
+            background: $pannelGradient;
+            padding: 10px;
+            height: 30%;
+    
             .title {
                 color: $white;
                 padding: 0 10px;
             }
-
-            .content {
+    
+            .contents{
                 width: 100%;
-                flex: 1;
+                flex:1;
                 display: flex;
                 gap: 10px;
-                padding: 6px 12px;
-                background: $dark;
                 justify-content: space-between;
-
-                .device-box {
+                flex-direction: row;
+    
+                .device{
+                    cursor: pointer;
+                    width: calc(100% / 10);
+                    background: $dark;
+                    border: 1px solid $gray;
                     display: flex;
                     flex-direction: column;
-                    color: $white;
-                    align-items: center;
+                    padding: 0 10px;
                     justify-content: center;
-                    cursor: pointer;
-                    transition: 0.3s;
-                    padding: 6px;
-                    border-radius: 8px;
-
-                    .name {
-                        font-size: 14px;
-                    }
-
-                    .value {
-                        font-size: 20px;
+    
+                    .img-box{
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 6px;
+                        color: $white;
                         font-weight: 700;
+    
+                        img{
+                            width: 30%;
+                        }
                     }
-                }
-
-                .device-box:hover {
-                    background: rgba(255, 255, 255, 0.1);
+                    .value-box{
+                        width: 100%;
+                        border: 1px solid $gray;
+                        display: flex;
+                        padding: 10px 6px;
+                        justify-content: space-between;
+                        color: $white;
+                        margin-bottom:6px;
+                        font-size: 14px;
+                        white-space: nowrap;
+                    }
+    
+                    .value-box:nth-child(3n){
+                        border: 1px solid rgb(66, 33, 33);
+                        display: flex;
+                        padding: 10px 6px;
+                        justify-content: space-between;
+                        color: rgb(196, 170, 170);
+                    }
                 }
             }
         }

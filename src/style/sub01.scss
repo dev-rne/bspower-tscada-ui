@@ -15,7 +15,7 @@
         gap: 10px;
 
         .main-contents {
-            height: 65%;
+            height: 70%;
             width: 100%;
             display: flex;
             gap: 12px;
@@ -29,7 +29,7 @@
             }
 
             .left-box {
-                width: 25%;
+                width: 23%;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
@@ -37,7 +37,7 @@
             }
 
             .center-box {
-                width: 50%;
+                width: 77%;
             }
 
             .right-box {
@@ -47,7 +47,7 @@
 
         .event-console {
             width: 100%;
-            height: calc(35% - 100px);
+            height: calc(30% - 100px);
             margin-top: 10px;
         }
     }

@@ -9,6 +9,10 @@ export const deviceStatusAPI = createAsyncThunk("deviceAPI", async () => {
     const response = await axios.get("./data/deviceStatus.json");
     return response.data;
 });
+export const eventDeviceTable = createAsyncThunk("eventDeviceAPI", async () => {
+    const response = await axios.get("./data/eventDeviceTable.json");
+    return response.data;
+});
 export const statusTop10API = createAsyncThunk("top10API", async () => {
     const response = await axios.get("./data/toplist.json");
     return response.data;
@@ -30,6 +34,7 @@ export const main = createSlice({
         deviceStatus: [],
         topList: [],
         emsList: [],
+        eventDeviceList: [],
         eventTrend: { critical: [], warn: [], major: [] },
     },
     reducers: {
@@ -52,6 +57,9 @@ export const main = createSlice({
         },
         [eventTrendAPI.fulfilled]: (state, action) => {
             state.eventTrend = action.payload;
+        },
+        [eventDeviceTable.fulfilled]: (state, action) => {
+            state.eventDeviceList = action.payload;
         },
     },
 });

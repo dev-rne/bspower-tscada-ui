@@ -26,9 +26,7 @@ const DeviceStatus = ({ dataList }) => {
                             >
                                 <div className="name">{list.name}</div>
                                 <img
-                                    src={require(`@assets/icons/icon_main${
-                                        i + 1
-                                    }.png`)}
+                                    src={require(`@assets/icons/${list.img}.png`)}
                                     alt=""
                                 />
                                 <div className="value">{list.value}</div>
