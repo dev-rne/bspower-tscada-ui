@@ -92,8 +92,9 @@
                     align-items: center;
                     font-size: 14px;
                     overflow: hidden;
-                    text-overflow: ellipsis;
-                    -webkit-line-clamp: 2;
+                    text-overflow : ellipsis;
+                    -webkit-line-clamp :3; 
+                    -webkit-box-orient : vertical;
                 }
                 .td:last-child {
                     border: none;

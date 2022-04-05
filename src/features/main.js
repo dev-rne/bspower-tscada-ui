@@ -3,6 +3,11 @@ import axios from "axios";
 
 export const eventDataAPI = createAsyncThunk("eventAPI", async () => {
     const response = await axios.get("/rest/tnms/dashboard/event");
+    return response.data;
+});
+
+export const todayEventAPI = createAsyncThunk("todayAPI", async () => {
+    const response = await axios.get("/rest/tnms/dashboard/evtCount");
     console.log(response.data);
     return response.data;
 });
@@ -34,6 +39,7 @@ export const main = createSlice({
         eventData: [],
         deviceStatus: [],
         topList: [],
+        todayData:[],
         emsList: [],
         eventDeviceList: [],
         eventTrend: { critical: [], warn: [], major: [] },
@@ -46,6 +52,9 @@ export const main = createSlice({
     extraReducers: {
         [eventDataAPI.fulfilled]: (state, action) => {
             state.eventData = action.payload.data.list;
+        },
+        [todayEventAPI.fulfilled]: (state, action) => {
+            state.todayData = action.payload.data.count;
         },
         [deviceStatusAPI.fulfilled]: (state, action) => {
             state.deviceStatus = action.payload;

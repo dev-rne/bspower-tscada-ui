@@ -11,10 +11,11 @@ import {
     eventDataAPI,
     deviceStatusAPI,
     eventDeviceTable,
+    todayEventAPI
 } from "../features/main";
 
 const Subject01 = () => {
-    const { eventData, deviceStatus, eventDeviceList, } =
+    const { eventData, deviceStatus, eventDeviceList, todayData } =
         useSelector((state) => state.main);
     const dispatch = useDispatch();
     const eventTimeout = useRef(null);
@@ -28,6 +29,7 @@ const Subject01 = () => {
         dispatch(eventDataAPI());
         dispatch(deviceStatusAPI());
         dispatch(eventDeviceTable());
+        dispatch(todayEventAPI());
         eventTimeout.current = setTimeout(() => {
             eventDataCall();
         }, 10000);
@@ -40,7 +42,7 @@ const Subject01 = () => {
                 <Ticker dataList={eventData} />
                 <div className="main-contents">
                     <div className="left-box">
-                        <GaugeComp dataList={eventData} />
+                        <GaugeComp dataList={todayData} />
                         <EventDeviceTable thead={eventDeviceList.thead} tbody={eventDeviceList.tbody} />
                     </div>
 
