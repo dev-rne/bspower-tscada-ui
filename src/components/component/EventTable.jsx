@@ -1,4 +1,7 @@
+import moment from "moment";
+
 const EventTable = (props) => {
+
     const { tableData, dashboard } = props;
     const dashboardThead = [
         {
@@ -95,31 +98,31 @@ const EventTable = (props) => {
                         return (
                             <div className="tr" key={i}>
                                 <div className="td severity">
-                                    {list.level === "critical" ? (
+                                    {list.severity === "CRITICAL" ? (
                                         <div className="critical circle"></div>
-                                    ) : list.level === "trouble" ? (
+                                    ) : list.severity === "TROUBLE" ? (
                                         <div className="trouble circle"></div>
                                     ) : (
                                         <div className="attention circle"></div>
                                     )}
                                     <div className="value">
-                                        {list.level}
+                                        {list.severity}
                                     </div>
                                 </div>
-                                <div className="td alarm">{list.model}</div>
+                                <div className="td alarm">{list.hostType}</div>
                                 <div className="td occurrence">
-                                    {list.occurredTime}
+                                    {moment(list.cTime).format("YYYY-MM-DD HH:mm")}
                                 </div>
                                 <div className="td duration">{list.device}</div>
                                 <div className="td system">
-                                    {list.location}
+                                    {list.ancestry}
                                 </div>
-                                <div className="td resource">{list.IP}</div>
-                                {dashboard ? <div className="td station">{list.station}</div> : ''}
+                                <div className="td resource">{list.managerName}</div>
+                                {dashboard ? <div className="td station">{list.hostName}</div> : ''}
                                 <div className="td target">
-                                    {list.eventName}
+                                    {list.ancestry}
                                 </div>
-                                <div className="td condition">{list.console}</div>
+                                <div className="td condition">{list.conditionLog}</div>
                             </div>
                         );
                     })}

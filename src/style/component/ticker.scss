@@ -27,13 +27,13 @@
             .li{
                 margin-right: 20px;
                 font-size: 22px;
-                &.critical{
+                &.CRITICAL{
                     color: $critical;
                 }
-                &.trouble{
+                &.TROUBLE{
                     color: $trouble;
                 }
-                &.attention{
+                &.ATTENTION{
                     color: $attention;
                 }
             }

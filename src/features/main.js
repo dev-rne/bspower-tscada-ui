@@ -2,7 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const eventDataAPI = createAsyncThunk("eventAPI", async () => {
-    const response = await axios.get("./data/eventConsole.json");
+    const response = await axios.get("/rest/tnms/dashboard/event");
+    console.log(response.data);
     return response.data;
 });
 export const deviceStatusAPI = createAsyncThunk("deviceAPI", async () => {
@@ -44,7 +45,7 @@ export const main = createSlice({
     },
     extraReducers: {
         [eventDataAPI.fulfilled]: (state, action) => {
-            state.eventData = action.payload;
+            state.eventData = action.payload.data.list;
         },
         [deviceStatusAPI.fulfilled]: (state, action) => {
             state.deviceStatus = action.payload;

@@ -1,9 +1,9 @@
-import { Select } from "antd";
+import { Select, Tooltip } from "antd";
 import Marquee from "react-fast-marquee";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { setPagination } from "@features/main";
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
 const { Option } = Select;
 
@@ -35,15 +35,25 @@ const Ticker = ({dataList}) => {
             dispatch(setPagination(location.hash.slice(1)))
         }
     },[])
+
+    const [eventList, setEventList] = useState([])
+
+    useEffect(()=>{
+        const list = dataList.filter(list => list.severity !== 'CLEAR')
+        setEventList(list);
+    },[dataList])
+
     return (
         <div className="ticker">
             <div className="title-box">Current Events</div>
             <div className="newsList">
                 <Marquee speed={50} pauseOnHover={true}>
                 {
-                    dataList && dataList.map((list,i) => {
+                    eventList && eventList.map((list,i) => {
                         return(
-                              <div className={ list.level + " li"} key={i}>{list.console}</div>
+                              <Tooltip title={`Host name: ${list.hostName}`} color={list.severity === 'CRITICAL' ? 'red' : list.severity === 'TROUBLE' ? 'orange' : 'yellow'}>
+                                  <div className={ list.severity + " li"} key={i}>{list.conditionLog}</div>
+                              </Tooltip>
                         )
                     })
                 }

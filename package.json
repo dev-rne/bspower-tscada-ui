@@ -2,7 +2,7 @@
     "name": "mongolia-dashboard",
     "version": "0.1.0",
     "private": true,
-    "proxy": "http://222.112.53.201:6507",
+    "proxy": "http://221.141.145.93",
     "dependencies": {
         "@ant-design/icons": "^4.7.0",
         "@craco/craco": "^6.4.3",
