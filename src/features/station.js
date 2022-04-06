@@ -1,10 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const eventDataAPI = createAsyncThunk("eventAPI", async () => {
-    const response = await axios.get("./data/eventConsole.json");
+export const stationEventDataAPI = createAsyncThunk("stationEventAPI", async (page) => {
+    const response = await axios.get("/rest/tnms/dashboard/event",{params:{station: page }});
     return response.data;
 });
+
 export const DeviceStatusAPI = createAsyncThunk("statusAPI", async () => {
     const response = await axios.get("./data/deviceEvents.json");
     return response.data;
@@ -36,7 +37,7 @@ export const station = createSlice({
     },
     reducers: {},
     extraReducers: {
-        [eventDataAPI.fulfilled]: (state, action) => {
+        [stationEventDataAPI.fulfilled]: (state, action) => {
             state.eventData = action.payload;
         },
         [DeviceStatusAPI.fulfilled]: (state, action) => {

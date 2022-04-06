@@ -9,7 +9,6 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useRef } from "react";
 import {
     eventTrendAPI,
-    eventDataAPI,
     EMSStatusAPI,
     DeviceManagementAPI,
     DeviceStatusAPI,
@@ -27,7 +26,6 @@ const Subject02 = () => {
 
     const eventDataCall = () => {
         clearTimeout(eventTimeout.current);
-        dispatch(eventDataAPI());
         dispatch(DeviceManagementAPI());
         dispatch(DeviceStatusAPI());
         dispatch(EMSStatusAPI());

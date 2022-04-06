@@ -2,7 +2,8 @@ import { Select, Tooltip } from "antd";
 import Marquee from "react-fast-marquee";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
-import { setPagination } from "@features/main";
+import { setPagination,eventDataAPI } from "@features/main";
+import { stationEventDataAPI } from "@features/station";
 import {useEffect, useState} from 'react';
 
 const { Option } = Select;
@@ -29,12 +30,14 @@ const Ticker = ({dataList}) => {
     useEffect(()=>{
         if(location.pathname === '/'){
             dispatch(setPagination('dashboard'));
+            dispatch(eventDataAPI());
         }else if(location.pathname === '/occ'){
             dispatch(setPagination('occ'));
         }else{
-            dispatch(setPagination(location.hash.slice(1)))
+            dispatch(setPagination(location.hash.slice(1)));
+            dispatch(stationEventDataAPI(page));
         }
-    },[])
+    },[page])
 
     const [eventList, setEventList] = useState([])
 

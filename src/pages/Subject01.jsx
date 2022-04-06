@@ -7,15 +7,13 @@ import StationMap from "@components/sub01/StationMap";
 import EventConsole from "@components/sub01/EventConsole";
 import React, { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-    eventDataAPI,
-    deviceStatusAPI,
+import {deviceStatusAPI,
     eventDeviceTable,
-    todayEventAPI
-} from "../features/main";
+    todayEventAPI,
+    stationStatusAPI} from "../features/main";
 
 const Subject01 = () => {
-    const { eventData, deviceStatus, eventDeviceList, todayData } =
+    const { eventData, deviceStatus, eventDeviceList, todayData, stationList } =
         useSelector((state) => state.main);
     const dispatch = useDispatch();
     const eventTimeout = useRef(null);
@@ -26,10 +24,10 @@ const Subject01 = () => {
 
     const eventDataCall = () => {
         clearTimeout(eventTimeout.current);
-        dispatch(eventDataAPI());
         dispatch(deviceStatusAPI());
         dispatch(eventDeviceTable());
         dispatch(todayEventAPI());
+        dispatch(stationStatusAPI());
         eventTimeout.current = setTimeout(() => {
             eventDataCall();
         }, 10000);
@@ -48,7 +46,7 @@ const Subject01 = () => {
 
                     <div className="center-box">
                         <ManagementStatus dataList={deviceStatus.device} />
-                        <StationMap />
+                        <StationMap/>
                     </div>
                 </div>
                 <EventConsole dataList={eventData} />
