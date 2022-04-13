@@ -1,33 +1,37 @@
-
-const EventDeviceTable = ({thead, tbody}) => {
+const EventDeviceTable = ({ thead, tbody }) => {
     return (
-        <div className='device-events sectionBox'>
-          <div className="title-box">
-              <div className="title">Events status by Device</div>
+        <div className="device-events sectionBox">
+            <div className="title-box">
+                <div className="title">Events status by Device</div>
             </div>
 
             <div className="table">
                 <div className="thead">
-                    {thead && thead.map((list, idx) => {
-                        return(
-                            <div className={list.class + ' th'} key={idx}>
-                                {list.title}</div>
-                        )
-                    })}
+                    <div className="station th">Station</div>
+                    <div className="attention th">Attention</div>
+                    <div className="trouble th">Trouble</div>
+                    <div className="critical th">Critical</div>
                 </div>
                 <div className="tbody">
-                    {tbody && 
-                        tbody.map((list,idx) => {
-                            return(
+                    {tbody &&
+                        tbody.map((list, idx) => {
+                            return (
                                 <div className="tr" key={idx}>
-                                    <div className="td station">{list.title}</div>
-                                    <div className="td attention">{list.attention}</div>
-                                    <div className="td trouble">{list.trouble}</div>
-                                    <div className="td critical">{list.critical}</div>
+                                    <div className="td station">
+                                        {list.title}
+                                    </div>
+                                    <div className="td attention">
+                                        {list.ATTENTION}
+                                    </div>
+                                    <div className="td trouble">
+                                        {list.TROUBLE}
+                                    </div>
+                                    <div className="td critical">
+                                        {list.CRITICAL}
+                                    </div>
                                 </div>
-                            )
-                        })
-                    }
+                            );
+                        })}
                 </div>
             </div>
         </div>

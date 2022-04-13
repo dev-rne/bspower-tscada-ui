@@ -174,11 +174,11 @@ const CCTVTable = () => {
                     <div className="control-comp">
                         <MinusOutlined
                             className="control-icon minus"
-                            onClick={() => controllCall("zoomout")}
+                            onClick={() => controllCall("zoom_out")}
                         />
                         <PlusOutlined
                             className="control-icon plus"
-                            onClick={() => controllCall("zoomin")}
+                            onClick={() => controllCall("zoom_in")}
                         />
                         <DownOutlined
                             className="control-icon down"

@@ -1,0 +1,11 @@
+{
+    "date": "2022-04-07 11:19:31",
+    "data": {
+        "count": [
+            { "severity": "CLEAR", "count": 20 },
+            { "severity": "ATTENTION", "count": 1 },
+            { "severity": "TROUBLE", "count": 2 }
+        ]
+    },
+    "id": "alarm"
+}

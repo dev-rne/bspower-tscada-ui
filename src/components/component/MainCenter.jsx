@@ -3,37 +3,68 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 const MainCenter = (props) => {
-    const { stationList } = useSelector((state) => state.main);
+    const [stationEvent, setStationEvent] = useState([
+        {
+            title: "Tsogttsetsii",
+            station: "Tsetsii",
+            level: 0,
+        },
+        {
+            title: "Khongor tolgoi",
+            station: "SIDING Station #1",
+            level: 0,
+        },
+        {
+            title: "Ar khonglidog",
+            station: "SIDING Station #2",
+            level: 0,
+        },
+        {
+            title: "Bayanbulag",
+            station: "SIDING Station #3",
+            level: 0,
+        },
+        {
+            title: "Khunkhar Zag",
+            station: "SIDING Station #4",
+            level: 0,
+        },
+        {
+            title: "Bor khoshuu",
+            station: "SIDING Station #5",
+            level: 0,
+        },
+        {
+            title: "Khulangiin Shand",
+            station: "SIDING Station #6",
+            level: 0,
+        },
+        {
+            title: "Zuunbayan Station",
+            station: "OCC",
+            level: 0,
+        },
+    ]);
+    const { eventDeviceList } = useSelector((state) => state.main);
     useEffect(() => {
-        if(stationList.length === 0) return;
-            const {count} = stationList.data
-            console.log(count);
-            const dataArr = [];
-            for(let i =0; i < count.length; i++){
-                let list = {
-                    name: count[i].station,
-                    value: [0, 280],
-                    symbol: `image://../../cctv/station-icon-alert.png`,
-                    symbolOffset: [0, "-30%"],
-                    label: {
-                        position: "bottom",
-                        align: "center",
-                        formatter: [
-                            `{a|${"TSETSII"}}`,
-                            `{b|${"STATION"}}`,
-                        ].join("\n"),
-                        rich: {
-                            a: { color: "#53ba2b" },
-                            b: { color: "#53ba2b" },
-                        },
-                    },
-                }
-                dataArr.push(list)
+        let initData = stationEvent.slice().map((obj) => {
+            obj.level = 0;
+            return obj;
+        });
+        setStationEvent(initData);
+        for (let i = 0; i < eventDeviceList.length; i++) {
+            let dataObj = eventDeviceList[i];
+            var index = stationEvent.findIndex(
+                (obj) => obj.station === dataObj.station
+            );
+            if (index !== -1) {
+                if (dataObj.ATTENTION) stationEvent[index].level = 1;
+                if (dataObj.TROUBLE) stationEvent[index].level = 2;
+                if (dataObj.CRITICAL) stationEvent[index].level = 3;
             }
-            options.series[0].data = dataArr;
-       
-        
-    },[stationList])
+        }
+        setStationEvent(stationEvent);
+    }, [eventDeviceList]);
 
     const { height, width } = props;
 
@@ -94,7 +125,8 @@ const MainCenter = (props) => {
                     {
                         name: "TSETSII",
                         value: [0, 280],
-                        symbol: "image://../../cctv/station-icon-alert.png",
+                        // symbol: "image:///tscada/cctvImg/station-icon-0.png",
+                        symbol: `image:///tscada/cctvImg/station-icon-${stationEvent[0].level}.png`,
                         symbolOffset: [0, "-30%"],
                         label: {
                             position: "bottom",
@@ -112,7 +144,7 @@ const MainCenter = (props) => {
                     {
                         name: "BB1",
                         value: [100, 280],
-                        symbol: "image://../../cctv/bb-icon.png",
+                        symbol: "image:///tscada/cctvImg/bb-icon-0.png",
                         symbolOffset: [0, "-30%"],
                         label: {
                             position: "bottom",
@@ -130,7 +162,8 @@ const MainCenter = (props) => {
                     {
                         name: "SS1",
                         value: [200, 280],
-                        symbol: "image://../../cctv/ss-icon.png",
+                        // symbol: "image:///tscada/cctvImg/ss-icon-0.png",
+                        symbol: `image:///tscada/cctvImg/ss-icon-${stationEvent[1].level}.png`,
                         symbolOffset: [0, "-30%"],
                         label: {
                             position: "bottom",
@@ -148,7 +181,7 @@ const MainCenter = (props) => {
                     {
                         name: "BB2",
                         value: [300, 280],
-                        symbol: "image://../../cctv/bb-icon.png",
+                        symbol: "image:///tscada/cctvImg/bb-icon-0.png",
                         symbolOffset: [0, "-30%"],
                         label: {
                             position: "bottom",
@@ -166,7 +199,8 @@ const MainCenter = (props) => {
                     {
                         name: "SS2",
                         value: [400, 280],
-                        symbol: "image://../../cctv/ss-icon.png",
+                        // symbol: "image:///tscada/cctvImg/ss-icon-0.png",
+                        symbol: `image:///tscada/cctvImg/ss-icon-${stationEvent[2].level}.png`,
                         symbolOffset: [0, "-30%"],
                         label: {
                             position: "bottom",
@@ -184,7 +218,7 @@ const MainCenter = (props) => {
                     {
                         name: "BB3",
                         value: [500, 210],
-                        symbol: "image://../../cctv/bb-icon.png",
+                        symbol: "image:///tscada/cctvImg/bb-icon-0.png",
                         symbolOffset: [0, "-30%"],
                         label: {
                             position: "bottom",
@@ -202,14 +236,13 @@ const MainCenter = (props) => {
                     {
                         name: "SS3",
                         value: [400, 140],
-                        symbol: "image://../../cctv/ss-icon-alert.png",
+                        // symbol: "image:///tscada/cctvImg/ss-icon-0.png",
+                        symbol: `image:///tscada/cctvImg/ss-icon-${stationEvent[3].level}.png`,
                         symbolOffset: [0, "-30%"],
                         label: {
                             position: "bottom",
                             align: "center",
-                            formatter: [
-                                `{a|${"Bayanbulag"}}`
-                            ].join("\n"),
+                            formatter: [`{a|${"Bayanbulag"}}`].join("\n"),
                             rich: {
                                 a: { color: "white" },
                                 b: { color: "white" },
@@ -219,7 +252,8 @@ const MainCenter = (props) => {
                     {
                         name: "SS4",
                         value: [300, 140],
-                        symbol: "image://../../cctv/ss-icon.png",
+                        // symbol: "image:///tscada/cctvImg/ss-icon-0.png",
+                        symbol: `image:///tscada/cctvImg/ss-icon-${stationEvent[4].level}.png`,
                         symbolOffset: [0, "-30%"],
                         label: {
                             position: "bottom",
@@ -237,7 +271,7 @@ const MainCenter = (props) => {
                     {
                         name: "BB4",
                         value: [200, 140],
-                        symbol: "image://../../cctv/bb-icon.png",
+                        symbol: "image:///tscada/cctvImg/bb-icon-0.png",
                         symbolOffset: [0, "-30%"],
                         label: {
                             position: "bottom",
@@ -255,7 +289,8 @@ const MainCenter = (props) => {
                     {
                         name: "SS5",
                         value: [100, 140],
-                        symbol: "image://../../cctv/ss-icon.png",
+                        // symbol: "image:///tscada/cctvImg/ss-icon-0.png",
+                        symbol: `image:///tscada/cctvImg/ss-icon-${stationEvent[5].level}.png`,
                         symbolOffset: [0, "-30%"],
                         label: {
                             position: "bottom",
@@ -273,7 +308,7 @@ const MainCenter = (props) => {
                     {
                         name: "BB5",
                         value: [0, 70],
-                        symbol: "image://../../cctv/bb-icon.png",
+                        symbol: "image:///tscada/cctvImg/bb-icon-0.png",
                         symbolOffset: [0, "-30%"],
                         label: {
                             position: "bottom",
@@ -291,7 +326,8 @@ const MainCenter = (props) => {
                     {
                         name: "SS6",
                         value: [100, 0],
-                        symbol: "image://../../cctv/ss-icon.png",
+                        // symbol: "image:///tscada/cctvImg/ss-icon-0.png",
+                        symbol: `image:///tscada/cctvImg/ss-icon-${stationEvent[6].level}.png`,
                         symbolOffset: [0, "-40%"],
                         label: {
                             position: "bottom",
@@ -309,7 +345,7 @@ const MainCenter = (props) => {
                     {
                         name: "BB6",
                         value: [200, 0],
-                        symbol: "image://../../cctv/bb-icon.png",
+                        symbol: "image:///tscada/cctvImg/bb-icon-0.png",
                         symbolOffset: [0, "-40%"],
                         label: {
                             position: "bottom",
@@ -327,7 +363,7 @@ const MainCenter = (props) => {
                     {
                         name: "BB7",
                         value: [300, 0],
-                        symbol: "image://../../cctv/bb-icon.png",
+                        symbol: "image:///tscada/cctvImg/bb-icon-0.png",
                         symbolOffset: [0, "-40%"],
                         label: {
                             position: "bottom",
@@ -345,7 +381,8 @@ const MainCenter = (props) => {
                     {
                         name: "ZUUNBAYAN",
                         value: [400, 0],
-                        symbol: "image://../../cctv/station-icon.png",
+                        // symbol: "image:///tscada/cctvImg/station-icon-0.png",
+                        symbol: `image:///tscada/cctvImg/station-icon-${stationEvent[7].level}.png`,
                         symbolOffset: [0, "-40%"],
                         label: {
                             position: "bottom",
@@ -605,8 +642,8 @@ const MainCenter = (props) => {
                     },
                 ],
             },
-        ]
-    }
+        ],
+    };
     return (
         <Fragment>
             <div

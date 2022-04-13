@@ -18,19 +18,23 @@ const TopNavi = () => {
     const handleChange = (value) => {
         dispatch(setPagination(value));
         if (value === "dashboard") {
-            navigate("/");
+            navigate("/tscada/");
         } else if (value === "occ") {
-            navigate("/occ");
+            navigate("/tscada/occ");
+        } else if (value === "cctv") {
+            navigate("/tscada/cctv");
         } else {
-            navigate(`/station#${value}`);
+            navigate(`/tscada/station#${value}`);
         }
     };
 
     useEffect(() => {
-        if (location.pathname === "/") {
+        if (location.pathname === "/tscada/") {
             dispatch(setPagination("dashboard"));
-        } else if (location.pathname === "/occ") {
+        } else if (location.pathname === "/tscada/occ") {
             dispatch(setPagination("occ"));
+        } else if (location.pathname === "/tscada/cctv") {
+            dispatch(setPagination("cctv"));
         } else {
             dispatch(setPagination(location.hash.slice(1)));
         }
@@ -53,13 +57,14 @@ const TopNavi = () => {
                         <Option value="dashboard">Dashboard</Option>
                         <Option value="occ">OCC</Option>
                         <Option value="tsetsii">TSETSII</Option>
-                        <Option value="ss1">SS1</Option>
-                        <Option value="ss2">SS2</Option>
-                        <Option value="ss3">SS3</Option>
-                        <Option value="ss4">SS4</Option>
-                        <Option value="ss5">SS5</Option>
-                        <Option value="ss6">SS6</Option>
+                        <Option value="ss1">Khongor Tolgoi</Option>
+                        <Option value="ss2">Khonglidog</Option>
+                        <Option value="ss3">Bayanbulag</Option>
+                        <Option value="ss4">Khunkhar Zag</Option>
+                        <Option value="ss5">Bor Khoshuu</Option>
+                        <Option value="ss6">Khulagniin Shand</Option>
                         <Option value="zuunbayan">ZUUNBAYAN</Option>
+                        <Option value="cctv">CCTV</Option>
                     </Select>
                 </div>
                 <NowTime />
