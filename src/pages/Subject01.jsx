@@ -8,17 +8,15 @@ import EventConsole from "@components/sub01/EventConsole";
 import React, { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
+    eventDataAPI,
     deviceStatusAPI,
     eventDeviceTable,
     todayEventAPI,
-    stationStatusAPI,
 } from "../features/main";
-import { ConsoleSqlOutlined } from "@ant-design/icons";
 
 const Subject01 = () => {
-    const { eventData, deviceStatus, eventDeviceList, todayData } = useSelector(
-        (state) => state.main
-    );
+    const { eventData, deviceStatus, eventDeviceList, todayData, page } =
+        useSelector((state) => state.main);
     const dispatch = useDispatch();
     const eventTimeout = useRef(null);
     const [stationEvent, setStationEvent] = useState([
@@ -27,56 +25,107 @@ const Subject01 = () => {
             station: "Tsetsii",
             ATTENTION: 0,
             TROUBLE: 0,
-            CRITICAl: 0,
+            CRITICAL: 0,
         },
         {
             title: "Khongor tolgoi",
             station: "SIDING Station #1",
             ATTENTION: 0,
             TROUBLE: 0,
-            CRITICAl: 0,
+            CRITICAL: 0,
         },
         {
             title: "Ar khonglidog",
             station: "SIDING Station #2",
             ATTENTION: 0,
             TROUBLE: 0,
-            CRITICAl: 0,
+            CRITICAL: 0,
         },
         {
             title: "Bayanbulag",
             station: "SIDING Station #3",
             ATTENTION: 0,
             TROUBLE: 0,
-            CRITICAl: 0,
+            CRITICAL: 0,
         },
         {
             title: "Khunkhar Zag",
             station: "SIDING Station #4",
             ATTENTION: 0,
             TROUBLE: 0,
-            CRITICAl: 0,
+            CRITICAL: 0,
         },
         {
             title: "Bor khoshuu",
             station: "SIDING Station #5",
             ATTENTION: 0,
             TROUBLE: 0,
-            CRITICAl: 0,
+            CRITICAL: 0,
         },
         {
             title: "Khulangiin Shand",
             station: "SIDING Station #6",
             ATTENTION: 0,
             TROUBLE: 0,
-            CRITICAl: 0,
+            CRITICAL: 0,
         },
         {
             title: "Zuunbayan Station",
             station: "OCC",
             ATTENTION: 0,
             TROUBLE: 0,
-            CRITICAl: 0,
+            CRITICAL: 0,
+        },
+    ]);
+    const [stationEvent2, setStationEvent2] = useState([
+        {
+            title: "Base Station 1",
+            station: "BaseStation1",
+            ATTENTION: 0,
+            TROUBLE: 0,
+            CRITICAL: 0,
+        },
+        {
+            title: "Base Station 2",
+            station: "BaseStation2",
+            ATTENTION: 0,
+            TROUBLE: 0,
+            CRITICAL: 0,
+        },
+        {
+            title: "Base Station 3",
+            station: "BaseStation3",
+            ATTENTION: 0,
+            TROUBLE: 0,
+            CRITICAL: 0,
+        },
+        {
+            title: "Base Station 4",
+            station: "BaseStation4",
+            ATTENTION: 0,
+            TROUBLE: 0,
+            CRITICAL: 0,
+        },
+        {
+            title: "Base Station 5",
+            station: "BaseStation5",
+            ATTENTION: 0,
+            TROUBLE: 0,
+            CRITICAL: 0,
+        },
+        {
+            title: "Base Station 6",
+            station: "BaseStation6",
+            ATTENTION: 0,
+            TROUBLE: 0,
+            CRITICAL: 0,
+        },
+        {
+            title: "Base Station 7",
+            station: "BaseStation7",
+            ATTENTION: 0,
+            TROUBLE: 0,
+            CRITICAL: 0,
         },
     ]);
     const [deviceInfo, setDeviceInfo] = useState([
@@ -204,17 +253,15 @@ const Subject01 = () => {
 
     const eventDataCall = () => {
         clearTimeout(eventTimeout.current);
+        console.log("dashboard page ::: " + page);
+        dispatch(eventDataAPI());
         dispatch(deviceStatusAPI());
         dispatch(eventDeviceTable());
         dispatch(todayEventAPI());
         // dispatch(stationStatusAPI());
-        eventTimeout.current = setTimeout(() => {
-            dispatch(todayEventAPI());
-            eventDataCall();
-            dispatch(deviceStatusAPI());
-            dispatch(eventDeviceTable());
-            // dispatch(stationStatusAPI());
-        }, 10000);
+        // eventTimeout.current = setTimeout(() => {
+        //     eventDataCall();
+        // }, 10000);
     };
 
     return (
@@ -222,16 +269,26 @@ const Subject01 = () => {
             <TopNavi />
             <div className="contents">
                 <Ticker dataList={eventData} />
-                <div className="main-contents">
+                <div className="top-contents">
                     <div className="left-box">
                         <GaugeComp dataList={todayData} />
-                        <EventDeviceTable tbody={stationEvent} />
                     </div>
-
                     <div className="center-box">
-                        {/* <ManagementStatus dataList={deviceStatus.device} /> */}
                         <ManagementStatus dataList={deviceInfo} />
+                    </div>
+                </div>
+                <div className="main-contents">
+                    <div className="left-box">
+                        <EventDeviceTable
+                            type={"siding"}
+                            tbody={stationEvent}
+                        />
+                    </div>
+                    <div className="center-box">
                         <StationMap />
+                    </div>
+                    <div className="right-box">
+                        <EventDeviceTable type={"base"} tbody={stationEvent2} />
                     </div>
                 </div>
                 <EventConsole dataList={eventData} />

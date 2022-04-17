@@ -18,10 +18,13 @@ const TopNavi = () => {
     const handleChange = (value) => {
         dispatch(setPagination(value));
         if (value === "dashboard") {
+            dispatch(setPagination("dashboard"));
             navigate("/tscada/");
         } else if (value === "occ") {
+            dispatch(setPagination("occ"));
             navigate("/tscada/occ");
         } else if (value === "cctv") {
+            dispatch(setPagination("cctv"));
             navigate("/tscada/cctv");
         } else {
             navigate(`/tscada/station#${value}`);
@@ -64,6 +67,13 @@ const TopNavi = () => {
                         <Option value="ss5">Bor Khoshuu</Option>
                         <Option value="ss6">Khulagniin Shand</Option>
                         <Option value="zuunbayan">ZUUNBAYAN</Option>
+                        <Option value="bb1">Base Station 1</Option>
+                        <Option value="bb2">Base Station 2</Option>
+                        <Option value="bb3">Base Station 3</Option>
+                        <Option value="bb4">Base Station 4</Option>
+                        <Option value="bb5">Base Station 5</Option>
+                        <Option value="bb6">Base Station 6</Option>
+                        <Option value="bb7">Base Station 7</Option>
                         <Option value="cctv">CCTV</Option>
                     </Select>
                 </div>

@@ -7,7 +7,7 @@
     flex-direction: column;
     gap: 10px;
 
-    .title-box{
+    .title-box {
         display: flex;
         align-items: center;
         width: 100%;
@@ -29,7 +29,7 @@
                 opacity: 0.4;
                 border: 1px solid rgba(255, 255, 255, 0.274);
                 cursor: pointer;
-                background: rgba(0,0,0,0.1);
+                background: rgba(0, 0, 0, 0.1);
                 transition: 0.3s;
                 &.critical {
                     border: 1px solid $redDown;
@@ -45,7 +45,6 @@
                 }
             }
         }
-        
     }
 
     .table {
@@ -92,9 +91,9 @@
                     align-items: center;
                     font-size: 14px;
                     overflow: hidden;
-                    text-overflow : ellipsis;
-                    -webkit-line-clamp :3; 
-                    -webkit-box-orient : vertical;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
                 }
                 .td:last-child {
                     border: none;
@@ -112,7 +111,6 @@
                 border-radius: 10px;
                 &.critical {
                     border: 1px solid $critical;
-
                 }
                 &.trouble {
                     border: 1px solid $trouble;
@@ -121,12 +119,12 @@
                     border: 1px solid $attention;
                 }
             }
-            .value{
+            .value {
                 width: 70%;
                 white-space: nowrap;
             }
         }
-       
+
         .alarm {
             width: 9%;
         }
@@ -149,11 +147,159 @@
             width: 26%;
         }
         .tbody::-webkit-scrollbar {
-            display: none; 
+            display: none;
+        }
+    }
+}
+.event-console-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .title-box {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        padding-right: 10px;
+
+        .title {
+            color: $white;
+            padding: 0 10px;
+            font-size: 18px;
+        }
+
+        .event-btn-area {
+            float: right;
+            .event-btn {
+                padding: 4px 20px;
+                float: left;
+                margin-left: 20px;
+                border-radius: 20px;
+                opacity: 0.4;
+                border: 1px solid rgba(255, 255, 255, 0.274);
+                cursor: pointer;
+                background: rgba(0, 0, 0, 0.1);
+                transition: 0.3s;
+                &.critical {
+                    border: 1px solid $redDown;
+                }
+                &.trouble {
+                    border: 1px solid $orrangeDown;
+                }
+                &.attention {
+                    border: 1px solid $yellowDown;
+                }
+                &.active {
+                    opacity: 1;
+                }
+            }
         }
     }
 
-    
+    .table {
+        width: 100%;
+        flex: 1;
+        overflow: hidden;
+        border-radius: 4px;
+        border: 1px solid $select;
+        background-color: $dark;
+
+        .thead {
+            width: 100%;
+            display: flex;
+            height: 20%;
+            font-size: 14px;
+            background: #091a29;
+
+            .th {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-right: 1px solid $select;
+                color: $white;
+            }
+            .th:last-child {
+                border: none;
+            }
+        }
+
+        .tbody {
+            width: 100%;
+            height: 80%;
+            overflow-y: auto;
+            .tr {
+                width: 100%;
+                display: flex;
+                border-top: 1px solid $select;
+                color: $white;
+
+                .td {
+                    padding: 8px 6px;
+                    border-right: 1px solid $select;
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                }
+                .td:last-child {
+                    border: none;
+                }
+            }
+        }
+        .severity {
+            width: 6%;
+            justify-content: center;
+
+            .circle {
+                width: 13px;
+                height: 13px;
+                margin-right: 6px;
+                border-radius: 10px;
+                &.critical {
+                    border: 1px solid $critical;
+                }
+                &.trouble {
+                    border: 1px solid $trouble;
+                }
+                &.attention {
+                    border: 1px solid $attention;
+                }
+            }
+            .value {
+                width: 70%;
+                white-space: nowrap;
+            }
+        }
+
+        .alarm {
+            width: 9%;
+        }
+        .occurrence {
+            width: 12%;
+        }
+        .duration {
+            width: 14%;
+        }
+        .system {
+            width: 8%;
+        }
+        .resource {
+            width: 10%;
+        }
+        .target {
+            width: 15%;
+        }
+        .condition {
+            width: 26%;
+        }
+        .tbody::-webkit-scrollbar {
+            display: none;
+        }
+    }
 }
 
 .subject01 {
@@ -174,7 +320,7 @@
             .resource {
                 width: 10%;
             }
-            .station{
+            .station {
                 width: 6%;
             }
             .target {
@@ -186,17 +332,44 @@
         }
     }
 }
+.event-console-modal {
+    .table {
+        .alarm {
+            width: 9%;
+        }
+        .occurrence {
+            width: 12%;
+        }
+        .duration {
+            width: 14%;
+        }
+        .system {
+            width: 6%;
+        }
+        .resource {
+            width: 10%;
+        }
+        .station {
+            width: 6%;
+        }
+        .target {
+            width: 13%;
+        }
+        .condition {
+            width: 24%;
+        }
+    }
+}
 
-.ant-badge-status{
-    .ant-badge-count{
-        text-shadow: 0px 0px 2px rgba(0,0,0,0.7);
+.ant-badge-status {
+    .ant-badge-count {
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
         opacity: 0.5;
         transition: 0.3s;
     }
-    &.badgeActive{
-        .ant-badge-count{
+    &.badgeActive {
+        .ant-badge-count {
             opacity: 1;
         }
     }
- 
 }

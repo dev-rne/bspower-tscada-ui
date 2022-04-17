@@ -1,8 +1,10 @@
 .subject01 {
+    .right-box,
     .left-box {
         .gaugecomp {
             width: 100%;
-            height: 30%;
+            // height: 30%;
+            height: 100%;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -28,8 +30,8 @@
                     justify-content: end;
 
                     img {
-                       width: 40%;
-                       margin-bottom: 4px;
+                        width: 40%;
+                        margin-bottom: 4px;
                     }
 
                     p {
@@ -67,14 +69,13 @@
                     align-items: center;
                     justify-content: center;
                     margin-bottom: 10px;
-
                 }
             }
         }
 
         .device-events {
             width: 100%;
-            height: 70%;
+            height: 100%;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -97,23 +98,23 @@
                 border: 1px solid $gray;
                 background: $dark;
                 border-radius: 4px;
-    
-                .station{
+
+                .station {
                     width: 35%;
                 }
-                .attention{
+                .attention {
                     width: calc(65% / 3);
                 }
-                .trouble{
+                .trouble {
                     width: calc(65% / 3);
                 }
-                .critical{
+                .critical {
                     width: calc(65% / 3);
                 }
                 .thead {
                     display: flex;
                     height: 15%;
-    
+
                     .th {
                         display: flex;
                         justify-content: center;
@@ -127,17 +128,17 @@
                         border: none;
                     }
 
-                    .attention{
-                        color: $attention
+                    .attention {
+                        color: $attention;
                     }
-                    .trouble{
-                        color: $trouble
+                    .trouble {
+                        color: $trouble;
                     }
-                    .critical{
-                        color: $critical
+                    .critical {
+                        color: $critical;
                     }
                 }
-    
+
                 .tbody {
                     width: 100%;
                     height: 85%;
@@ -147,7 +148,29 @@
                         border-top: 1px solid $gray;
                         color: $white;
                         height: calc(100% / 8);
-    
+
+                        .td {
+                            border-right: 1px solid $gray;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 14px;
+                        }
+                        .td:last-child {
+                            border: none;
+                        }
+                    }
+                }
+                .tbody2 {
+                    width: 100%;
+                    height: 85%;
+                    .tr {
+                        width: 100%;
+                        display: flex;
+                        border-top: 1px solid $gray;
+                        color: $white;
+                        height: calc(100% / 7);
+
                         .td {
                             border-right: 1px solid $gray;
                             display: flex;

@@ -1,8 +1,8 @@
-const EventDeviceTable = ({ thead, tbody }) => {
+const EventDeviceTable = ({ type, tbody }) => {
     return (
         <div className="device-events sectionBox">
             <div className="title-box">
-                <div className="title">Events status by Device</div>
+                <div className="title">Events status by {type} station</div>
             </div>
 
             <div className="table">
@@ -12,7 +12,7 @@ const EventDeviceTable = ({ thead, tbody }) => {
                     <div className="trouble th">Trouble</div>
                     <div className="critical th">Critical</div>
                 </div>
-                <div className="tbody">
+                <div className={type === "base" ? "tbody2" : "tbody"}>
                     {tbody &&
                         tbody.map((list, idx) => {
                             return (

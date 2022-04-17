@@ -46,7 +46,7 @@ const Subject02 = () => {
                         thead={deviceStatus.thead}
                         tbody={deviceStatus.tbody}
                     />
-                    <EmsServer dataList={emsList} />
+                    {/* <EmsServer dataList={emsList} /> */}
                 </div>
                 <ManagementStatus dataList={deviceManagement.device} />
                 <EventConsole dataList={eventData} />

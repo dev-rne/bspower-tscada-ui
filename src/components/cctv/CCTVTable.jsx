@@ -21,17 +21,35 @@ const CCTVTable = () => {
     const { Option } = Select;
     const { cctvList } = useSelector((state) => state.cctv);
     const dispatch = useDispatch();
-
+    const stationArr = [
+        "TSETSII",
+        "Khongor Tolgoi",
+        "Khonglidog",
+        "Bayanbulag",
+        "Khunkhar Zag",
+        "Bor Khoshuu",
+        "Khulagniin Shand",
+        "ZUUNBAYAN",
+    ];
     useEffect(() => {
         let arr = cctvList.map((obj, idx) => {
-            let stationInfo = idx % 2 === 0 ? "TSETSII" : "SS2";
-            let newObject = Object.assign({ station: stationInfo }, obj);
+            let newObject = Object.assign(
+                { idx: idx + 1, station: stationArr[idx % 8] },
+                obj
+            );
             return newObject;
         });
         setDatas(arr);
         setFilterDatas(arr);
     }, [cctvList]);
     const columns = [
+        {
+            title: "",
+            dataIndex: "idx",
+            key: "idx",
+            width: "5%",
+            align: "center",
+        },
         {
             title: "CCTV Name",
             dataIndex: "device_name",
@@ -77,7 +95,7 @@ const CCTVTable = () => {
                 const tag = (
                     <img
                         style={{ cursor: "pointer" }}
-                        src="./cctv-icon.png"
+                        src="/tscada/cctvImg/cctv-icon.png"
                         onClick={() => {
                             setUrl(text);
                             setCctvInfo(record);
@@ -117,7 +135,11 @@ const CCTVTable = () => {
                 return true;
             }
         });
-        setFilterDatas(result);
+        let arr = result.map((obj, idx) => {
+            obj.idx = idx + 1;
+            return obj;
+        });
+        setFilterDatas(arr);
     }
 
     return (
@@ -133,12 +155,14 @@ const CCTVTable = () => {
                     >
                         <Option value="total">ALL</Option>
                         <Option value="TSETSII">TSETSII</Option>
-                        <Option value="SS1">SS1</Option>
-                        <Option value="SS2">SS2</Option>
-                        <Option value="SS3">SS3</Option>
-                        <Option value="SS4">SS4</Option>
-                        <Option value="SS5">SS5</Option>
-                        <Option value="SS6">SS6</Option>
+                        <Option value="Khongor Tolgoi">Khongor Tolgoi</Option>
+                        <Option value="Khonglidog">Khonglidog</Option>
+                        <Option value="Bayanbulag">Bayanbulag</Option>
+                        <Option value="Khunkhar Zag">Khunkhar Zag</Option>
+                        <Option value="Bor Khoshuu">Bor Khoshuu</Option>
+                        <Option value="Khulagniin Shand">
+                            Khulagniin Shand
+                        </Option>
                         <Option value="ZUUNBAYAN">ZUUNBAYAN</Option>
                     </Select>
                 </div>
@@ -168,32 +192,73 @@ const CCTVTable = () => {
                             CCTV Type : <span>{cctvInfo.model_name}</span>
                         </div>
                         <div>
-                            Station : <span>{"Mogolia station"}</span>
+                            Station : <span>{cctvInfo.station}</span>
                         </div>
                     </div>
-                    <div className="control-comp">
+                    <div
+                        className="control-comp"
+                        style={{
+                            opacity: cctvInfo.use_ptz === "true" ? 1 : 0.2,
+                        }}
+                    >
                         <MinusOutlined
                             className="control-icon minus"
+                            style={{
+                                cursor:
+                                    cctvInfo.use_ptz === "true"
+                                        ? "pointer"
+                                        : "default",
+                            }}
                             onClick={() => controllCall("zoom_out")}
                         />
                         <PlusOutlined
                             className="control-icon plus"
+                            style={{
+                                cursor:
+                                    cctvInfo.use_ptz === "true"
+                                        ? "pointer"
+                                        : "default",
+                            }}
                             onClick={() => controllCall("zoom_in")}
                         />
                         <DownOutlined
                             className="control-icon down"
+                            style={{
+                                cursor:
+                                    cctvInfo.use_ptz === "true"
+                                        ? "pointer"
+                                        : "default",
+                            }}
                             onClick={() => controllCall("down")}
                         />
                         <UpOutlined
                             className="control-icon up"
+                            style={{
+                                cursor:
+                                    cctvInfo.use_ptz === "true"
+                                        ? "pointer"
+                                        : "default",
+                            }}
                             onClick={() => controllCall("up")}
                         />
                         <LeftOutlined
                             className="control-icon left"
+                            style={{
+                                cursor:
+                                    cctvInfo.use_ptz === "true"
+                                        ? "pointer"
+                                        : "default",
+                            }}
                             onClick={() => controllCall("left")}
                         />
                         <RightOutlined
                             className="control-icon right"
+                            style={{
+                                cursor:
+                                    cctvInfo.use_ptz === "true"
+                                        ? "pointer"
+                                        : "default",
+                            }}
                             onClick={() => controllCall("right")}
                         />
                     </div>

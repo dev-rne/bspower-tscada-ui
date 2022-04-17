@@ -1,36 +1,36 @@
 .main-contents {
-   .event-trend{
-       width: 25%;
-       display: flex;
-       flex-direction: column;
-       gap: 10px;
-       .title {
-        color: $white;
-        padding: 0 10px;
-    }
-    .chart-box{
-        width: 100%;
-        flex:1;
-    }
-   }
-
-   .device-events{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    .title-box{
+    .event-trend {
+        width: 50%;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: $white;
-        padding: 0 10px;
-        height: 5%;
-
-        .unit{
-            font-size: 14px;
+        flex-direction: column;
+        gap: 10px;
+        .title {
+            color: $white;
+            padding: 0 10px;
+        }
+        .chart-box {
+            width: 100%;
+            flex: 1;
         }
     }
+
+    .device-events {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .title-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: $white;
+            padding: 0 10px;
+            height: 5%;
+
+            .unit {
+                font-size: 14px;
+            }
+        }
 
         .table {
             width: 100%;
@@ -40,16 +40,16 @@
             background: $dark;
             border-radius: 4px;
 
-            .title{
+            .title {
                 width: 10%;
             }
-            .previous{
+            .previous {
                 width: 30%;
             }
-            .today{
+            .today {
                 width: 30%;
             }
-            .critical{
+            .critical {
                 width: 30%;
             }
             .thead {
@@ -93,105 +93,104 @@
                 }
             }
         }
-       
-}
-
-.ems-server{
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    .title {
-     color: $white;
-     padding: 0 10px;
     }
 
-    .table-box {
+    .ems-server {
+        width: 25%;
         display: flex;
         flex-direction: column;
-        height: 90%;
-        border: 1px solid $gray;
-        background-color: $dark;
-        border-radius: 4px;
+        gap: 10px;
+        .title {
+            color: $white;
+            padding: 0 10px;
+        }
 
-        .table {
-            width: 100%;
-            height: 50%;
-            overflow: hidden;
-            border-bottom: 1px solid $gray;
+        .table-box {
+            display: flex;
+            flex-direction: column;
+            height: 90%;
+            border: 1px solid $gray;
+            background-color: $dark;
+            border-radius: 4px;
 
-            .thead {
-                width: calc(100% - 8px);
-                display: flex;
-                height: 18%;
-
-                .th {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    border-right: 1px solid $gray;
-                    color: $white;
-                }
-                .th:last-child {
-                    border: none;
-                }
-            }
-
-            .tbody {
+            .table {
                 width: 100%;
-                height: 82%;
-                overflow-y: auto;
-                .tr {
-                    width: 100%;
-                    display: flex;
-                    border-top: 1px solid $gray;
-                    color: $white;
+                height: 50%;
+                overflow: hidden;
+                border-bottom: 1px solid $gray;
 
-                    .td {
-                        padding: 2px;
-                        border-right: 1px solid $gray;
+                .thead {
+                    width: calc(100% - 8px);
+                    display: flex;
+                    height: 18%;
+
+                    .th {
                         display: flex;
-                        align-items: center;
                         justify-content: center;
-                        font-size: 14px;
+                        align-items: center;
+                        border-right: 1px solid $gray;
+                        color: $white;
                     }
-                    .td:last-child {
+                    .th:last-child {
                         border: none;
                     }
                 }
-            }
-            .key {
-                width: 13%;
-            }
-            .name {
-                width: 35%;
-            }
-            .progress {
-                width: 52%;
 
-                .progressBar {
-                    padding-left: 8px;
-                    .ant-progress-outer {
-                        height: 100%;
-                        .ant-progress-inner {
-                            border-radius: 0;
-                            background: rgba(0, 0, 0, 0);
-                            height: 100%;
-                            .ant-progress-bg {
-                                height: 12px !important;
-                                border-radius: 0;
-                            }
+                .tbody {
+                    width: 100%;
+                    height: 82%;
+                    overflow-y: auto;
+                    .tr {
+                        width: 100%;
+                        display: flex;
+                        border-top: 1px solid $gray;
+                        color: $white;
+
+                        .td {
+                            padding: 2px;
+                            border-right: 1px solid $gray;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 14px;
+                        }
+                        .td:last-child {
+                            border: none;
                         }
                     }
-                    .ant-progress-text {
-                        color: $white;
+                }
+                .key {
+                    width: 13%;
+                }
+                .name {
+                    width: 35%;
+                }
+                .progress {
+                    width: 52%;
+
+                    .progressBar {
+                        padding-left: 8px;
+                        .ant-progress-outer {
+                            height: 100%;
+                            .ant-progress-inner {
+                                border-radius: 0;
+                                background: rgba(0, 0, 0, 0);
+                                height: 100%;
+                                .ant-progress-bg {
+                                    height: 12px !important;
+                                    border-radius: 0;
+                                }
+                            }
+                        }
+                        .ant-progress-text {
+                            color: $white;
+                        }
                     }
                 }
             }
-        }
-        .table:nth-child(2n) {
-            border-bottom: none;
+            .table:nth-child(2n) {
+                border-bottom: none;
+            }
         }
     }
-}
 }

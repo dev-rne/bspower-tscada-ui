@@ -36,6 +36,7 @@ export const main = createSlice({
     },
     reducers: {
         setPagination: (state, action) => {
+            console.log("page change :::: " + action.payload);
             state.page = action.payload;
         },
         setDeviceStatus: (state, action) => {

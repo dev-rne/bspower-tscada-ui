@@ -7,6 +7,7 @@ export const cctvListData = createAsyncThunk("cctvListAPI", async () => {
         // "http://222.112.53.201:6507/openapi/v1/devicelist"
         "http://115.95.137.19:6507/openapi/v1/devicelist"
         // "/rest/tnms/dashboard/cctv"
+        // "/rest/tnms/dashboard/cctv"
     );
     return response.data;
 });
