@@ -4,10 +4,10 @@ import Marquee from "react-fast-marquee";
 
 const EventStatus = (props) => {
     const { dataList } = props;
-    const critical = dataList.filter((list) => list.level === "critical");
-    const trouble = dataList.filter((list) => list.level === "trouble");
-    const attention = dataList.filter((list) => list.level === "attention");
-    const [event, setEvent] = useState("critical");
+    const critical = dataList.filter((list) => list.severity === "CRITICAL");
+    const trouble = dataList.filter((list) => list.severity === "TROUBLE");
+    const attention = dataList.filter((list) => list.severity === "ATTENTION");
+    const [event, setEvent] = useState("");
     const [eventList, setEventList] = useState([]);
 
     useEffect(() => {
@@ -18,71 +18,50 @@ const EventStatus = (props) => {
     }, [event, dataList]);
 
     const handleEvent = (value) => {
-        setEvent(value);
+        // setEvent(value);
     };
 
     return (
         <div className="event-status">
             <div className="event-box">
-                <div
-                    className={
-                        event === "critical"
-                            ? "critical select event"
-                            : "critical event"
-                    }
-                    onClick={() => handleEvent("critical")}
-                >
+                <div className="critical event">
                     <div className="name">
                         <div className="box"></div>
                         <span>Critical</span>
                     </div>
                     <img
-                        className={
-                            event === "critical"
-                                ? "alert"
-                                : ""
-                        }
+                        className={event === "critical" ? "alert" : ""}
                         src={require(`@assets/critical.png`)}
                         alt=""
                     />
                     <div className="value">{critical.length}</div>
                 </div>
-                <div
-                    className={
-                        event === "trouble" ? "trouble select event" : "trouble event"
-                    }
-                    onClick={() => handleEvent("trouble")}
-                >
+                <div className="trouble event">
                     <div className="name">
                         <div className="box"></div>
                         <span>Trouble</span>
                     </div>
-                    <img src={require(`@assets/trouble.png`)} alt="" className={
-                            event === "trouble"
-                                ? "alert"
-                                : ""
-                        } />
+                    <img
+                        src={require(`@assets/trouble.png`)}
+                        alt=""
+                        className={event === "trouble" ? "alert" : ""}
+                    />
                     <div className="value">{trouble.length}</div>
                 </div>
-                <div
-                    className={
-                        event === "attention" ? "attention select event" : "attention event"
-                    }
-                    onClick={() => handleEvent("attention")}
-                >
+                <div className="attention event">
                     <div className="name">
                         <div className="box"></div>
                         <span>Attention</span>
                     </div>
-                    <img src={require(`@assets/attention.png`)} alt="" className={
-                            event === "attention"
-                                ? "alert"
-                                : ""
-                        }/>
+                    <img
+                        src={require(`@assets/attention.png`)}
+                        alt=""
+                        className={event === "attention" ? "alert" : ""}
+                    />
                     <div className="value">{attention.length}</div>
                 </div>
             </div>
-            <div className="ticker-box">
+            {/* <div className="ticker-box">
                 <div className="overFlowBox">
                     <div className="tickerList">
                         <Marquee speed={50} pauseOnHover={true}>
@@ -90,26 +69,17 @@ const EventStatus = (props) => {
                                 eventList.map((list, i) => {
                                     return (
                                         <div
-                                            className={list.level + " li"}
+                                            className={list.severity + " li"}
                                             key={i}
                                         >
-                                            {list.console}
+                                            {list.conditionLog}
                                         </div>
                                     );
                                 })}
                         </Marquee>
-                        {/* {jsonData.event
-                            .filter((list) => list.img === event)[0]
-                            .eventList.map((list, idx) => {
-                                return (
-                                    <div className="list" key={idx}>
-                                        {list}
-                                    </div>
-                                );
-                            })} */}
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

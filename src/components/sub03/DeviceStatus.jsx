@@ -29,12 +29,12 @@ const DeviceStatus = ({ dataList }) => {
                                     src={require(`@assets/icons/${list.img}.png`)}
                                     alt=""
                                 />
-                                <div className="value">{list.value}</div>
+                                <div className="value">{list.cnt}</div>
                             </div>
                         );
                     })}
             </div>
-            <Modal
+            {/* <Modal
                 visible={isModalVisible}
                 onCancel={handleOk}
                 footer={null}
@@ -42,7 +42,7 @@ const DeviceStatus = ({ dataList }) => {
                 maskClosable={false}
             >
                 <p>Some contents...</p>
-            </Modal>
+            </Modal> */}
         </div>
     );
 };

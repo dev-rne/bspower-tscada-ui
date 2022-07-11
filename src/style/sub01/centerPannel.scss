@@ -3,7 +3,7 @@
         gap: 12px;
         display: flex;
         flex-direction: column;
-        .management-status{
+        .management-status {
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -11,22 +11,22 @@
             border-radius: 8px;
             background: $pannelGradient;
             padding: 10px;
-            height: 30%;
-    
+            height: 100%;
+
             .title {
                 color: $white;
                 padding: 0 10px;
             }
-    
-            .contents{
+
+            .contents {
                 width: 100%;
-                flex:1;
+                flex: 1;
                 display: flex;
                 gap: 10px;
                 justify-content: space-between;
                 flex-direction: row;
-    
-                .device{
+
+                .device {
                     cursor: pointer;
                     width: calc(100% / 10);
                     background: $dark;
@@ -35,8 +35,8 @@
                     flex-direction: column;
                     padding: 0 10px;
                     justify-content: center;
-    
-                    .img-box{
+
+                    .img-box {
                         width: 100%;
                         display: flex;
                         justify-content: center;
@@ -44,24 +44,24 @@
                         gap: 6px;
                         color: $white;
                         font-weight: 700;
-    
-                        img{
+
+                        img {
                             width: 30%;
                         }
                     }
-                    .value-box{
+                    .value-box {
                         width: 100%;
                         border: 1px solid $gray;
                         display: flex;
                         padding: 10px 6px;
                         justify-content: space-between;
                         color: $white;
-                        margin-bottom:6px;
+                        margin-bottom: 6px;
                         font-size: 14px;
                         white-space: nowrap;
                     }
-    
-                    .value-box:nth-child(3n){
+
+                    .value-box:nth-child(3n) {
                         border: 1px solid rgb(66, 33, 33);
                         display: flex;
                         padding: 10px 6px;
@@ -74,7 +74,7 @@
 
         .station-map {
             width: 100%;
-            height: calc(70% - 12px);
+            height: 100%;
             position: relative;
             .bgbox {
                 position: absolute;

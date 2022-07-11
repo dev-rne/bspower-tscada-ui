@@ -1,4 +1,4 @@
-.ticker{
+.ticker {
     width: 100%;
     border: 1px solid $blueBorder;
     display: flex;
@@ -6,48 +6,47 @@
     height: 40px;
     align-items: center;
 
-    .title-box{
+    .title-box {
         width: 10%;
-        background: #081D2F;
+        background: #081d2f;
         color: $white;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100%;
     }
-    .newsList{
+    .newsList {
         width: 75%;
-        
 
-        .overlay{
+        .overlay {
             display: none;
         }
-        .marquee{
+        .marquee {
             overflow: hidden;
-            .li{
+            .li {
                 margin-right: 20px;
                 font-size: 22px;
-                &.CRITICAL{
+                &.CRITICAL {
                     color: $critical;
                 }
-                &.TROUBLE{
+                &.TROUBLE {
                     color: $trouble;
                 }
-                &.ATTENTION{
+                &.ATTENTION {
                     color: $attention;
                 }
             }
         }
     }
-    .select-box{
+    .select-box {
         width: 15%;
         display: flex;
         align-items: center;
         height: 30px;
-        background: #040F17;
+        background: #040f17;
         margin-right: 10px;
 
-        .label{
+        .label {
             width: 50%;
             color: $white;
             display: flex;
@@ -55,21 +54,21 @@
             justify-content: center;
         }
 
-        .selector{
+        .selector {
             width: 50% !important;
 
-            .ant-select-selector{
+            .ant-select-selector {
                 background: $gray;
                 border: none;
                 color: white;
 
-                .ant-select-selection-item{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+                .ant-select-selection-item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
             }
-            .ant-select-arrow{
+            .ant-select-arrow {
                 color: white;
             }
         }

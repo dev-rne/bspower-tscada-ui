@@ -6,8 +6,15 @@ export const cctvListData = createAsyncThunk("cctvAPI", async () => {
     return response.data;
 });
 
-export const fetchEventData = createAsyncThunk("eventAPI", async () => {
-    const response = await axios.get("./data/eventConsole.json");
+export const eventDataAPI = createAsyncThunk("eventAPI", async () => {
+    const response = await axios.get("/rest/tnms/dashboard/event?station=OCC");
+    // const response = await axios.get("./data/event.json");
+    return response.data;
+});
+
+export const deviceStatusAPI = createAsyncThunk("deviceAPI", async () => {
+    // const response = await axios.get("./data/deviceStatus.json");
+    const response = await axios.get("/rest/tnms/dashboard/device?station=OCC");
     return response.data;
 });
 
@@ -20,8 +27,10 @@ export const occ = createSlice({
         floor_2: [],
         rtspurl: "",
         eventData: [],
+        todayData: [],
+        deviceStatus: [],
         cctvList: { floor_1: [], floor_2: [] },
-        unityReady:false
+        unityReady: false,
     },
     reducers: {
         setFloorVal: (state, action) => {
@@ -44,18 +53,27 @@ export const occ = createSlice({
         },
     },
     extraReducers: {
-        [fetchEventData.fulfilled]: (state, action) => {
-            state.eventData = action.payload;
+        [eventDataAPI.fulfilled]: (state, action) => {
+            state.eventData = action.payload.data.list;
         },
         [cctvListData.fulfilled]: (state, action) => {
             state.cctvList = action.payload;
             state.rtspurl = state.cctvList.floor_1[0].rtspurl;
         },
+        [deviceStatusAPI.fulfilled]: (state, action) => {
+            state.deviceStatus = action.payload.device;
+        },
     },
 });
 
 // Action creators are generated for each case reducer function
-export const { setCctvVal, setFloorVal, setFloor_1, setFloor_2, setRtspurl,setUnityReady } =
-    occ.actions;
+export const {
+    setCctvVal,
+    setFloorVal,
+    setFloor_1,
+    setFloor_2,
+    setRtspurl,
+    setUnityReady,
+} = occ.actions;
 
 export default occ.reducer;

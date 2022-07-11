@@ -1,7 +1,6 @@
 import moment from "moment";
 
 const EventTable = (props) => {
-
     const { tableData, dashboard } = props;
     const dashboardThead = [
         {
@@ -20,9 +19,13 @@ const EventTable = (props) => {
             class: "duration",
             title: "Duration",
         },
+        // {
+        //     class: "system",
+        //     title: "System Name",
+        // },
         {
             class: "system",
-            title: "System Name",
+            title: "Device",
         },
         {
             class: "resource",
@@ -58,9 +61,13 @@ const EventTable = (props) => {
             class: "duration",
             title: "Duration",
         },
+        // {
+        //     class: "system",
+        //     title: "System Name",
+        // },
         {
             class: "system",
-            title: "System Name",
+            title: "Device",
         },
         {
             class: "resource",
@@ -75,22 +82,25 @@ const EventTable = (props) => {
             title: "Condition Log",
         },
     ];
-    
+
     return (
         <div className="table">
             <div className="thead">
-                {
-                dashboard ?
-                dashboardThead.map((list,i) => {
-                    return (
-                        <div className={list.class + " th"} key={i}>{list.title}</div>
-                    );
-                }) :
-                thead.map((list,i) => {
-                    return (
-                        <div className={list.class + " th"} key={i}>{list.title}</div>
-                    );
-                })}
+                {dashboard
+                    ? dashboardThead.map((list, i) => {
+                          return (
+                              <div className={list.class + " th"} key={i}>
+                                  {list.title}
+                              </div>
+                          );
+                      })
+                    : thead.map((list, i) => {
+                          return (
+                              <div className={list.class + " th"} key={i}>
+                                  {list.title}
+                              </div>
+                          );
+                      })}
             </div>
             <div className="tbody">
                 {tableData &&
@@ -105,24 +115,40 @@ const EventTable = (props) => {
                                     ) : (
                                         <div className="attention circle"></div>
                                     )}
-                                    <div className="value">
-                                        {list.severity}
-                                    </div>
+                                    <div className="value">{list.severity}</div>
                                 </div>
-                                <div className="td alarm">{list.hostType}</div>
+                                <div className="td alarm">
+                                    {list.definitionName}
+                                </div>
                                 <div className="td occurrence">
-                                    {moment(list.cTime).format("YYYY-MM-DD HH:mm")}
+                                    {moment(list.cTime).format(
+                                        "YYYY-MM-DD HH:mm:ss"
+                                    )}
                                 </div>
-                                <div className="td duration">{list.device}</div>
+                                <div className="td duration">
+                                    {list.duration}
+                                </div>
                                 <div className="td system">
-                                    {list.ancestry}
+                                    {list.deviceType === "null"
+                                        ? ""
+                                        : list.deviceType}
                                 </div>
-                                <div className="td resource">{list.managerName}</div>
-                                {dashboard ? <div className="td station">{list.hostName}</div> : ''}
-                                <div className="td target">
-                                    {list.ancestry}
+                                <div className="td resource">
+                                    {list.resourceName}
                                 </div>
-                                <div className="td condition">{list.conditionLog}</div>
+                                {dashboard ? (
+                                    <div className="td station">
+                                        {list.station === "null"
+                                            ? ""
+                                            : list.station}
+                                    </div>
+                                ) : (
+                                    ""
+                                )}
+                                <div className="td target">{list.ancestry}</div>
+                                <div className="td condition">
+                                    {list.conditionLog}
+                                </div>
                             </div>
                         );
                     })}
