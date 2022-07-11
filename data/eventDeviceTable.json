@@ -1,0 +1,70 @@
+{
+    "thead": [
+        {
+            "class": "station",
+            "title": "Station"
+        },
+        {
+            "class": "attention",
+            "title": "Attention"
+        },
+        {
+            "class": "trouble",
+            "title": "Trouble"
+        },
+        {
+            "class": "critical",
+            "title": "Critical"
+        }
+    ],
+    "tbody": [
+        {
+            "title": "Tsogttsetsii",
+            "attention": 5,
+            "trouble": 0,
+            "critical": 0
+        },
+        {
+            "title": "Khongor tolgoi",
+            "attention": 2,
+            "trouble": 1,
+            "critical": 0
+        },
+        {
+            "title": "Ar khonglidog",
+            "attention": 0,
+            "trouble": 0,
+            "critical": 1
+        },
+        {
+            "title": "Bayanbulag",
+            "attention": 1,
+            "trouble": 1,
+            "critical": 1
+        },
+        {
+            "title": "Khunkhar Zag",
+            "attention": 1,
+            "trouble": 0,
+            "critical": 0
+        },
+        {
+            "title": "Bor khoshuu",
+            "attention": 1,
+            "trouble": 1,
+            "critical": 0
+        },
+        {
+            "title": "Khulangiin Shand",
+            "attention": 1,
+            "trouble": 0,
+            "critical": 1
+        },
+        {
+            "title": "Zuunbayan Station",
+            "attention": 1,
+            "trouble": 0,
+            "critical": 1
+        }
+    ]
+}

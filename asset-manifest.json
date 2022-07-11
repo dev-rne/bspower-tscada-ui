@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tscada-dashboard/static/css/main.33412a1c.css",
+    "main.js": "/tscada-dashboard/static/js/main.beeb7331.js",
+    "static/media/control-bg.png": "/tscada-dashboard/static/media/control-bg.16510a227e4cf9baf6d7.png",
+    "static/media/dashboardTop.svg": "/tscada-dashboard/static/media/dashboardTop.c18da2ed0662ca8a6e5ec60260f467c8.svg",
+    "index.html": "/tscada-dashboard/index.html",
+    "main.33412a1c.css.map": "/tscada-dashboard/static/css/main.33412a1c.css.map",
+    "main.beeb7331.js.map": "/tscada-dashboard/static/js/main.beeb7331.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.33412a1c.css",
+    "static/js/main.beeb7331.js"
+  ]
+}

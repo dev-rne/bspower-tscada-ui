@@ -1,0 +1,167 @@
+[
+    {
+        "key": 1,
+        "severity": "CRITICAL",
+        "hostType": "서버",
+        "cTime": "2019/10/17  09:08:54",
+        "device": "CPU",
+        "hostName": "Polestar-AP 2",
+        "ancestry": "192.268.232.12",
+        "managerName": "CPU 사용률",
+        "conditionLog": "사용률[1.1 % ( > 1%, 3회연속)]"
+    },
+    {
+        "key": 2,
+        "severity": "TROUBLE",
+        "hostType": "네트워크",
+        "cTime": "2019/10/17  11:19:00",
+        "device": "Vlan2",
+        "hostName": "S4048-BB2",
+        "ancestry": "192.168.254.10",
+        "managerName": "포트",
+        "conditionLog": "가용성 [DOWN ( = DOWN, 2회연속)]"
+    },
+    {
+        "key": 3,
+        "severity": "CRITICAL",
+        "hostType": "네트워크",
+        "cTime": "2019/10/17  11:19:00",
+        "device": "ManagementEthernet 1/1",
+        "hostName": "S4048-BB2",
+        "ancestry": "192.268.232.12",
+        "managerName": "포트",
+        "conditionLog": "가용성 [DOWN ( = DOWN, 2회연속)]"
+    },
+    {
+        "key": 4,
+        "severity": "ATTENTION",
+        "hostType": "서버",
+        "cTime": "2019/10/17  11:19:00",
+        "device": "TenGigabitEthernet 1/45",
+        "hostName": "S4048-BB2",
+        "ancestry": "192.168.254.10",
+        "managerName": "응답시간",
+        "conditionLog": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
+    },
+    {
+        "key": 5,
+        "severity": "TROUBLE",
+        "hostType": "서버",
+        "cTime": "2019/10/17  11:19:00",
+        "device": "TenGigabitEthernet 1/45",
+        "hostName": "S4048-BB2",
+        "ancestry": "192.268.232.12",
+        "managerName": "응답시간",
+        "conditionLog": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
+    },
+    {
+        "key": 1,
+        "severity": "CRITICAL",
+        "hostType": "서버",
+        "cTime": "2019/10/17  09:08:54",
+        "device": "CPU",
+        "hostName": "Polestar-AP 2",
+        "ancestry": "192.268.232.12",
+        "managerName": "CPU 사용률",
+        "conditionLog": "사용률[1.1 % ( > 1%, 3회연속)]"
+    },
+    {
+        "key": 2,
+        "severity": "TROUBLE",
+        "hostType": "네트워크",
+        "cTime": "2019/10/17  11:19:00",
+        "device": "Vlan2",
+        "hostName": "S4048-BB2",
+        "ancestry": "192.168.254.10",
+        "managerName": "포트",
+        "conditionLog": "가용성 [DOWN ( = DOWN, 2회연속)]"
+    },
+    {
+        "key": 3,
+        "severity": "CRITICAL",
+        "hostType": "네트워크",
+        "cTime": "2019/10/17  11:19:00",
+        "device": "ManagementEthernet 1/1",
+        "hostName": "S4048-BB2",
+        "ancestry": "192.268.232.12",
+        "managerName": "포트",
+        "conditionLog": "가용성 [DOWN ( = DOWN, 2회연속)]"
+    },
+    {
+        "key": 4,
+        "severity": "ATTENTION",
+        "hostType": "서버",
+        "cTime": "2019/10/17  11:19:00",
+        "device": "TenGigabitEthernet 1/45",
+        "hostName": "S4048-BB2",
+        "ancestry": "192.168.254.10",
+        "managerName": "응답시간",
+        "conditionLog": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
+    },
+    {
+        "key": 5,
+        "severity": "TROUBLE",
+        "hostType": "서버",
+        "cTime": "2019/10/17  11:19:00",
+        "device": "TenGigabitEthernet 1/45",
+        "hostName": "S4048-BB2",
+        "ancestry": "192.268.232.12",
+        "managerName": "응답시간",
+        "conditionLog": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
+    },
+    {
+        "key": 1,
+        "severity": "CRITICAL",
+        "hostType": "서버",
+        "cTime": "2019/10/17  09:08:54",
+        "device": "CPU",
+        "hostName": "Polestar-AP 2",
+        "ancestry": "192.268.232.12",
+        "managerName": "CPU 사용률",
+        "conditionLog": "사용률[1.1 % ( > 1%, 3회연속)]"
+    },
+    {
+        "key": 2,
+        "severity": "TROUBLE",
+        "hostType": "네트워크",
+        "cTime": "2019/10/17  11:19:00",
+        "device": "Vlan2",
+        "hostName": "S4048-BB2",
+        "ancestry": "192.168.254.10",
+        "managerName": "포트",
+        "conditionLog": "가용성 [DOWN ( = DOWN, 2회연속)]"
+    },
+    {
+        "key": 3,
+        "severity": "CRITICAL",
+        "hostType": "네트워크",
+        "cTime": "2019/10/17  11:19:00",
+        "device": "ManagementEthernet 1/1",
+        "hostName": "S4048-BB2",
+        "ancestry": "192.268.232.12",
+        "managerName": "포트",
+        "conditionLog": "가용성 [DOWN ( = DOWN, 2회연속)]"
+    },
+    {
+        "key": 4,
+        "severity": "ATTENTION",
+        "hostType": "서버",
+        "cTime": "2019/10/17  11:19:00",
+        "device": "TenGigabitEthernet 1/45",
+        "hostName": "S4048-BB2",
+        "ancestry": "192.168.254.10",
+        "managerName": "응답시간",
+        "conditionLog": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
+    },
+    {
+        "key": 5,
+        "severity": "TROUBLE",
+        "hostType": "서버",
+        "cTime": "2019/10/17  11:19:00",
+        "device": "TenGigabitEthernet 1/45",
+        "hostName": "S4048-BB2",
+        "ancestry": "192.268.232.12",
+        "managerName": "응답시간",
+        "conditionLog": "업무서비슷 응답시간 지연 [ 0.2 ms ( > 0.1ms, 2회연속)]"
+    }
+]

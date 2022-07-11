@@ -1,0 +1,56 @@
+{
+    "cpu":[
+        {   
+            "key" : 1,
+            "name": "Switch_003",
+            "value": 6.8
+        },
+        {
+            "key" : 2,
+            "name": "Switch_009",
+            "value": 6.2
+        },
+        {
+            "key" : 3,
+            "name": "Switch_006",
+            "value": 5.7
+        },
+        {
+            "key" : 4,
+            "name": "Switch_010",
+            "value": 5.5
+        },
+        {
+            "key" : 5,
+            "name": "Switch_011",
+            "value": 5.1
+        } 
+    ],
+    "memory":[
+        {
+            "key" : 1,
+            "name": "Switch_007",
+            "value": 4.7
+        },
+        {
+            "key" : 2,
+            "name": "Switch_015",
+            "value": 4.2
+        },
+        {
+            "key" : 3,
+            "name": "Switch_020",
+            "value": 3.7
+        },
+        {
+            "key" : 4,
+            "name": "Switch_023",
+            "value": 2.5
+        },
+        {
+            "key" : 5,
+            "name": "Switch_019",
+            "value": 1.5
+        }
+    ]
+}
