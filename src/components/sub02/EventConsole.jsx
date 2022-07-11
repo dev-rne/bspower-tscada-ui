@@ -5,9 +5,9 @@ import { Badge } from 'antd';
 const EventConsole = (props) => {
     const { dataList } = props;
 
-    const critical = dataList.filter((list) => list.level === "critical");
-    const trouble = dataList.filter((list) => list.level === "trouble");
-    const attention = dataList.filter((list) => list.level === "attention");
+    const critical = dataList.filter((list) => list.severity === "CRITICAL");
+    const trouble = dataList.filter((list) => list.severity === "TROUBLE");
+    const attention = dataList.filter((list) => list.severity === "ATTENTION");
 
     const [data, setData] = useState([]);
 
@@ -20,9 +20,9 @@ const EventConsole = (props) => {
     useEffect(() => {
         let dataArr = dataList.filter((obj) => {
             let bool = false;
-            if (evnetInfo.critical && obj.level === "critical") bool = true;
-            if (evnetInfo.trouble && obj.level === "trouble") bool = true;
-            if (evnetInfo.attention && obj.level === "attention") bool = true;
+            if (evnetInfo.critical && obj.severity === "CRITICAL") bool = true;
+            if (evnetInfo.trouble && obj.severity === "TROUBLE") bool = true;
+            if (evnetInfo.attention && obj.severity === "ATTENTION") bool = true;
 
             if (bool) return obj;
         });
@@ -50,7 +50,7 @@ const EventConsole = (props) => {
                         >
                             attention
                         </div></Badge>
-                        <Badge size="small" count={critical.length} color="#ff6f1c"  className={evnetInfo.trouble ? "badgeActive" : ""}>
+                        <Badge size="small" count={trouble.length} color="#ff6f1c"  className={evnetInfo.trouble ? "badgeActive" : ""}>
                         <div
                             className={evnetInfo.trouble ? "active event-btn trouble" : "event-btn trouble"}
                             onClick={() => {
@@ -63,7 +63,7 @@ const EventConsole = (props) => {
                         >
                             trouble
                         </div></Badge>
-                        <Badge size="small" count={trouble.length} color="#f51212"  className={evnetInfo.critical ? "badgeActive" : ""}>
+                        <Badge size="small" count={critical.length} color="#f51212"  className={evnetInfo.critical ? "badgeActive" : ""}>
                         <div
                             className={
                                 evnetInfo.critical ? "active event-btn critical" : "event-btn critical"}

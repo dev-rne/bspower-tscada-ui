@@ -2,7 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const stationEventDataAPI = createAsyncThunk("stationEventAPI", async (page) => {
-    const response = await axios.get("/rest/tnms/dashboard/event",{params:{station: page }});
+    // const response = await axios.get("/rest/tnms/dashboard/event",{params:{station: page }});
+    const response = await axios.get("/data/eventConsole.json");
     return response.data;
 });
 

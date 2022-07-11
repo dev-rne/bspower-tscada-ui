@@ -36,6 +36,7 @@ const Ticker = ({dataList}) => {
         }else{
             dispatch(setPagination(location.hash.slice(1)));
             dispatch(stationEventDataAPI(page));
+            // dispatch(eventDataAPI());
         }
     },[page])
 
@@ -54,7 +55,7 @@ const Ticker = ({dataList}) => {
                 {
                     eventList && eventList.map((list,i) => {
                         return(
-                              <Tooltip title={`Host name: ${list.hostName}`} color={list.severity === 'CRITICAL' ? 'red' : list.severity === 'TROUBLE' ? 'orange' : 'yellow'}>
+                              <Tooltip title={`Host name: ${list.hostName}`} color={list.severity === 'CRITICAL' ? 'red' : list.severity === 'TROUBLE' ? 'orange' : 'yellow'} key={i}>
                                   <div className={ list.severity + " li"} key={i}>{list.conditionLog}</div>
                               </Tooltip>
                         )

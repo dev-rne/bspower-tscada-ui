@@ -9,8 +9,7 @@ import React, { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {deviceStatusAPI,
     eventDeviceTable,
-    todayEventAPI,
-    stationStatusAPI} from "../features/main";
+    todayEventAPI} from "../features/main";
 
 const Subject01 = () => {
     const { eventData, deviceStatus, eventDeviceList, todayData, stationList } =
@@ -27,7 +26,7 @@ const Subject01 = () => {
         dispatch(deviceStatusAPI());
         dispatch(eventDeviceTable());
         dispatch(todayEventAPI());
-        dispatch(stationStatusAPI());
+        // dispatch(stationStatusAPI());
         eventTimeout.current = setTimeout(() => {
             eventDataCall();
         }, 10000);

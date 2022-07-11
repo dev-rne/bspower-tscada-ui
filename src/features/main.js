@@ -2,26 +2,29 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const eventDataAPI = createAsyncThunk("eventAPI", async () => {
-    const response = await axios.get("/rest/tnms/dashboard/event");
+    // const response = await axios.get("/rest/tnms/dashboard/event");
+    const response = await axios.get("/data/eventConsole.json");
     return response.data;
 });
 
 export const todayEventAPI = createAsyncThunk("todayAPI", async () => {
-    const response = await axios.get("/rest/tnms/dashboard/evtCount");
+    // const response = await axios.get("/rest/tnms/dashboard/evtCount");
+    const response = await axios.get("/data/eventConsole.json");
     return response.data;
 });
 
 export const stationStatusAPI = createAsyncThunk("stationAPI", async () => {
-    const response = await axios.get("/rest/tnms/dashboard/evtCount/station");
+    // const response = await axios.get("/rest/tnms/dashboard/evtCount/station");
+    const response = await axios.get("/data/.json");
     return response.data;
 });
 
 export const deviceStatusAPI = createAsyncThunk("deviceAPI", async () => {
-    const response = await axios.get("./data/deviceStatus.json");
+    const response = await axios.get("/data/deviceStatus.json");
     return response.data;
 });
 export const eventDeviceTable = createAsyncThunk("eventDeviceAPI", async () => {
-    const response = await axios.get("./data/eventDeviceTable.json");
+    const response = await axios.get("/data/eventDeviceTable.json");
     return response.data;
 });
 
@@ -44,10 +47,10 @@ export const main = createSlice({
     },
     extraReducers: {
         [eventDataAPI.fulfilled]: (state, action) => {
-            state.eventData = action.payload.data.list;
+            state.eventData = action.payload;
         },
         [todayEventAPI.fulfilled]: (state, action) => {
-            state.todayData = action.payload.data.count;
+            state.todayData = action.payload
         },
         [stationStatusAPI.fulfilled]: (state, action) => {
             state.stationList = action.payload;
