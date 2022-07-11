@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/tscada-dashboard/static/css/main.33412a1c.css",
-    "main.js": "/tscada-dashboard/static/js/main.beeb7331.js",
-    "static/media/control-bg.png": "/tscada-dashboard/static/media/control-bg.16510a227e4cf9baf6d7.png",
-    "static/media/dashboardTop.svg": "/tscada-dashboard/static/media/dashboardTop.c18da2ed0662ca8a6e5ec60260f467c8.svg",
-    "index.html": "/tscada-dashboard/index.html",
-    "main.33412a1c.css.map": "/tscada-dashboard/static/css/main.33412a1c.css.map",
-    "main.beeb7331.js.map": "/tscada-dashboard/static/js/main.beeb7331.js.map"
+    "main.css": "/bspower-tscada-ui/static/css/main.2ad7d4e1.css",
+    "main.js": "/bspower-tscada-ui/static/js/main.e6d20e3a.js",
+    "static/media/control-bg.png": "/bspower-tscada-ui/static/media/control-bg.16510a227e4cf9baf6d7.png",
+    "static/media/dashboardTop.svg": "/bspower-tscada-ui/static/media/dashboardTop.c18da2ed0662ca8a6e5ec60260f467c8.svg",
+    "index.html": "/bspower-tscada-ui/index.html",
+    "main.2ad7d4e1.css.map": "/bspower-tscada-ui/static/css/main.2ad7d4e1.css.map",
+    "main.e6d20e3a.js.map": "/bspower-tscada-ui/static/js/main.e6d20e3a.js.map"
   },
   "entrypoints": [
-    "static/css/main.33412a1c.css",
-    "static/js/main.beeb7331.js"
+    "static/css/main.2ad7d4e1.css",
+    "static/js/main.e6d20e3a.js"
   ]
 }
