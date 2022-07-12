@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/bspower-tscada-ui/static/css/main.2ad7d4e1.css",
-    "main.js": "/bspower-tscada-ui/static/js/main.e6d20e3a.js",
-    "static/media/control-bg.png": "/bspower-tscada-ui/static/media/control-bg.16510a227e4cf9baf6d7.png",
-    "static/media/dashboardTop.svg": "/bspower-tscada-ui/static/media/dashboardTop.c18da2ed0662ca8a6e5ec60260f467c8.svg",
-    "index.html": "/bspower-tscada-ui/index.html",
-    "main.2ad7d4e1.css.map": "/bspower-tscada-ui/static/css/main.2ad7d4e1.css.map",
-    "main.e6d20e3a.js.map": "/bspower-tscada-ui/static/js/main.e6d20e3a.js.map"
+    "main.css": "/static/css/main.cde824ed.css",
+    "main.js": "/static/js/main.9be9bbab.js",
+    "static/media/control-bg.png": "/static/media/control-bg.16510a227e4cf9baf6d7.png",
+    "static/media/dashboardTop.svg": "/static/media/dashboardTop.c18da2ed0662ca8a6e5ec60260f467c8.svg",
+    "index.html": "/index.html",
+    "main.cde824ed.css.map": "/static/css/main.cde824ed.css.map",
+    "main.9be9bbab.js.map": "/static/js/main.9be9bbab.js.map"
   },
   "entrypoints": [
-    "static/css/main.2ad7d4e1.css",
-    "static/js/main.e6d20e3a.js"
+    "static/css/main.cde824ed.css",
+    "static/js/main.9be9bbab.js"
   ]
 }
